@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../BONEAT/.idea/BONEAT.iml" filepath="$PROJECT_DIR$/../BONEAT/.idea/BONEAT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NEATCPP.iml" filepath="$PROJECT_DIR$/.idea/NEATCPP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../oldneat/.idea/oldneat.iml" filepath="$PROJECT_DIR$/../oldneat/.idea/oldneat.iml" />
+    </modules>
+  </component>
+</project>
