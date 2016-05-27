@@ -102,7 +102,7 @@ class Simulator:
     def getPerformance(self):
         perf = {'winratio':0.0}
         if self.max_dd > 0.0:
-            perf['fitness'] = self.curr_bal/self.max_dd
+            perf['fitness'] = (self.curr_bal/self.max_dd)+1.0
         else:
             perf['fitness'] = self.curr_bal
         perf['profit'] = self.curr_bal
@@ -110,6 +110,11 @@ class Simulator:
         perf['trades'] = self.trade_count
         if self.trade_count > 0:
             perf['winratio'] = float(self.win_count)/float(self.trade_count)
+        if self.max_dd > 0.0:
+            perf['p2/d'] = ((self.curr_bal**2)/self.max_dd)+1.0
+        else:
+            perf['p2/d'] = self.curr_bal**2
+
 
         return perf
 
@@ -163,6 +168,8 @@ def fastSimulate(list_of_genomes,data_file_path,processes=1):
     pool.join()
 
     for i,genome in enumerate(list_of_genomes):
+        if genome.fitness > 0.0 and genome.fitness != resultlist[i]['fitness']:
+            print "############ prev = %f  new = %f ##########\n"%(genome.fitness,resultlist[i]['fitness'])
         genome.fitness = resultlist[i]['fitness']
         genome.performance = resultlist[i]
 
@@ -170,10 +177,26 @@ def fastSimulate(list_of_genomes,data_file_path,processes=1):
     print "Maximum fitness = %.1f with performance:" %best_performer['fitness']
     print best_performer
 
+def slowSimulate(list_of_genomes,data_file_path):
+
+    # make a NN from each genome and append it to a processing list
+    for genome in list_of_genomes:
+        result = simuRoutine([genome,data_file_path])
+        if genome.fitness > 0.0 and genome.fitness != result["fitness"]:
+            print "\n############ WARNING ############\n"
+        genome.fitness = result['fitness']
+        genome.performance = result
+
+    best_performer = max(list_of_genomes,key=lambda g: g.fitness)
+    print "Maximum fitness = %.1f with performance:" %best_performer.fitness
+    print best_performer.performance
+
 def makeTestDataFile(filename,start_date = '1999-12-31',end_date = '2007-05-01'):
 
     arr = get_input_data(start_date=start_date,end_date=end_date)
     np.save(filename,arr)
+
+makeTestDataFile('data/AUDUSD4H_NPA_15Y',start_date = '2000-01-01',end_date = '2015-01-01')
 
 
 

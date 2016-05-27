@@ -17,3 +17,13 @@ class nodeGene:
         self.fromNode = inputNode
         self.toNode = outputNode
         self.nodeType = nodeType
+
+def copyGene(gene):
+    if hasattr(gene,'nodeType'):
+        ng = nodeGene(gene.nodeType,gene.fromNode,gene.toNode,gene.innovationNumber)
+    elif hasattr(gene, 'weight'):
+        ng = linkGene(gene.fromNode,gene.toNode,gene.weight,gene.innovationNumber)
+        ng.enabled = gene.enabled
+    else:
+        raise Exception('gene type not recognised')
+    return ng

@@ -4,7 +4,8 @@ import genome
 
 class SpeciesList:
 
-    def __init__(self,population,disjointWeight=1.0,excessWeight=1.0,weightsWeight=0.5,threshold=2.0):
+    def __init__(self,population,disjointWeight=1.0,excessWeight=1.0,weightsWeight=0.5,threshold=0.8):
+        #CONSTANTS
         self.disjointC = disjointWeight
         self.excessC = excessWeight
         self.weightsC = weightsWeight
@@ -70,7 +71,7 @@ class SpeciesList:
                 if sum_avg_fitness != 0.0:
                     breed = int(math.floor((species.avg_fitness/sum_avg_fitness)*self.population))
                 else:
-                    breed = 1
+                    breed = int(math.floor(float(self.population)/len(self.l_species)))
 
                 if breed < 0:
                     allAlive = False
@@ -88,6 +89,8 @@ class SpeciesList:
 
     def breedChildren(self,innovations):
 
+        crossoverchance = 0.8
+
         new_gen_children = []
         # breed all the children for each species
         for s in self.l_species:
@@ -97,11 +100,17 @@ class SpeciesList:
         remainder = self.population-len(new_gen_children)
         all_Gs = self.getAllGenomes()
         for i in range(remainder):
-            child=genome.crossover(random.sample(all_Gs,2),innovations)
+            if random.random() <= crossoverchance and len(all_Gs)>1:
+                child=genome.crossover(random.sample(all_Gs,2),innovations)
+
+            else:
+                child = genome.copyGenome(random.choice(all_Gs))
             child.mutate(innovations)
             new_gen_children.append(child)
 
         self.newGeneration(new_gen_children)
+
+
 
     def newGeneration(self,new_generation):
         self.killOldGeneration()
@@ -141,15 +150,19 @@ class species:
         self.calculateAverageFitness()
 
     def checkStaleness(self,max_pop_fitness):
+        # get the new max fitness
         maxfit = self.getMaxFitness()
+        # if it was more than previous max update it and reset staleness
         if maxfit > self.max_fitness:
             self.max_fitness = maxfit
             self.staleness = 0
+        # else increase staleness
         else:
             self.staleness += 1
 
         # CONSTANT
-        if self.staleness > 20:
+        # if it is stale for 20 generations and is not the best performing species it's stale
+        if self.staleness > 20 and self.max_fitness < max_pop_fitness:
             return True
         else:
             return False
@@ -178,7 +191,7 @@ class species:
                 child=genome.crossover(random.sample(self.l_genomes,2),innovations)
 
             else:
-                child = random.choice(self.l_genomes)
+                child = genome.copyGenome(random.choice(self.l_genomes))
 
             child.mutate(innovations)
             children.append(child)

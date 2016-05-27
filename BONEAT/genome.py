@@ -113,10 +113,10 @@ class Genome:
     def mutate(self,global_innovations):
         #CONSTANT
         mut_conn_c = 0.8
-        mut_link_c = 1.3
-        mut_node_c = 0.8
-        perturb_c = 0.8
-        switch_c = 0.2
+        mut_link_c = 0.8
+        mut_node_c = 0.5
+        perturb_c = 0.9
+        switch_c = 0.1
         mut_step = 0.2
 
 
@@ -167,6 +167,18 @@ class Genome:
         link = random.choice(self.l_link_genes)
         self.addNode(link.fromNode,link.toNode,glob_innov,weight=link.weight)
         link.enabled = False
+
+    def printGenome(self, comment=''):
+
+        print "{} - Genome: {}\n\tperformance:".format(comment,id(self))
+        for att in self.performance:
+            print "\t\t{} : {}".format(att,self.performance[att])
+        print"\tlinks"
+        for lg in self.l_link_genes:
+            print"\t\tlink {} {}".format(id(lg),vars(lg))
+        for ng in self.l_node_genes:
+            print"\t\tnode {} {}".format(id(ng),vars(ng))
+        print "-----------------------------------//--------------------------------------"
 
 def newSimpleGenome(inputs,outputs,pool):
 
@@ -219,10 +231,13 @@ def crossover(genome_pair,innovations):
 
     G1_genes = genome1.getAllGenes()
     G2_genes = genome1.getAllGenes()
+
+    ####### AAARRRRRGGGHHHHHH this cost me a day,
+    # learn: never say = always copy in a new object python will keep reference
     for g in G1_genes:
-        l_gen1[g.innovationNumber] = g
+        l_gen1[g.innovationNumber] = copyGene(g) # ok half day each
     for g in G2_genes:
-        l_gen1[g.innovationNumber] = g
+        l_gen1[g.innovationNumber] = copyGene(g) # ok half day each
 
     new_genes = []
     for In in range(genlength):
@@ -242,6 +257,16 @@ def crossover(genome_pair,innovations):
     NG.createFromGeneList(new_genes,innovations)
 
     return NG
+
+def copyGenome(genome):
+    nG = Genome()
+    nG.l_link_genes = []
+    for g in genome.l_link_genes:
+        nG.l_link_genes.append(copyGene(g))
+    for g in genome.l_node_genes:
+        nG.l_node_genes.append(copyGene(g))
+    return nG
+
 
 
 
