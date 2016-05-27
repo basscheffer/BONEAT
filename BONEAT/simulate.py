@@ -168,8 +168,6 @@ def fastSimulate(list_of_genomes,data_file_path,processes=1):
     pool.join()
 
     for i,genome in enumerate(list_of_genomes):
-        if genome.fitness > 0.0 and genome.fitness != resultlist[i]['fitness']:
-            print "############ prev = %f  new = %f ##########\n"%(genome.fitness,resultlist[i]['fitness'])
         genome.fitness = resultlist[i]['fitness']
         genome.performance = resultlist[i]
 
@@ -195,8 +193,6 @@ def makeTestDataFile(filename,start_date = '1999-12-31',end_date = '2007-05-01')
 
     arr = get_input_data(start_date=start_date,end_date=end_date)
     np.save(filename,arr)
-
-makeTestDataFile('data/AUDUSD4H_NPA_15Y',start_date = '2000-01-01',end_date = '2015-01-01')
 
 
 
