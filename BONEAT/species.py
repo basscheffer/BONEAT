@@ -48,7 +48,7 @@ class SpeciesList:
 
     def removeWeakPopulation(self):
 
-        self.max_pop_fitness = self.getMaxFitness()
+        self.max_pop_perf = self.getMaxPerf()
         surv = []
 
         for species in self.l_species:
@@ -84,8 +84,8 @@ class SpeciesList:
 
         self.l_species = surv
 
-    def getMaxFitness(self):
-        return max(s.max_fitness for s in self.l_species)
+    def getMaxPerf(self):
+        return max(s.max_performance for s in self.l_species)
 
     def breedChildren(self,innovations):
 
@@ -139,7 +139,7 @@ class species:
         self.l_genomes = [genome]
         self.staleness = 0
         self.avg_fitness = 0.0
-        self.max_fitness = 0.0
+        self.max_performance = 0.0
         self.breed = 0
 
     def removeWeak(self):
@@ -151,10 +151,10 @@ class species:
 
     def checkStaleness(self,max_pop_fitness):
         # get the new max fitness
-        maxfit = self.getMaxFitness()
+        maxperf = self.getMaxPerformance()
         # if it was more than previous max update it and reset staleness
-        if maxfit > self.max_fitness:
-            self.max_fitness = maxfit
+        if maxperf > self.max_performance:
+            self.max_fitness = maxperf
             self.staleness = 0
         # else increase staleness
         else:
@@ -167,8 +167,8 @@ class species:
         else:
             return False
 
-    def getMaxFitness(self):
-        return max(g.fitness for g in self.l_genomes)
+    def getMaxPerformance(self):
+        return max(g.performance["p2/dd"] for g in self.l_genomes)
 
     def calculateAverageFitness(self):
         self.avg_fitness = sum(g.fitness for g in self.l_genomes)/float(len(self.l_genomes))

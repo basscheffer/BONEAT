@@ -1,11 +1,11 @@
-import math
+from flask import Flask, url_for
 
-class tets:
+app = Flask(__name__)
 
-    def __init__(self):
-        self.a = 1
-        self.b =3
+@app.route('/blaat/<number>')
+def hello_world(number):
+    return str(float(number)**2)
 
-t=tets()
-print hasattr(t,'a')
+if __name__ == '__main__':
+    app.run()
 

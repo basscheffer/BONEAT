@@ -5,11 +5,9 @@ import phenotype as phen
 import simulate as sim
 import time
 
-
-
 class Pool:
 
-    def __init__(self,population,numpy_datafile,processors=4):
+    def __init__(self,population,pair="",time_frame=1,processors=4):
 
         self.population = population
 
@@ -18,7 +16,7 @@ class Pool:
         self.newPopulation()
         self.generation = 1
         self.processors = processors
-        self.df_path = numpy_datafile
+        self.df_path = "data/"+pair+str(time_frame)+"_NormData.npy"
 
     def newPopulation(self):
 
@@ -46,7 +44,7 @@ class Pool:
 
 if __name__=='__main__':
 
-    p = Pool(100,numpy_datafile='data/AUDUSD4H_NPA_10Y.npy',processors=4)
+    p = Pool(300,pair="AUDUSD",time_frame=240,processors=4)
     for i in range(20):
         p.evolvePopulation()
 
