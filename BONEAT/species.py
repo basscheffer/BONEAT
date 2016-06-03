@@ -4,13 +4,15 @@ import genome
 
 class SpeciesList:
 
-    def __init__(self,population,disjointWeight=1.0,excessWeight=1.0,weightsWeight=0.5,threshold=1.5):
-        #CONSTANTS
-        self.disjointC = disjointWeight
-        self.excessC = excessWeight
-        self.weightsC = weightsWeight
-        self.threshold = threshold
-        self.population = population
+    def __init__(self,settings):
+
+        self.settings = settings
+
+        self.disjointC = float(settings["d_factor"])
+        self.excessC = float(settings["e_factor"])
+        self.weightsC = float(settings["w_factor"])
+        self.threshold = float(settings["threshold"])
+        self.population = int(settings["population"])
 
         self.max_pop_fitness = 0.0
 
@@ -26,7 +28,7 @@ class SpeciesList:
 
         # if it didn't belong to any make a new one
         else:
-            s = species(genome)
+            s = species(genome,self.settings)
             self.l_species.append(s)
 
     def sameSpecies(self,speciesGenome,newGenome):
@@ -48,7 +50,7 @@ class SpeciesList:
 
     def removeWeakPopulation(self):
 
-        self.max_pop_perf = self.getMaxPerf()
+        self.max_pop_fitness = self.getMaxFitness()
         surv = []
 
         for species in self.l_species:
@@ -84,12 +86,12 @@ class SpeciesList:
 
         self.l_species = surv
 
-    def getMaxPerf(self):
-        return max(s.max_performance for s in self.l_species)
+    def getMaxFitness(self):
+        return max(s.max_fitness for s in self.l_species)
 
     def breedChildren(self,innovations):
 
-        crossoverchance = 0.8
+        crossoverchance = float(self.settings["crossover"])
 
         new_gen_children = []
         # breed all the children for each species
@@ -101,16 +103,13 @@ class SpeciesList:
         all_Gs = self.getAllGenomes()
         for i in range(remainder):
             if random.random() <= crossoverchance and len(all_Gs)>1:
-                child=genome.crossover(random.sample(all_Gs,2),innovations)
-
+                child=genome.crossover(random.sample(all_Gs,2),innovations,self.settings)
             else:
-                child = genome.copyGenome(random.choice(all_Gs))
+                child = genome.copyGenome(random.choice(all_Gs),self.settings)
             child.mutate(innovations)
             new_gen_children.append(child)
 
         self.newGeneration(new_gen_children)
-
-
 
     def newGeneration(self,new_generation):
         self.killOldGeneration()
@@ -134,12 +133,13 @@ class SpeciesList:
 
 class species:
 
-    def __init__(self,genome):
+    def __init__(self,genome,settings):
+        self.settings = settings
         self.root_genome = genome
         self.l_genomes = [genome]
         self.staleness = 0
         self.avg_fitness = 0.0
-        self.max_performance = 0.0
+        self.max_fitness = 0.0
         self.breed = 0
 
     def removeWeak(self):
@@ -151,31 +151,30 @@ class species:
 
     def checkStaleness(self,max_pop_fitness):
         # get the new max fitness
-        maxperf = self.getMaxPerformance()
+        maxperf = self.getMaxFitness()
         # if it was more than previous max update it and reset staleness
-        if maxperf > self.max_performance:
+        if maxperf > self.max_fitness:
             self.max_fitness = maxperf
             self.staleness = 0
         # else increase staleness
         else:
             self.staleness += 1
 
-        # CONSTANT
         # if it is stale for 20 generations and is not the best performing species it's stale
-        if self.staleness > 20 and self.max_fitness < max_pop_fitness:
+        if self.staleness > int(self.settings["staleness"]) and self.max_fitness < max_pop_fitness:
             return True
         else:
             return False
 
-    def getMaxPerformance(self):
-        return max(g.performance["p2/dd"] for g in self.l_genomes)
+    def getMaxFitness(self):
+        return max(g.fitness for g in self.l_genomes)
 
     def calculateAverageFitness(self):
         self.avg_fitness = sum(g.fitness for g in self.l_genomes)/float(len(self.l_genomes))
 
     def breedChildren(self,innovations):
-        # CONSTANT
-        crossoverchance = 0.80
+
+        crossoverchance = float(self.settings["crossover"])
 
         # update root genome
         self.root_genome = random.choice(self.l_genomes)
@@ -188,10 +187,10 @@ class species:
         # loop through remaining breed
         for i in range(self.breed-1):
             if random.random() <= crossoverchance and len(self.l_genomes)>1:
-                child=genome.crossover(random.sample(self.l_genomes,2),innovations)
+                child=genome.crossover(random.sample(self.l_genomes,2),innovations,self.settings)
 
             else:
-                child = genome.copyGenome(random.choice(self.l_genomes))
+                child = genome.copyGenome(random.choice(self.l_genomes),self.settings)
 
             child.mutate(innovations)
             children.append(child)

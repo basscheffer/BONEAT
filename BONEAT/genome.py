@@ -4,7 +4,9 @@ import random
 
 class Genome:
 
-    def __init__(self):
+    def __init__(self,settings):
+        self.settings = settings
+
         self.l_node_genes = []
         self.l_link_genes = []
         self.fitness = 0.0
@@ -66,7 +68,8 @@ class Genome:
                 inno_num = global_innovations.createNewInnovation(GeneType.LINK,fromNode,toNode)
 
             if linkweight == 0.0:
-                weight = random.uniform(-2.0,2.0)
+                w = float(self.settings["weight"])
+                weight = random.uniform(-w,w)
             else:
                 weight = linkweight
 
@@ -111,14 +114,13 @@ class Genome:
                 self.l_link_genes.append(g)
 
     def mutate(self,global_innovations):
-        #CONSTANT
-        mut_conn_c = 0.8
-        mut_link_c = 1.5
-        mut_node_c = 1.5
-        perturb_c = 0.9
-        switch_c = 0.05
-        mut_step = 0.5
 
+        mut_conn_c = float(self.settings["mutation"])
+        mut_link_c = float(self.settings["new_link"])
+        mut_node_c = float(self.settings["new_node"])
+        perturb_c = float(self.settings["perturbing"])
+        switch_c = float(self.settings["switch"])
+        mut_step = float(self.settings["step"])
 
         # mutate existing genes
         if random.random() <= mut_conn_c:
@@ -147,7 +149,8 @@ class Genome:
             if random.random() <= perturb_c:
                 gene.weight += random.uniform(-mut_step,mut_step)
             else:
-                gene.weight = random.uniform(-2.0,2.0)
+                w = float(self.settings["weight"])
+                gene.weight = random.uniform(-w,w)
             if random.random() <= switch_c:
                 gene.enabled = not gene.enabled
 
@@ -180,12 +183,12 @@ class Genome:
             print"\t\tnode {} {}".format(id(ng),vars(ng))
         print "-----------------------------------//--------------------------------------"
 
-def newSimpleGenome(inputs,outputs,pool):
+def newSimpleGenome(inputs,outputs,pool,settings):
 
     gI = pool.innovations
 
     # make a new genome
-    nG = Genome()
+    nG = Genome(settings)
 
     # make the bias node
     nG.addNode(0,0,gI,NodeType.BIAS)
@@ -213,7 +216,7 @@ def newSimpleGenome(inputs,outputs,pool):
 
     return nG
 
-def crossover(genome_pair,innovations):
+def crossover(genome_pair,innovations,settings):
 
     equal_fitness = False
     if genome_pair[0].fitness == genome_pair[1].fitness:
@@ -253,13 +256,13 @@ def crossover(genome_pair,innovations):
         elif l_gen2[In] != None and equal_fitness:
             new_genes.append(l_gen1[In])
 
-    NG = Genome()
+    NG = Genome(settings)
     NG.createFromGeneList(new_genes,innovations)
 
     return NG
 
-def copyGenome(genome):
-    nG = Genome()
+def copyGenome(genome,settings):
+    nG = Genome(settings)
     nG.l_link_genes = []
     for g in genome.l_link_genes:
         nG.l_link_genes.append(copyGene(g))

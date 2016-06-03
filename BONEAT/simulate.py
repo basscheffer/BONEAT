@@ -1,54 +1,10 @@
-import pandas as pd
 import numpy as np
 import multiprocessing as mp
 from phenotype import *
 import time
 import math
 from datetime import *
-
-# def get_input_data(data_path='data/AUDUSD240.csv',start_date = '1999-12-31', end_date = '2007-05-01'):
-#     df = pd.read_csv(data_path, sep=',')
-#     df['date'] = pd.to_datetime(df['date'],format="%Y.%m.%d")
-#
-#     df = df[(df['date'] >= start_date) & (df['date'] < end_date)].reset_index()
-#
-#     da = np.zeros((len(df.index),7))
-#
-#     for row in df.itertuples():
-#
-#         if row.Index == 0:
-#             O = 0.0
-#         else:
-#             O = row.open-df.ix[row.Index-1]['open']
-#         H = row.high-row.open
-#         L = row.low-row.open
-#         C = row.close-row.open
-#         TOD = float(row.time.split(':')[0])+4.0
-#         TOY = row.date.timetuple().tm_yday
-#         open_price = row.open
-#
-#         da[row.Index,0] = TOY
-#         da[row.Index,1] = TOD
-#         da[row.Index,2] = O
-#         da[row.Index,3] = H
-#         da[row.Index,4] = L
-#         da[row.Index,5] = C
-#         da[row.Index,6] = open_price
-#
-#
-#     NTOY = da[:,0]/365.0
-#     NTOD = da[:,1]/24.0
-#     NO = da[:,2]/max(abs(da[:,2]))
-#     NH = da[:,3]/max(abs(da[:,3]))
-#     NL = da[:,4]/max(abs(da[:,4]))
-#     NC = da[:,5]/max(abs(da[:,5]))
-#     OP = da[:,6]
-#
-#     cols = (NTOY,NTOD,NO,NH,NL,NC,OP)
-#
-#     norm_data = np.column_stack(cols)
-#
-#     return norm_data
+import dateutil.parser as dp
 
 def makeBacktestData(data_path='data/AUDUSD240.csv'):
 
@@ -119,7 +75,7 @@ class Simulator:
         self.trade_count = 0
         self.win_count = 0
 
-    def runSimulation(self,data,neuralNetwork):
+    def runSimulation(self,data,neuralNetwork,settings):
 
         NN = neuralNetwork
 
@@ -129,10 +85,9 @@ class Simulator:
             closepos=False
 
             openprice = tf[1]
-            self.updatePosProfit(openprice)
+            self.updatePosProfit(openprice,float(settings["spread"]))
 
-            #CONSTANT
-            posprof = self.pos_prof/0.627450
+            posprof = self.pos_prof/settings["profit_norm"]
             inputlist = [self.pos_open,self.pos_dir,posprof]
             inputlist.extend(tf[2:8])
 
@@ -178,11 +133,10 @@ class Simulator:
             self.pos_dir = direction
             self.pos_price = price
 
-    def updatePosProfit(self,currentPrice):
-        #CONSTANT
-        spread = 0.00018
+    def updatePosProfit(self,currentPrice,spread):
+
         profit = (self.pos_price-currentPrice)*self.pos_dir
-        self.pos_prof = profit-spread
+        self.pos_prof = profit-(spread/10000)
 
     def closePosition(self):
         if self.pos_open > 0.0:
@@ -202,55 +156,72 @@ class Simulator:
         if self.max_bal-self.curr_bal > self.max_dd:
             self.max_dd=self.max_bal-self.curr_bal
 
+def getData(data_path,settings):
+    A = np.load(data_path)
+
+    from_date=dp.parse(settings["traindata_start"])
+    to_date=dp.parse(settings["traindata_end"])
+    idx=(A[:,0]>=from_date) & (A[:,0]<to_date)
+
+    return(A[idx])
+
 def simuRoutine(process_data):
 
-    data = np.load(process_data[1])
+    data = getData(process_data[1],process_data[2])
     NN = neuralNetwork(process_data[0])
+    S = process_data[2]
     SIM = Simulator()
-    return SIM.runSimulation(data,NN)
+    return SIM.runSimulation(data,NN,S)
 
-def fastSimulate(list_of_genomes,data_file_path,processes=1):
+def fastSimulate(list_of_genomes,settings):
 
+    processes = int(settings["cores"])
+    data_file_path = settings["test_data_path"]
     processing_list = []
 
     # make a NN from each genome and append it to a processing list
     for genome in list_of_genomes:
-        processing_list.append([genome,data_file_path])
+        processing_list.append([genome,data_file_path,settings])
 
     pool = mp.Pool(processes)
-    cz =int(math.ceil(len(processing_list)/float(processes)))
-    resultlist = pool.map(simuRoutine,processing_list,chunksize=cz)
+
+    resultlist = pool.map(simuRoutine,processing_list)
     pool.close()
     pool.join()
 
-    worst_perf = min(r['p2/dd'] for r in resultlist)
+    p_mode = settings["perf_mode"]
+
+    # worst_perf = min(r[p_mode] for r in resultlist)
 
     for perf in resultlist:
-        perf["fitness"]=perf['p2/dd']-worst_perf
+        fit = perf[p_mode]
+        if fit < 0.0:
+            fit = -0.0001
+        perf["fitness"] = fit+0.0001
 
     for i,genome in enumerate(list_of_genomes):
         genome.fitness = resultlist[i]['fitness']
         genome.performance = resultlist[i]
 
-    best_performer = max(resultlist,key=lambda r: r['fitness'])
+    best_performer = max(resultlist,key=lambda r: r[p_mode])
     print "Best performer:"
     for key in best_performer:
         print key," : ",best_performer[key]
 
-def slowSimulate(list_of_genomes,data_file_path):
-    #### WATCH OUT NOT UP TO DATE
-
-    # make a NN from each genome and append it to a processing list
-    for genome in list_of_genomes:
-        result = simuRoutine([genome,data_file_path])
-        if genome.fitness > 0.0 and genome.fitness != result["fitness"]:
-            print "\n############ WARNING ############\n"
-        genome.fitness = result['fitness']
-        genome.performance = result
-
-    best_performer = max(list_of_genomes,key=lambda g: g.fitness)
-    print "Maximum fitness = %.1f with performance:" %best_performer.fitness
-    print best_performer.performance
+# def slowSimulate(list_of_genomes,data_file_path):
+#     #### WATCH OUT NOT UP TO DATE
+#
+#     # make a NN from each genome and append it to a processing list
+#     for genome in list_of_genomes:
+#         result = simuRoutine([genome,data_file_path])
+#         if genome.fitness > 0.0 and genome.fitness != result["fitness"]:
+#             print "\n############ WARNING ############\n"
+#         genome.fitness = result['fitness']
+#         genome.performance = result
+#
+#     best_performer = max(list_of_genomes,key=lambda g: g.fitness)
+#     print "Maximum fitness = %.1f with performance:" %best_performer.fitness
+#     print best_performer.performance
 
 # if __name__=='__main__':
 #     makeBacktestData()

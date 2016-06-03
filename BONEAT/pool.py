@@ -4,33 +4,56 @@ from species import *
 import phenotype as phen
 import simulate as sim
 import time
+import ConfigParser
+import tools
 
 class Pool:
 
-    def __init__(self,population,pair="",time_frame=1,processors=4):
+    def __init__(self,cfg_filepath):
 
-        self.population = population
+        self.getSettingsFromCfg(cfg_filepath)
 
-        self.species = SpeciesList(self.population)
+        self.population = int(self.GS["population"])
+        self.species = SpeciesList(self.GS)
         self.innovations = innovList()
         self.newPopulation()
         self.generation = 1
-        self.processors = processors
-        self.df_path = "data/"+pair+str(time_frame)+"_NormData.npy"
+        self.processors = int(self.GS["cores"])
+
+    def getSettingsFromCfg(self,cfg_filepath):
+        config = ConfigParser.RawConfigParser()
+        config.read(cfg_filepath)
+        self.GS={}
+
+        sections = config.sections()
+        for sec in sections:
+            d = dict(config.items(sec))
+            self.GS.update(d)
+
+        tf_dict = {"M5":5,"M15":15,"M30":30,"H1":60,"H4":240,"D1":1440}
+        self.GS["timeframe"] = tf_dict[self.GS["timeframe"]]
+
+        self.GS["test_data_path"] = "data/npy_data/{}{}_NormData.npy"\
+            .format(self.GS["pair"],self.GS["timeframe"])
+
+        np = "data/norm_fs/{}{}_NormConst.txt"\
+            .format(self.GS["pair"],self.GS["timeframe"])
+        with open(np) as f:
+            for l in f:
+                p = l.split(";")
+                if p[0] == "P":
+                    self.GS["profit_norm"] = float(p[1])
 
     def newPopulation(self):
 
         for i in range(self.population):
-            nG = newSimpleGenome(9,3,self)
+            nG = newSimpleGenome(9,3,self,self.GS)
             self.species.addToSpecies(nG)
 
     def testPopulation(self):
         print "\nGeneration %i, %i species ,%i innovations"\
               %(self.generation,len(self.species.l_species),len(self.innovations.l_innovations))
-        if self.processors > 1:
-            sim.fastSimulate(self.species.getAllGenomes(),self.df_path,self.processors)
-        else:
-            sim.slowSimulate(self.species.getAllGenomes(),self.df_path)
+        sim.fastSimulate(self.species.getAllGenomes(),self.GS)
 
     def evolvePopulation(self):
 
@@ -44,7 +67,7 @@ class Pool:
 
 if __name__=='__main__':
 
-    p = Pool(50,pair="AUDUSD",time_frame=240,processors=4)
-    for i in range(40):
+    p = Pool("data/config_files/AUDUSD240.cfg")
+    for i in range(2):
         p.evolvePopulation()
 

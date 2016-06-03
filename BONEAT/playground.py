@@ -1,26 +1,13 @@
-import ConfigParser
-import datetime
-import dateutil.parser
+import numpy as np
+import dateutil.parser as dp
 
-# setdict = {"simulation":{"setting1":0.84,"setting2":-2.6},"data":{"setting1":0.84,"setting2":-2.6}}
+path = r"data\npy_data\AUDUSD240_NormData.npy"
+s_date = "2001-01-01"
+e_date = "2004-01-01"
 
-d = {"aba_cadabra":1}
-x = d.keys()[0]
-if "aba" in :
-    print "simsalabim"
+A = np.load(path)
 
-# setdict = {}
-#
-# config = ConfigParser.RawConfigParser()
-#
-# config.read("C:/Users/Bas Scheffer/Documents/NEAT/NEAT/BONEAT/data/testthis.cfg")
-#
-# sections = config.sections()
-# for sec in sections:
-#     d = {sec:dict(config.items(sec))}
-#     setdict.update(d)
-#
-# print setdict
-# datestring = setdict["data"]["test_data_end"]
-# date = (dateutil.parser.parse(datestring)).date()
-# print date
+from_date=dp.parse(s_date)
+to_date=dp.parse(e_date)
+idx=(A[:,0]>=from_date) & (A[:,0]<to_date)
+print(A[idx])
