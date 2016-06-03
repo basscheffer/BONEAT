@@ -44,7 +44,7 @@ class Pool:
 
 if __name__=='__main__':
 
-    p = Pool(300,pair="AUDUSD",time_frame=240,processors=4)
-    for i in range(20):
+    p = Pool(50,pair="AUDUSD",time_frame=240,processors=4)
+    for i in range(40):
         p.evolvePopulation()
 

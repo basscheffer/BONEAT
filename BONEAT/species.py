@@ -4,7 +4,7 @@ import genome
 
 class SpeciesList:
 
-    def __init__(self,population,disjointWeight=1.0,excessWeight=1.0,weightsWeight=0.5,threshold=0.8):
+    def __init__(self,population,disjointWeight=1.0,excessWeight=1.0,weightsWeight=0.5,threshold=1.5):
         #CONSTANTS
         self.disjointC = disjointWeight
         self.excessC = excessWeight

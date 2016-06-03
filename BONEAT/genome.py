@@ -10,7 +10,7 @@ class Genome:
         self.fitness = 0.0
         self.performance = {}
 
-    def addNode(self,fromNode,toNode,global_innovations,nodeType=NodeType.HIDDEN,weight=1.0):
+    def addNode(self,fromNode,toNode,global_innovations,nodeType=NodeType.HIDDEN,weight=0.8):
 
         #get all possible innovation numbers for this node
         gil = global_innovations.findInnovations(GeneType.NODE,fromNode,toNode,nodeType)
@@ -113,11 +113,11 @@ class Genome:
     def mutate(self,global_innovations):
         #CONSTANT
         mut_conn_c = 0.8
-        mut_link_c = 0.8
-        mut_node_c = 0.5
+        mut_link_c = 1.5
+        mut_node_c = 1.5
         perturb_c = 0.9
-        switch_c = 0.1
-        mut_step = 0.2
+        switch_c = 0.05
+        mut_step = 0.5
 
 
         # mutate existing genes
@@ -137,7 +137,7 @@ class Genome:
         while True:
             r = random.random()
             if r <= mut_node_c:
-                mut_link_c-=r
+                mut_node_c-=r
                 self.nodeMutation(global_innovations)
             else:
                 break
