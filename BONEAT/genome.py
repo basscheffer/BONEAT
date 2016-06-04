@@ -12,7 +12,7 @@ class Genome:
         self.fitness = 0.0
         self.performance = {}
 
-    def addNode(self,fromNode,toNode,global_innovations,nodeType=NodeType.HIDDEN,weight=0.8):
+    def addNode(self,fromNode,toNode,global_innovations,nodeType=NodeType.HIDDEN,weight=1.0):
 
         #get all possible innovation numbers for this node
         gil = global_innovations.findInnovations(GeneType.NODE,fromNode,toNode,nodeType)
@@ -188,6 +188,52 @@ class Genome:
         for ng in self.l_node_genes:
             print"\t\tnode {} {}".format(id(ng),vars(ng))
         print "-----------------------------------//--------------------------------------"
+
+    def makeGenotypeString(self):
+        prepdict = {"O":"OPEN",
+                    "H":"HIGH",
+                    "L":"LOW",
+                    "C":"CLOSE",
+                    "P":"PROFIT"}
+
+        ## properties ##
+        pair = self.settings["pair"]
+        tf = self.settings["timeframe"]
+        vers = 0.0
+        ## normalise constants ##
+        np = "data/norm_fs/{}{}_NormConst.txt"\
+            .format(pair,tf)
+        with open(np,"r") as f:
+            normstr = "\n"+f.read().rstrip()
+        ## neurons ##
+        neurstr = ""
+        for n in self.l_node_genes:
+            nm = n.innovationNumber
+            tp = n.nodeType
+            io = 0
+            if tp == NodeType.INPUT:
+                io = n.fromNode
+            if tp == NodeType.OUTPUT:
+                io = n.toNode
+
+            s = "\n{};{};{}".format(nm,tp,io)
+            neurstr+=s
+        ## links ##
+        linkstr = ""
+        for l in self.l_link_genes:
+            if l.enabled:
+                s = "\n{};{};{}".format(l.fromNode,l.toNode,l.weight)
+                linkstr+=s
+
+        retstr = """>PROP
+PAIR;{}
+TF;{}
+VERS;{}
+>PREP{}
+>NEUR{}
+>LINK{}
+""".format(pair,tf,vers,normstr,neurstr,linkstr)
+        return retstr
 
 def newSimpleGenome(inputs,outputs,pool,settings):
 

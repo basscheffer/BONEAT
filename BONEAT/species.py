@@ -2,6 +2,7 @@ import math
 import random
 import genome
 
+
 class SpeciesList:
 
     def __init__(self,settings):
@@ -17,6 +18,7 @@ class SpeciesList:
         self.max_pop_fitness = 0.0
 
         self.l_species = []
+        self.next_id = 1
 
     def addToSpecies(self,genome):
 
@@ -28,7 +30,8 @@ class SpeciesList:
 
         # if it didn't belong to any make a new one
         else:
-            s = species(genome,self.settings)
+            s = species(self.next_id,genome,self.settings)
+            self.next_id += 1
             self.l_species.append(s)
 
     def sameSpecies(self,speciesGenome,newGenome):
@@ -75,7 +78,7 @@ class SpeciesList:
                 else:
                     breed = int(math.floor(float(self.population)/len(self.l_species)))
 
-                if breed < 0:
+                if breed <= 0:
                     allAlive = False
                     continue
                 else:
@@ -131,9 +134,17 @@ class SpeciesList:
         for s in self.l_species:
             s.l_genomes = []
 
+    def getGenerationData(self):
+        newdata = []
+        for species in self.l_species:
+            speciesData = species.getSpeciesData()
+            newdata.append(speciesData)
+        return newdata
+
 class species:
 
-    def __init__(self,genome,settings):
+    def __init__(self,species_id,genome,settings):
+        self.sp_id = species_id
         self.settings = settings
         self.root_genome = genome
         self.l_genomes = [genome]
@@ -141,6 +152,20 @@ class species:
         self.avg_fitness = 0.0
         self.max_fitness = 0.0
         self.breed = 0
+
+    def getSpeciesData(self):
+
+        s_num = self.sp_id
+        s_pop = len(self.l_genomes)
+        s_topfit = self.getMaxFitness()
+        self.calculateAverageFitness()
+        s_avg_fit = self.avg_fitness
+        self.l_genomes.sort(key=lambda g: g.fitness, reverse=True)
+        s_topf_gen = self.l_genomes[0].makeGenotypeString()
+        s_topf_perf = self.l_genomes[0].performance
+
+        sdata = [s_num,s_pop,s_topfit,s_avg_fit,s_topf_gen,s_topf_perf]
+        return sdata
 
     def removeWeak(self):
         split = int(math.ceil(len(self.l_genomes)/2.0))

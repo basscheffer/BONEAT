@@ -5,6 +5,7 @@ import phenotype as phen
 import simulate as sim
 import time
 import ConfigParser
+import csv
 
 class Pool:
 
@@ -53,20 +54,26 @@ class Pool:
         print "\nGeneration %i, %i species ,%i innovations"\
               %(self.generation,len(self.species.l_species),len(self.innovations.l_innovations))
         sim.fastSimulate(self.species.getAllGenomes(),self.GS)
+        self.logGenerationResults()
+
+    def logGenerationResults(self):
+        data = self.species.getGenerationData()
+        csvpath="data/ga_logs/{}{}.csv".format(self.GS["pair"],self.GS["timeframe"])
+        with open(csvpath,"a") as csvf:
+            writer = csv.writer(csvf, delimiter=',',quotechar='"')
+            for row in data:
+                line = [self.generation]
+                line.extend(row)
+                writer.writerow(line)
 
     def evolvePopulation(self):
 
-        # test te previous population for fitness
-        self.testPopulation()
         #remove weakest individuals from species and stale speces
         self.species.removeWeakPopulation()
         #breed children and fill new population
         self.species.breedChildren(self.innovations)
+        # this is the new generation
         self.generation+=1
-
-if __name__=='__main__':
-
-    p = Pool("data/config_files/AUDUSD240.cfg")
-    for i in range(40):
-        p.evolvePopulation()
+        # test the new population for fitness
+        self.testPopulation()
 
