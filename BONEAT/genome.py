@@ -151,8 +151,8 @@ class Genome:
             else:
                 w = float(self.settings["weight"])
                 gene.weight = random.uniform(-w,w)
-            if random.random() <= switch_c:
-                gene.enabled = not gene.enabled
+            # if random.random() <= switch_c:
+            #     gene.enabled = not gene.enabled
 
     def linkMutation(self,glob_innov):
 
@@ -306,7 +306,7 @@ def crossover(genome_pair,innovations,settings):
         elif l_gen1[In] != None:
             new_genes.append(l_gen1[In])
         elif l_gen2[In] != None and equal_fitness:
-            new_genes.append(l_gen1[In])
+            new_genes.append(l_gen2[In])
 
     NG = Genome(settings)
     NG.createFromGeneList(new_genes,innovations)

@@ -89,7 +89,7 @@ class mainWindow(QMainWindow):
         self.mutSettGb.addSlider("crossover","Crossover chance",1.0,0.0,0.8,0.05)
         self.mutSettGb.addSlider("mutation","Existing link mutation chance",1.0,0.0,0.8,0.05)
         self.mutSettGb.addSlider("perturbing","Weight perturbing chance",1.0,0.0,0.8,0.05)
-        self.mutSettGb.addSlider("switch","Weight enabled mutation chance",0.5,0.0,0.1,0.05)
+        # self.mutSettGb.addSlider("switch","Weight enable mutation chance",0.5,0.0,0.1,0.05)
         self.mutSettGb.addSlider("step","Weight perturbing step-size",10.0,0.2,2.0,0.2)
         self.mutSettGb.addSlider("weight","New weight range",10.0,1.0,2.0,0.5)
         self.mutSettGb.addSlider("new_link","New link mutation chance",3.0,0.0,1.0,0.1)

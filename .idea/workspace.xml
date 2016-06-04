@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db566f5e-22f0-4002-99ff-966fc7348672" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/species.py" afterPath="$PROJECT_DIR$/BONEAT/species.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/genome.py" afterPath="$PROJECT_DIR$/BONEAT/genome.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/gui.py" afterPath="$PROJECT_DIR$/BONEAT/gui.py" />
     </list>
     <ignored path="NEAT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,21 +38,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AUDUSD240pt1.csv" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240pt1.csv">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="species.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="species.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.28148147">
-                  <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="199" column="40" selection-start-line="199" selection-start-column="40" selection-end-line="199" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                     <element signature="e#104#483#0" expanded="false" />
@@ -67,22 +57,115 @@
                     <element signature="e#3833#3890#0" expanded="false" />
                     <element signature="e#3933#3986#0" expanded="false" />
                     <element signature="e#4029#4194#0" expanded="false" />
+                    <element signature="e#4271#4507#0" expanded="false" />
                     <element signature="e#4548#4991#0" expanded="false" />
                     <element signature="e#5027#5247#0" expanded="false" />
                     <element signature="e#5303#5887#0" expanded="false" />
                     <element signature="e#5926#5971#0" expanded="false" />
                     <element signature="e#6020#6104#0" expanded="false" />
+                    <element signature="e#6156#6845#0" expanded="false" />
                     <element signature="e#6885#7743#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AUDUSD240.csv" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv">
+          <file leaf-file-name="genome.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/BONEAT/genome.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.9310346">
-                  <caret line="73465" column="0" selection-start-line="73465" selection-start-column="0" selection-end-line="73592" selection-end-column="24" />
+                <state vertical-scroll-proportion="-0.72839504">
+                  <caret line="44" column="72" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                    <element signature="e#110#254#0" expanded="false" />
+                    <element signature="e#359#1566#0" expanded="false" />
+                    <element signature="e#1650#2842#0" expanded="false" />
+                    <element signature="e#2893#3058#0" expanded="false" />
+                    <element signature="e#3102#3251#0" expanded="false" />
+                    <element signature="e#3291#3367#0" expanded="false" />
+                    <element signature="e#3404#3525#0" expanded="false" />
+                    <element signature="e#3565#3623#0" expanded="false" />
+                    <element signature="e#3689#3930#0" expanded="false" />
+                    <element signature="e#3982#4878#0" expanded="false" />
+                    <element signature="e#4944#5301#0" expanded="false" />
+                    <element signature="e#5351#5860#0" expanded="false" />
+                    <element signature="e#5910#6056#0" expanded="false" />
+                    <element signature="e#6106#6578#0" expanded="false" />
+                    <element signature="e#6622#7798#0" expanded="false" />
+                    <element signature="e#7856#8519#0" expanded="false" />
+                    <element signature="e#8575#10004#0" expanded="false" />
+                    <element signature="e#10043#10259#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/BONEAT/gui.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="92" column="87" selection-start-line="92" selection-start-column="87" selection-end-line="92" selection-end-column="87" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#204#253#0" expanded="false" />
+                    <element signature="e#286#524#0" expanded="false" />
+                    <element signature="e#564#980#0" expanded="false" />
+                    <element signature="e#1020#1318#0" expanded="false" />
+                    <element signature="e#1355#1505#0" expanded="false" />
+                    <element signature="e#1546#1760#0" expanded="false" />
+                    <element signature="e#4314#4785#0" expanded="false" />
+                    <element signature="e#4833#5012#0" expanded="false" />
+                    <element signature="e#5052#5158#0" expanded="false" />
+                    <element signature="e#5238#5373#0" expanded="false" />
+                    <element signature="e#5451#5549#0" expanded="false" />
+                    <element signature="e#5609#5731#0" expanded="false" />
+                    <element signature="e#5803#5910#0" expanded="false" />
+                    <element signature="e#5947#6206#0" expanded="false" />
+                    <element signature="e#6257#6432#0" expanded="false" />
+                    <element signature="e#6485#6632#0" expanded="false" />
+                    <element signature="e#6678#7906#0" expanded="false" />
+                    <element signature="e#6721#6822#0" expanded="false" />
+                    <element signature="e#6868#6927#0" expanded="false" />
+                    <element signature="e#6963#7364#0" expanded="false" />
+                    <element signature="e#7400#7635#0" expanded="false" />
+                    <element signature="e#7671#7906#0" expanded="false" />
+                    <element signature="e#7946#10881#0" expanded="false" />
+                    <element signature="e#7989#8752#0" expanded="false" />
+                    <element signature="e#8791#8837#0" expanded="false" />
+                    <element signature="e#8874#9073#0" expanded="false" />
+                    <element signature="e#9110#9163#0" expanded="false" />
+                    <element signature="e#9205#9397#0" expanded="false" />
+                    <element signature="e#9434#9962#0" expanded="false" />
+                    <element signature="e#10004#10881#0" expanded="false" />
+                    <element signature="e#10919#12283#0" expanded="false" />
+                    <element signature="e#10995#11540#0" expanded="false" />
+                    <element signature="e#11584#11653#0" expanded="false" />
+                    <element signature="e#11689#11722#0" expanded="false" />
+                    <element signature="e#11758#12027#0" expanded="false" />
+                    <element signature="e#12071#12150#0" expanded="false" />
+                    <element signature="e#12191#12283#0" expanded="false" />
+                    <element signature="e#12319#13049#0" expanded="false" />
+                    <element signature="e#12361#12726#0" expanded="false" />
+                    <element signature="e#12770#12864#0" expanded="false" />
+                    <element signature="e#12900#12948#0" expanded="false" />
+                    <element signature="e#12991#13049#0" expanded="false" />
+                    <element signature="e#13084#15436#0" expanded="false" />
+                    <element signature="e#13144#13778#0" expanded="false" />
+                    <element signature="e#13822#14227#0" expanded="false" />
+                    <element signature="e#14263#14475#0" expanded="false" />
+                    <element signature="e#14518#14851#0" expanded="false" />
+                    <element signature="e#14890#15436#0" expanded="false" />
+                    <element signature="e#15455#15592#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gene.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/BONEAT/gene.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -95,8 +178,8 @@
           <file leaf-file-name="AUDUSD_240.gt.txt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/BONEAT/mql_files/AUDUSD_240.gt.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6296296">
-                  <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.41975307">
+                  <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -124,9 +207,7 @@
         <option value="$PROJECT_DIR$/BONEAT/data/raw_price_data/AUDUSD240.csv" />
         <option value="$PROJECT_DIR$/BONEAT/signals.py" />
         <option value="$PROJECT_DIR$/BONEAT/simulate.py" />
-        <option value="$PROJECT_DIR$/BONEAT/gui.py" />
         <option value="$PROJECT_DIR$/BONEAT/mql_files/AUDUSD_240.gt.txt" />
-        <option value="$PROJECT_DIR$/BONEAT/genome.py" />
         <option value="$PROJECT_DIR$/BONEAT/data/norm_fs/AUDUSD240_NormConst.txt" />
         <option value="$PROJECT_DIR$/BONEAT/pool.py" />
         <option value="$PROJECT_DIR$/BONEAT/ga.py" />
@@ -134,6 +215,8 @@
         <option value="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240pt1.csv" />
         <option value="$PROJECT_DIR$/BONEAT/playground.py" />
         <option value="$PROJECT_DIR$/BONEAT/species.py" />
+        <option value="$PROJECT_DIR$/BONEAT/gui.py" />
+        <option value="$PROJECT_DIR$/BONEAT/genome.py" />
       </list>
     </option>
   </component>
@@ -225,6 +308,46 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="BONEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="NEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BONEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="data">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="NEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BONEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="data">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="config_files">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -562,55 +685,56 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#25#0" expanded="true" />
             <element signature="e#204#253#0" expanded="false" />
             <element signature="e#286#524#0" expanded="false" />
             <element signature="e#564#980#0" expanded="false" />
             <element signature="e#1020#1318#0" expanded="false" />
             <element signature="e#1355#1505#0" expanded="false" />
             <element signature="e#1546#1760#0" expanded="false" />
-            <element signature="e#4313#4784#0" expanded="false" />
-            <element signature="e#4832#5011#0" expanded="false" />
-            <element signature="e#5051#5157#0" expanded="false" />
-            <element signature="e#5237#5372#0" expanded="false" />
-            <element signature="e#5450#5548#0" expanded="false" />
-            <element signature="e#5608#5730#0" expanded="false" />
-            <element signature="e#5802#5909#0" expanded="false" />
-            <element signature="e#5946#6205#0" expanded="false" />
-            <element signature="e#6256#6431#0" expanded="false" />
-            <element signature="e#6484#6631#0" expanded="false" />
-            <element signature="e#6677#7905#0" expanded="false" />
-            <element signature="e#6720#6821#0" expanded="false" />
-            <element signature="e#6867#6926#0" expanded="false" />
-            <element signature="e#6962#7363#0" expanded="false" />
-            <element signature="e#7399#7634#0" expanded="false" />
-            <element signature="e#7670#7905#0" expanded="false" />
-            <element signature="e#7945#10880#0" expanded="false" />
-            <element signature="e#7988#8751#0" expanded="false" />
-            <element signature="e#8790#8836#0" expanded="false" />
-            <element signature="e#8873#9072#0" expanded="false" />
-            <element signature="e#9109#9162#0" expanded="false" />
-            <element signature="e#9204#9396#0" expanded="false" />
-            <element signature="e#9433#9961#0" expanded="false" />
-            <element signature="e#10003#10880#0" expanded="false" />
-            <element signature="e#10918#12282#0" expanded="false" />
-            <element signature="e#10994#11539#0" expanded="false" />
-            <element signature="e#11583#11652#0" expanded="false" />
-            <element signature="e#11688#11721#0" expanded="false" />
-            <element signature="e#11757#12026#0" expanded="false" />
-            <element signature="e#12070#12149#0" expanded="false" />
-            <element signature="e#12190#12282#0" expanded="false" />
-            <element signature="e#12318#13048#0" expanded="false" />
-            <element signature="e#12360#12725#0" expanded="false" />
-            <element signature="e#12769#12863#0" expanded="false" />
-            <element signature="e#12899#12947#0" expanded="false" />
-            <element signature="e#12990#13048#0" expanded="false" />
-            <element signature="e#13083#15435#0" expanded="false" />
-            <element signature="e#13143#13777#0" expanded="false" />
-            <element signature="e#13821#14226#0" expanded="false" />
-            <element signature="e#14262#14474#0" expanded="false" />
-            <element signature="e#14517#14850#0" expanded="false" />
-            <element signature="e#14889#15435#0" expanded="false" />
-            <element signature="e#15454#15591#0" expanded="false" />
+            <element signature="e#4314#4785#0" expanded="false" />
+            <element signature="e#4833#5012#0" expanded="false" />
+            <element signature="e#5052#5158#0" expanded="false" />
+            <element signature="e#5238#5373#0" expanded="false" />
+            <element signature="e#5451#5549#0" expanded="false" />
+            <element signature="e#5609#5731#0" expanded="false" />
+            <element signature="e#5803#5910#0" expanded="false" />
+            <element signature="e#5947#6206#0" expanded="false" />
+            <element signature="e#6257#6432#0" expanded="false" />
+            <element signature="e#6485#6632#0" expanded="false" />
+            <element signature="e#6678#7906#0" expanded="false" />
+            <element signature="e#6721#6822#0" expanded="false" />
+            <element signature="e#6868#6927#0" expanded="false" />
+            <element signature="e#6963#7364#0" expanded="false" />
+            <element signature="e#7400#7635#0" expanded="false" />
+            <element signature="e#7671#7906#0" expanded="false" />
+            <element signature="e#7946#10881#0" expanded="false" />
+            <element signature="e#7989#8752#0" expanded="false" />
+            <element signature="e#8791#8837#0" expanded="false" />
+            <element signature="e#8874#9073#0" expanded="false" />
+            <element signature="e#9110#9163#0" expanded="false" />
+            <element signature="e#9205#9397#0" expanded="false" />
+            <element signature="e#9434#9962#0" expanded="false" />
+            <element signature="e#10004#10881#0" expanded="false" />
+            <element signature="e#10919#12283#0" expanded="false" />
+            <element signature="e#10995#11540#0" expanded="false" />
+            <element signature="e#11584#11653#0" expanded="false" />
+            <element signature="e#11689#11722#0" expanded="false" />
+            <element signature="e#11758#12027#0" expanded="false" />
+            <element signature="e#12071#12150#0" expanded="false" />
+            <element signature="e#12191#12283#0" expanded="false" />
+            <element signature="e#12319#13049#0" expanded="false" />
+            <element signature="e#12361#12726#0" expanded="false" />
+            <element signature="e#12770#12864#0" expanded="false" />
+            <element signature="e#12900#12948#0" expanded="false" />
+            <element signature="e#12991#13049#0" expanded="false" />
+            <element signature="e#13084#15436#0" expanded="false" />
+            <element signature="e#13144#13778#0" expanded="false" />
+            <element signature="e#13822#14227#0" expanded="false" />
+            <element signature="e#14263#14475#0" expanded="false" />
+            <element signature="e#14518#14851#0" expanded="false" />
+            <element signature="e#14890#15436#0" expanded="false" />
+            <element signature="e#15455#15592#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -620,7 +744,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="118" column="23" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
           <folding>
-            <element signature="e#0#18#0" expanded="false" />
+            <element signature="e#0#18#0" expanded="true" />
             <element signature="e#110#254#0" expanded="false" />
             <element signature="e#359#1566#0" expanded="false" />
             <element signature="e#1650#2842#0" expanded="false" />
@@ -631,10 +755,10 @@
             <element signature="e#3565#3623#0" expanded="false" />
             <element signature="e#3689#3930#0" expanded="false" />
             <element signature="e#3982#4878#0" expanded="false" />
-            <element signature="e#4944#5297#0" expanded="false" />
-            <element signature="e#5347#5856#0" expanded="false" />
-            <element signature="e#5906#6052#0" expanded="false" />
-            <element signature="e#6102#6574#0" expanded="false" />
+            <element signature="e#4944#5301#0" expanded="false" />
+            <element signature="e#5351#5860#0" expanded="false" />
+            <element signature="e#5910#6056#0" expanded="false" />
+            <element signature="e#6106#6578#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -713,7 +837,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="117" column="23" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
           <folding>
-            <element signature="e#0#18#0" expanded="false" />
+            <element signature="e#0#18#0" expanded="true" />
             <element signature="e#110#254#0" expanded="false" />
             <element signature="e#359#1566#0" expanded="false" />
             <element signature="e#1650#2842#0" expanded="false" />
@@ -724,10 +848,10 @@
             <element signature="e#3565#3623#0" expanded="false" />
             <element signature="e#3689#3930#0" expanded="false" />
             <element signature="e#3982#4878#0" expanded="false" />
-            <element signature="e#4944#5297#0" expanded="false" />
-            <element signature="e#5347#5856#0" expanded="false" />
-            <element signature="e#5906#6052#0" expanded="false" />
-            <element signature="e#6102#6574#0" expanded="false" />
+            <element signature="e#4944#5301#0" expanded="false" />
+            <element signature="e#5351#5860#0" expanded="false" />
+            <element signature="e#5910#6056#0" expanded="false" />
+            <element signature="e#6106#6578#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -868,13 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/innovation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2638191">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/phenotype.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40201005">
@@ -893,64 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17085427">
           <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="77" selection-start-line="83" selection-start-column="77" selection-end-line="83" selection-end-column="77" />
-          <folding>
-            <element signature="e#204#253#0" expanded="false" />
-            <element signature="e#286#524#0" expanded="false" />
-            <element signature="e#564#980#0" expanded="false" />
-            <element signature="e#1020#1318#0" expanded="false" />
-            <element signature="e#1355#1505#0" expanded="false" />
-            <element signature="e#1546#1760#0" expanded="false" />
-            <element signature="e#4313#4784#0" expanded="false" />
-            <element signature="e#4832#5011#0" expanded="false" />
-            <element signature="e#5051#5157#0" expanded="false" />
-            <element signature="e#5237#5372#0" expanded="false" />
-            <element signature="e#5450#5548#0" expanded="false" />
-            <element signature="e#5608#5730#0" expanded="false" />
-            <element signature="e#5802#5909#0" expanded="false" />
-            <element signature="e#5946#6205#0" expanded="false" />
-            <element signature="e#6256#6431#0" expanded="false" />
-            <element signature="e#6484#6631#0" expanded="false" />
-            <element signature="e#6677#7905#0" expanded="false" />
-            <element signature="e#6720#6821#0" expanded="false" />
-            <element signature="e#6867#6926#0" expanded="false" />
-            <element signature="e#6962#7363#0" expanded="false" />
-            <element signature="e#7399#7634#0" expanded="false" />
-            <element signature="e#7670#7905#0" expanded="false" />
-            <element signature="e#7945#10880#0" expanded="false" />
-            <element signature="e#7988#8751#0" expanded="false" />
-            <element signature="e#8790#8836#0" expanded="false" />
-            <element signature="e#8873#9072#0" expanded="false" />
-            <element signature="e#9109#9162#0" expanded="false" />
-            <element signature="e#9204#9396#0" expanded="false" />
-            <element signature="e#9433#9961#0" expanded="false" />
-            <element signature="e#10003#10880#0" expanded="false" />
-            <element signature="e#10918#12282#0" expanded="false" />
-            <element signature="e#10994#11539#0" expanded="false" />
-            <element signature="e#11583#11652#0" expanded="false" />
-            <element signature="e#11688#11721#0" expanded="false" />
-            <element signature="e#11757#12026#0" expanded="false" />
-            <element signature="e#12070#12149#0" expanded="false" />
-            <element signature="e#12190#12282#0" expanded="false" />
-            <element signature="e#12318#13048#0" expanded="false" />
-            <element signature="e#12360#12725#0" expanded="false" />
-            <element signature="e#12769#12863#0" expanded="false" />
-            <element signature="e#12899#12947#0" expanded="false" />
-            <element signature="e#12990#13048#0" expanded="false" />
-            <element signature="e#13083#15435#0" expanded="false" />
-            <element signature="e#13143#13777#0" expanded="false" />
-            <element signature="e#13821#14226#0" expanded="false" />
-            <element signature="e#14262#14474#0" expanded="false" />
-            <element signature="e#14517#14850#0" expanded="false" />
-            <element signature="e#14889#15435#0" expanded="false" />
-            <element signature="e#15454#15591#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -982,38 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/gene.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/genome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="206" column="27" selection-start-line="206" selection-start-column="27" selection-end-line="206" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-            <element signature="e#110#254#0" expanded="false" />
-            <element signature="e#359#1566#0" expanded="false" />
-            <element signature="e#1650#2842#0" expanded="false" />
-            <element signature="e#2893#3058#0" expanded="false" />
-            <element signature="e#3102#3251#0" expanded="false" />
-            <element signature="e#3291#3367#0" expanded="false" />
-            <element signature="e#3404#3525#0" expanded="false" />
-            <element signature="e#3565#3623#0" expanded="false" />
-            <element signature="e#3689#3930#0" expanded="false" />
-            <element signature="e#3982#4878#0" expanded="false" />
-            <element signature="e#4944#5297#0" expanded="false" />
-            <element signature="e#5347#5856#0" expanded="false" />
-            <element signature="e#5906#6052#0" expanded="false" />
-            <element signature="e#6102#6574#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/data/norm_fs/AUDUSD240_NormConst.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21356784">
@@ -1040,14 +1067,6 @@
             <element signature="e#1534#1782#0" expanded="false" />
             <element signature="e#1828#2200#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18844222">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,16 +1114,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/mql_files/AUDUSD_240.gt.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6296296">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.41975307">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6296296">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/gene.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28148147">
-          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="199" column="40" selection-start-line="199" selection-start-column="40" selection-end-line="199" selection-end-column="40" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#104#483#0" expanded="false" />
@@ -1119,12 +1154,109 @@
             <element signature="e#3833#3890#0" expanded="false" />
             <element signature="e#3933#3986#0" expanded="false" />
             <element signature="e#4029#4194#0" expanded="false" />
+            <element signature="e#4271#4507#0" expanded="false" />
             <element signature="e#4548#4991#0" expanded="false" />
             <element signature="e#5027#5247#0" expanded="false" />
             <element signature="e#5303#5887#0" expanded="false" />
             <element signature="e#5926#5971#0" expanded="false" />
             <element signature="e#6020#6104#0" expanded="false" />
+            <element signature="e#6156#6845#0" expanded="false" />
             <element signature="e#6885#7743#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="87" selection-start-line="92" selection-start-column="87" selection-end-line="92" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#204#253#0" expanded="false" />
+            <element signature="e#286#524#0" expanded="false" />
+            <element signature="e#564#980#0" expanded="false" />
+            <element signature="e#1020#1318#0" expanded="false" />
+            <element signature="e#1355#1505#0" expanded="false" />
+            <element signature="e#1546#1760#0" expanded="false" />
+            <element signature="e#4314#4785#0" expanded="false" />
+            <element signature="e#4833#5012#0" expanded="false" />
+            <element signature="e#5052#5158#0" expanded="false" />
+            <element signature="e#5238#5373#0" expanded="false" />
+            <element signature="e#5451#5549#0" expanded="false" />
+            <element signature="e#5609#5731#0" expanded="false" />
+            <element signature="e#5803#5910#0" expanded="false" />
+            <element signature="e#5947#6206#0" expanded="false" />
+            <element signature="e#6257#6432#0" expanded="false" />
+            <element signature="e#6485#6632#0" expanded="false" />
+            <element signature="e#6678#7906#0" expanded="false" />
+            <element signature="e#6721#6822#0" expanded="false" />
+            <element signature="e#6868#6927#0" expanded="false" />
+            <element signature="e#6963#7364#0" expanded="false" />
+            <element signature="e#7400#7635#0" expanded="false" />
+            <element signature="e#7671#7906#0" expanded="false" />
+            <element signature="e#7946#10881#0" expanded="false" />
+            <element signature="e#7989#8752#0" expanded="false" />
+            <element signature="e#8791#8837#0" expanded="false" />
+            <element signature="e#8874#9073#0" expanded="false" />
+            <element signature="e#9110#9163#0" expanded="false" />
+            <element signature="e#9205#9397#0" expanded="false" />
+            <element signature="e#9434#9962#0" expanded="false" />
+            <element signature="e#10004#10881#0" expanded="false" />
+            <element signature="e#10919#12283#0" expanded="false" />
+            <element signature="e#10995#11540#0" expanded="false" />
+            <element signature="e#11584#11653#0" expanded="false" />
+            <element signature="e#11689#11722#0" expanded="false" />
+            <element signature="e#11758#12027#0" expanded="false" />
+            <element signature="e#12071#12150#0" expanded="false" />
+            <element signature="e#12191#12283#0" expanded="false" />
+            <element signature="e#12319#13049#0" expanded="false" />
+            <element signature="e#12361#12726#0" expanded="false" />
+            <element signature="e#12770#12864#0" expanded="false" />
+            <element signature="e#12900#12948#0" expanded="false" />
+            <element signature="e#12991#13049#0" expanded="false" />
+            <element signature="e#13084#15436#0" expanded="false" />
+            <element signature="e#13144#13778#0" expanded="false" />
+            <element signature="e#13822#14227#0" expanded="false" />
+            <element signature="e#14263#14475#0" expanded="false" />
+            <element signature="e#14518#14851#0" expanded="false" />
+            <element signature="e#14890#15436#0" expanded="false" />
+            <element signature="e#15455#15592#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/innovation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.21728395">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/genome.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.72839504">
+          <caret line="44" column="72" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#110#254#0" expanded="false" />
+            <element signature="e#359#1566#0" expanded="false" />
+            <element signature="e#1650#2842#0" expanded="false" />
+            <element signature="e#2893#3058#0" expanded="false" />
+            <element signature="e#3102#3251#0" expanded="false" />
+            <element signature="e#3291#3367#0" expanded="false" />
+            <element signature="e#3404#3525#0" expanded="false" />
+            <element signature="e#3565#3623#0" expanded="false" />
+            <element signature="e#3689#3930#0" expanded="false" />
+            <element signature="e#3982#4878#0" expanded="false" />
+            <element signature="e#4944#5301#0" expanded="false" />
+            <element signature="e#5351#5860#0" expanded="false" />
+            <element signature="e#5910#6056#0" expanded="false" />
+            <element signature="e#6106#6578#0" expanded="false" />
+            <element signature="e#6622#7798#0" expanded="false" />
+            <element signature="e#7856#8519#0" expanded="false" />
+            <element signature="e#8575#10004#0" expanded="false" />
+            <element signature="e#10043#10259#0" expanded="false" />
           </folding>
         </state>
       </provider>
