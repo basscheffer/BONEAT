@@ -4,6 +4,7 @@ from datetime import *
 from signals import *
 import ConfigParser
 import sys
+import os
 
 class mainWindow(QMainWindow):
 
@@ -51,7 +52,6 @@ class mainWindow(QMainWindow):
             sect = sW.sectCode
             sW.setSettings(self.settingsdict[sect])
 
-
     def getSettingsDict(self):
         self.settingsdict = {}
         for i in range(4):
@@ -67,7 +67,7 @@ class mainWindow(QMainWindow):
 
         self.simSettGb = simulationSettings("simulation","Simulation settings")
         self.simSettGb.addSlider("spread","Spread",5.0,0.0,1.5,0.1)
-        self.simSettGb.addDropDown("perf_mode","Performance function",["profit","winratio","profit/drawdown","profit^2/drawdown"])
+        self.simSettGb.addDropDown("perf_mode","Performance function",["profit","t*p2/d","profit/drawdown","profit^2/drawdown"])
         self.simSettGb.addSlider("cores","CPU Cores",12,1,4,1)
         self.simSettGb.addSlider("population","Population",2000,30,300,10)
         self.simSettGb.addButtons()
@@ -75,17 +75,14 @@ class mainWindow(QMainWindow):
         self.simSettGb.signals.loadconfig.connect(self.loadConfigFile)
 
         self.dataSettGb = dataSettings("data","Data settings")
-        self.dataSettGb.addDropDown("pair","Pair",["EURUSD","AUDUSD","JPYNZD"])
-        self.dataSettGb.addDropDown("timeframe","Timeframe",["M5","M15","M30","H1","H4","D1"])
-        self.dataSettGb.addDateRange("traindata","Training data range",date(2000,1,1),date.today())
-        self.dataSettGb.addDateRange("confirmdata","Confirmation data range",date(2000,1,1),date.today())
-        self.dataSettGb.addDateRange("test_data","Test data range",date(2000,1,1),date.today())
+        self.dataSettGb.signals.basename.connect(self.simSettGb.setFilepath)
+        self.dataSettGb.requestSignal()
 
         self.specSettGb = settingsBox("speciation","Speciation settings")
         self.specSettGb.addSlider("threshold","Speciation threshold",5.0,0.2,1.0,0.1)
-        self.specSettGb.addSlider("D_factor","Disjoint weight",3.0,0.0,1.0,0.1)
-        self.specSettGb.addSlider("E_factor","Excess weight",3.0,0.0,1.0,0.1)
-        self.specSettGb.addSlider("W_factor","Weight difference weight",3.0,0.0,1.0,0.1)
+        self.specSettGb.addSlider("d_factor","Disjoint weight",3.0,0.0,1.0,0.1)
+        self.specSettGb.addSlider("e_factor","Excess weight",3.0,0.0,1.0,0.1)
+        self.specSettGb.addSlider("w_factor","Weight difference weight",3.0,0.0,1.0,0.1)
         self.specSettGb.addSlider("staleness","Stale species",30,1,15,1)
 
         self.mutSettGb = settingsBox("mutation","Mutation settings")
@@ -97,6 +94,7 @@ class mainWindow(QMainWindow):
         self.mutSettGb.addSlider("weight","New weight range",10.0,1.0,2.0,0.5)
         self.mutSettGb.addSlider("new_link","New link mutation chance",3.0,0.0,1.0,0.1)
         self.mutSettGb.addSlider("new_node","New node mutation chance",3.0,0.0,1.0,0.1)
+        self.mutSettGb.addSlider("recur_boost","Recurrent connection boost",1.0,0.0,0.2,0.05)
 
 
         self.settlay.addWidget(self.simSettGb,0,0)
@@ -127,6 +125,10 @@ class mainWindow(QMainWindow):
         for i in range(grid_layout.rowCount()):
             grid_layout.setRowStretch(i,1)
 
+    def updateFilePath(self):
+        bn = self.dataSettGb.getBaseName()
+        self.simSettGb.filepath = "data/config_files/{}.cfg".format(bn)
+
 class settingsBox(QGroupBox):
 
     def __init__(self,sectCode,title):
@@ -143,10 +145,12 @@ class settingsBox(QGroupBox):
         drop = comboSetting(settCode,name)
         drop.addItems(itemlist)
         self.layout.addWidget(drop)
+        return drop
 
     def addDateRange(self,settCode,name,start_date,end_date):
         date = dateRange(settCode,name,start_date,end_date)
         self.layout.addWidget(date)
+        return date
 
     def getSettings(self):
         settDict = {}
@@ -176,12 +180,13 @@ class settingsBox(QGroupBox):
 
 class simulationSettings(settingsBox):
 
-
-
     def __init__(self,sectCode,title):
         settingsBox.__init__(self,sectCode,title)
         self.signals = Signals()
-        self.filepath = "data/mycustomconfig.cfg"
+        self.filepath = ""
+
+    def setFilepath(self,new_path):
+        self.filepath = "data/config_files/{}.cfg".format(new_path)
 
     def addButtons(self):
         self.but_layout = QHBoxLayout()
@@ -209,12 +214,86 @@ class simulationSettings(settingsBox):
             self.filepath = fp
             self.signals.loadconfig.emit()
 
-
-
 class dataSettings(settingsBox):
 
     def __init__(self,sectCode,title):
         settingsBox.__init__(self,sectCode,title)
+        self.signals = Signals()
+        self.getAvailableData()
+
+        self.pdd = self.addDropDown("pair","Pair",[])
+        self.tfdd = self.addDropDown("timeframe","Timeframe",[])
+        self.tde = self.addDateRange("traindata","Training data range",date(2000,1,1),date.today())
+        self.cde = self.addDateRange("confirmdata","Confirmation data range",date(2000,1,1),date.today())
+        self.tstde = self.addDateRange("test_data","Test data range",date(2000,1,1),date.today())
+
+        self.updatePairs()
+        self.updateTimeFrames()
+        self.updateDates()
+        self.pdd.comboB.currentIndexChanged.connect(self.updateTimeFrames)
+        self.tfdd.comboB.currentIndexChanged.connect(self.updateDates)
+
+    def requestSignal(self):
+        self.signals.basename.emit(self.getBaseName())
+
+    def getBaseName(self):
+        tf_dict = {"M5":5,"M15":15,"M30":30,"H1":60,"H4":240,"D1":1440}
+        pair = str(self.pdd.comboB.currentText())
+        tf = tf_dict[str(self.tfdd.comboB.currentText())]
+        return pair+str(tf)
+
+    def updatePairs(self):
+        l = self.datadict.keys()
+        self.pdd.addItems(l)
+
+    def updateTimeFrames(self):
+        pair = str(self.pdd.comboB.currentText())
+        l = self.datadict[pair].keys()
+        self.tfdd.addItems(l)
+        self.updateDates()
+        self.signals.basename.emit(self.getBaseName())
+
+    def updateDates(self):
+        pair = str(self.pdd.comboB.currentText())
+        tf = str(self.tfdd.comboB.currentText())
+        self.tde.minDate = self.datadict[pair][tf][0]
+        self.tde.maxDate = self.datadict[pair][tf][1]
+        self.tde.updateDateInputs()
+        self.cde.minDate = self.datadict[pair][tf][0]
+        self.cde.maxDate = self.datadict[pair][tf][1]
+        self.cde.updateDateInputs()
+        self.tstde.minDate = self.datadict[pair][tf][0]
+        self.tstde.maxDate = self.datadict[pair][tf][1]
+        self.tstde.updateDateInputs()
+
+    def getAvailableData(self):
+        tf_dict = {5:"M5",15:"M15",30:"M30",60:"H1",240:"H4",1440:"D1"}
+        base_dir = "data/raw_price_data/"
+        self.datadict = {}
+
+        for file in os.listdir(base_dir):
+
+            if file.endswith(".csv"):
+                name = file.split('.')[0]
+                pair = name[:6]
+                tf = tf_dict[int(name[6:])]
+                tl = [0]*2
+
+                with open(base_dir+file) as fh:
+                    ds = fh.readline().split(",")[0]
+                    tl[0] = datetime.strptime(ds,"%Y.%m.%d").date()
+                    for line in fh:
+                        pass
+                    ds = line.split(",")[0]
+                    tl[1] = datetime.strptime(ds,"%Y.%m.%d").date()
+
+                if pair in self.datadict:
+                    self.datadict[pair].update({tf:tl})
+                else:
+                    self.datadict[pair] = {tf:tl}
+
+
+
 
 class slideAndNum(QWidget):
 
@@ -288,6 +367,7 @@ class comboSetting(QWidget):
         return {self.settCode:self.comboB.currentText()}
 
     def addItems(self,itemlist):
+        self.comboB.clear()
         self.comboB.addItems(itemlist)
 
 class dateRange(QGroupBox):
@@ -301,6 +381,7 @@ class dateRange(QGroupBox):
 
         self.startDateW = QDateEdit(self.minDate)
         self.endDateW = QDateEdit(self.maxDate)
+
         self.graphW = QGraphicsView()
         self.updateDateInputs()
         self.updateGraphic()
@@ -331,6 +412,7 @@ class dateRange(QGroupBox):
         return {kF:dF,kT:dT}
 
     def updateDateInputs(self):
+
         self.startDateW.setDate(self.minDate)
         self.endDateW.setDate(self.maxDate)
         self.startDateW.setDateRange(self.minDate,self.maxDate)

@@ -5,7 +5,6 @@ import phenotype as phen
 import simulate as sim
 import time
 import ConfigParser
-import tools
 
 class Pool:
 
@@ -68,6 +67,6 @@ class Pool:
 if __name__=='__main__':
 
     p = Pool("data/config_files/AUDUSD240.cfg")
-    for i in range(2):
+    for i in range(40):
         p.evolvePopulation()
 

@@ -1,13 +1,28 @@
-import numpy as np
-import dateutil.parser as dp
+import os
+import datetime
 
-path = r"data\npy_data\AUDUSD240_NormData.npy"
-s_date = "2001-01-01"
-e_date = "2004-01-01"
+base_dir = "data/raw_price_data/"
+datadict = {}
 
-A = np.load(path)
+for file in os.listdir(base_dir):
 
-from_date=dp.parse(s_date)
-to_date=dp.parse(e_date)
-idx=(A[:,0]>=from_date) & (A[:,0]<to_date)
-print(A[idx])
+    if file.endswith(".csv"):
+        name = file.split('.')[0]
+        pair = name[:6]
+        tf = name[6:]
+        tl = [0]*2
+
+        with open(base_dir+file) as fh:
+            ds = fh.readline().split(",")[0]
+            tl[0] = datetime.datetime.strptime(ds,"%Y.%m.%d")
+            for line in fh:
+                pass
+            ds = line.split(",")[0]
+            tl[1] = datetime.datetime.strptime(ds,"%Y.%m.%d")
+
+        if pair in datadict:
+            datadict[pair].update({tf:tl})
+        else:
+            datadict[pair] = {tf:tl}
+
+print datadict

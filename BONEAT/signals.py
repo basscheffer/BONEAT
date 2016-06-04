@@ -5,3 +5,4 @@ class Signals(QObject):
 
     saveconfig = pyqtSignal()
     loadconfig = pyqtSignal()
+    basename = pyqtSignal(str)

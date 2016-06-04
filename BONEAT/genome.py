@@ -159,11 +159,17 @@ class Genome:
         max_tries = len(self.l_node_genes)
         nodes = self.getNodeNumbers()
 
-        for t in range(max_tries):
-            n1 = random.choice(nodes)
-            n2 = random.choice(nodes)
-            if self.addLink(n1,n2,glob_innov):
-                break
+        if random.random() <= float(self.settings["recur_boost"]):
+            for t in range(max_tries):
+                n = random.choice(nodes)
+                if self.addLink(n,n,glob_innov):
+                    break
+        else:
+            for t in range(max_tries):
+                n1 = random.choice(nodes)
+                n2 = random.choice(nodes)
+                if self.addLink(n1,n2,glob_innov):
+                    break
 
     def nodeMutation(self,glob_innov):
 

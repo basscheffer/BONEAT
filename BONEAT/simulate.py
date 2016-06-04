@@ -124,6 +124,7 @@ class Simulator:
         perf['trades'] = self.trade_count
         if self.trade_count > 0:
             perf['winratio'] = float(self.win_count)/float(self.trade_count)
+        perf["t*p2/d"] = self.trade_count*perf["p2/dd"]
 
         return perf
 
