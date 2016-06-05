@@ -94,7 +94,7 @@ class mainWindow(QMainWindow):
         self.mutSettGb.addSlider("weight","New weight range",10.0,1.0,2.0,0.5)
         self.mutSettGb.addSlider("new_link","New link mutation chance",3.0,0.0,1.0,0.1)
         self.mutSettGb.addSlider("new_node","New node mutation chance",3.0,0.0,1.0,0.1)
-        self.mutSettGb.addSlider("recur_boost","Recurrent connection boost",1.0,0.0,0.2,0.05)
+        self.mutSettGb.addSlider("recur_boost","Recurrent connection boost",1.0,0.0,0.3,0.05)
 
 
         self.settlay.addWidget(self.simSettGb,0,0)

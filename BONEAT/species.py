@@ -202,7 +202,7 @@ class species:
         crossoverchance = float(self.settings["crossover"])
 
         # update root genome
-        # self.root_genome = random.choice(self.l_genomes)
+        self.root_genome = random.choice(self.l_genomes)
 
         children = []
 
