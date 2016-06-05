@@ -292,7 +292,7 @@ def crossover(genome_pair,innovations,settings):
     for g in G1_genes:
         l_gen1[g.innovationNumber] = copyGene(g) # ok half day each
     for g in G2_genes:
-        l_gen1[g.innovationNumber] = copyGene(g) # ok half day each
+        l_gen2[g.innovationNumber] = copyGene(g) # ok half day each
 
     new_genes = []
     for In in range(genlength):
