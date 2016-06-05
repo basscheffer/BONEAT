@@ -207,10 +207,10 @@ class species:
         children = []
 
         # copy genome 0
-        children.append(self.l_genomes[0])
+        # children.append(self.l_genomes[0])
 
-        # loop through remaining breed
-        for i in range(self.breed-1):
+        # loop through breed
+        for i in range(self.breed):
             if random.random() <= crossoverchance and len(self.l_genomes)>1:
                 child=genome.crossover(random.sample(self.l_genomes,2),innovations,self.settings)
 
