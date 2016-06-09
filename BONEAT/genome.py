@@ -1,6 +1,7 @@
 from gene import *
 from enums import *
 import random
+import innovation
 
 class Genome:
 
@@ -119,12 +120,11 @@ class Genome:
         mut_link_c = float(self.settings["new_link"])
         mut_node_c = float(self.settings["new_node"])
         perturb_c = float(self.settings["perturbing"])
-        switch_c = float(self.settings["switch"])
         mut_step = float(self.settings["step"])
 
         # mutate existing genes
         if random.random() <= mut_conn_c:
-            self.geneMutation(perturb_c,switch_c,mut_step)
+            self.geneMutation(perturb_c,mut_step)
 
         # new link
         while True:
@@ -144,7 +144,7 @@ class Genome:
             else:
                 break
 
-    def geneMutation(self,perturb_c,switch_c,mut_step):
+    def geneMutation(self,perturb_c,mut_step):
         for gene in self.l_link_genes:
             if random.random() <= perturb_c:
                 gene.weight += random.uniform(-mut_step,mut_step)
@@ -190,11 +190,6 @@ class Genome:
         print "-----------------------------------//--------------------------------------"
 
     def makeGenotypeString(self):
-        prepdict = {"O":"OPEN",
-                    "H":"HIGH",
-                    "L":"LOW",
-                    "C":"CLOSE",
-                    "P":"PROFIT"}
 
         ## properties ##
         pair = self.settings["pair"]
@@ -322,9 +317,44 @@ def copyGenome(genome,settings):
         nG.l_node_genes.append(copyGene(g))
     return nG
 
+def buildFromGTFile(genotype_file):
+    nodelist = []
+    linklist = []
 
+    with open(genotype_file,"r") as gtf:
+        gts = gtf.read()
+        ns,ls = gts.split(">NEUR")[1].split(">LINK")
+        nsl =  ns.split()
+        lsl = ls.split()
 
+        for ni in nsl:
+            x = ni.split(";")
+            nodelist.append([int(x[0]),int(x[1]),int(x[2])])
+        for li in lsl:
+            x = li.split(";")
+            linklist.append([int(x[0]),int(x[1]),float(x[2])])
 
+    settings = {"pair":"AUDUSD","timeframe":240}
+    NG = Genome(settings)
+    for node in nodelist:
+        type = node[1]
+        fromnode = 0
+        tonode = 0
+        innonum = node[0]
+        if type == NodeType.INPUT:
+            fromnode = node[2]
+        elif type == NodeType.OUTPUT:
+            tonode = node[2]
+        Ng = nodeGene(type,fromnode,tonode,innonum)
+        NG.l_node_genes.append(Ng)
+    for link in linklist:
+        fromnode = link[0]
+        tonode = link[1]
+        weight = link[2]
+        Nl = linkGene(fromnode,tonode,weight,0)
+        NG.l_link_genes.append(Nl)
+
+    return NG
 
 
 

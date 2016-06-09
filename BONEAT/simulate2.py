@@ -79,7 +79,7 @@ class Simulator:
 
         NN = neuralNetwork
 
-        for i,tf in enumerate(data):
+        for tf in data:
             openbuy=False
             opensell=False
             closepos=False
@@ -91,10 +91,9 @@ class Simulator:
             posprof = self.pos_prof/settings["profit_norm"]
             inputlist = [self.pos_open,self.pos_dir,posprof]
             inputlist.extend(tf[2:8])
-            # print data[i+1][0].date().isoformat()," ",data[i+1][3]*24," ",inputlist
+            # print tf[0].date().isoformat()," ",tf[3]*24," ",inputlist
             outputlist = NN.update(inputlist)
-            #print i
-            # print data[i+1][0].date().isoformat()," ",data[i+1][3]*24," ",outputlist
+            print tf[0].date().isoformat()," ",tf[3]*24," ",outputlist
 
             if outputlist[0] > 0.5:
                 openbuy = True
@@ -212,21 +211,6 @@ def fastSimulate(list_of_genomes,settings):
     print "Best performer:"
     for key in best_performer:
         print key," : ",best_performer[key]
-
-# def slowSimulate(list_of_genomes,data_file_path):
-#     #### WATCH OUT NOT UP TO DATE
-#
-#     # make a NN from each genome and append it to a processing list
-#     for genome in list_of_genomes:
-#         result = simuRoutine([genome,data_file_path])
-#         if genome.fitness > 0.0 and genome.fitness != result["fitness"]:
-#             print "\n############ WARNING ############\n"
-#         genome.fitness = result['fitness']
-#         genome.performance = result
-#
-#     best_performer = max(list_of_genomes,key=lambda g: g.fitness)
-#     print "Maximum fitness = %.1f with performance:" %best_performer.fitness
-#     print best_performer.performance
 
 # if __name__=='__main__':
 #     makeBacktestData()

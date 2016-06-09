@@ -86,7 +86,8 @@ class neuralNetVisualiser(QGraphicsScene):
                     else:
                         allcreated = False
             newlayerlist.sort(reverse=False)
-            self.layerarray.insert(len(self.layerarray)-1,newlayerlist)
+            if newlayerlist:
+                self.layerarray.insert(len(self.layerarray)-1,newlayerlist)
         for layer in self.layerarray:
             print layer
     
@@ -173,7 +174,7 @@ class W(QGraphicsView):
 
         NNV = neuralNetVisualiser(900,600)
         # NNV.drawArc()
-        GTS = open("testGT.txt").read()
+        GTS = open("data/genotypes/AUDUSD240sync.gt.txt").read()
         NNV.readGTstring(GTS)
         NNV.makeGraphicNodes()
         NNV.makeGraphicLinks()
