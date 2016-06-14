@@ -139,7 +139,7 @@ class Simulator:
 
     def updatePosProfit(self,currentPrice,spread):
 
-        profit = (self.pos_price-currentPrice)*self.pos_dir
+        profit = (currentPrice-self.pos_price)*self.pos_dir
         self.pos_prof = profit-(spread/10000)
 
     def closePosition(self,date, time):
@@ -161,18 +161,34 @@ class Simulator:
         if self.max_bal-self.curr_bal > self.max_dd:
             self.max_dd=self.max_bal-self.curr_bal
 
-def getData(data_path,settings):
+def getData(data_path,settings,data_field = "train"):
     A = np.load(data_path)
 
-    from_date=dp.parse(settings["traindata_start"])
-    to_date=dp.parse(settings["traindata_end"])
-    idx=(A[:,0]>=from_date) & (A[:,0]<to_date)
+    if data_field == "train":
+        from_date=dp.parse(settings["traindata_start"])
+        to_date=dp.parse(settings["traindata_end"])
+    elif data_field == "confirm":
+        from_date=dp.parse(settings["confirmdata_start"])
+        to_date=dp.parse(settings["confirmdata_end"])
+    else:
+        raise NameError("data field %s not defined"%data_field)
+    # idx=(A[:,0]>=from_date) & (A[:,0]<to_date)
+    # return(A[idx])
 
-    return(A[idx])
+    si = min(np.where(A[:,0]>=from_date)[0])-1
+    ei = min(np.where(A[:,0]>=to_date)[0])
+    return (A[si:ei])
 
 def simuRoutine(process_data):
 
     data = getData(process_data[1],process_data[2])
+    NN = neuralNetwork(process_data[0])
+    S = process_data[2]
+    SIM = Simulator()
+    return SIM.runSimulation(data,NN,S)
+
+def confirmRoutine(process_data):
+    data = getData(process_data[1],process_data[2],"confirm")
     NN = neuralNetwork(process_data[0])
     S = process_data[2]
     SIM = Simulator()
@@ -196,8 +212,6 @@ def fastSimulate(list_of_genomes,settings):
 
     p_mode = settings["perf_mode"]
 
-    # worst_perf = min(r[p_mode] for r in resultlist)
-
     for perf in resultlist:
         fit = perf[p_mode]
         if fit < 0.0:
@@ -212,6 +226,64 @@ def fastSimulate(list_of_genomes,settings):
     print "Best performer:"
     for key in best_performer:
         print key," : ",best_performer[key]
+
+def fastSimulateConfirm(list_of_genomes,settings):
+
+    processes = int(settings["cores"])
+    data_file_path = settings["test_data_path"]
+    processing_list = []
+
+    # make a NN from each genome and append it to a processing list
+    for genome in list_of_genomes:
+        processing_list.append([genome,data_file_path,settings])
+
+    pool = mp.Pool(processes)
+
+    resultlist = pool.map(simuRoutine,processing_list)
+    pool.close()
+    pool.join()
+
+    p_mode = settings["perf_mode"]
+
+    for perf in resultlist:
+        fit = perf[p_mode]
+        if fit <= 0.0:
+            fit = -0.0001
+        perf["fitness"] = fit+0.0001
+
+    confirm_genome_list = []
+
+    for i,genome in enumerate(list_of_genomes):
+        genome.fitness = resultlist[i]['fitness']
+        genome.performance = resultlist[i]
+        if genome.fitness > 0.0:
+            confirm_genome_list.append(genome)
+
+    processing_conf_list = []
+    for genome in confirm_genome_list:
+        processing_conf_list.append([genome,data_file_path,settings])
+
+    pool = mp.Pool(processes)
+    confirmlist = pool.map(confirmRoutine,processing_conf_list)
+    pool.close()
+    pool.join()
+
+    for i,genome in enumerate(confirm_genome_list):
+        cf = confirmlist[i][p_mode]
+        change = cf/genome.performance[p_mode]
+        genome.performance["confirmfactor"] = change
+        if change > 1.0:
+            change = 1.0
+        if change < 0.0:
+            change = 0.0
+        genome.performance["fitness"] = genome.performance["fitness"]*change
+
+    best_performer = max(list_of_genomes,key=lambda g: g.fitness)
+    print "Best performer:"
+    for key in best_performer.performance:
+        print key," : ",best_performer.performance[key]
+
+
 
 # def slowSimulate(list_of_genomes,data_file_path):
 #     #### WATCH OUT NOT UP TO DATE

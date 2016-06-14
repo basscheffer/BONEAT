@@ -1,15 +1,15 @@
-# import csv
-#
-# nf = open("data/ga_logs/AUDUSD240xl.csv","w")
-# writer = csv.writer(nf,delimiter=",",quotechar='"')
-#
-# with open("data/ga_logs/AUDUSD240.csv","r") as of:
-#     reader = csv.reader(of,delimiter=",",quotechar='"')
-#     for row in reader:
-#         if row:
-#             writer.writerow(row[:5])
-#
-#
+import csv
+
+nf = open("data/ga_logs/AUDUSD240xl.csv","w")
+writer = csv.writer(nf,delimiter=",",quotechar='"')
+
+with open("data/ga_logs/AUDUSD240.csv","r") as of:
+    reader = csv.reader(of,delimiter=",",quotechar='"')
+    for row in reader:
+        if row:
+            writer.writerow(row[:5])
+
+
 
 
 import numpy as np
@@ -21,10 +21,11 @@ import dateutil.parser as dp
 A = np.load("data/npy_data/AUDUSD240_NormData.npy")
 
 from_date=dp.parse("2007-01-01")
-to_date=dp.parse("2007-01-03")
+to_date=dp.parse("2013-01-01")
 # idx=(A[:,0]>=from_date) & (A[:,0]<to_date)
-# data = A[idx]
-si = min(np.where(A[:,0]>=from_date)[0])-1
+# data1 = A[idx]
+# print data1
+si = min(np.where(A[:,0]>=from_date)[0])
 ei = min(np.where(A[:,0]>=to_date)[0])
 data = A[si:ei]
 

@@ -123,8 +123,8 @@ class Genome:
         mut_step = float(self.settings["step"])
 
         # mutate existing genes
-        if random.random() <= mut_conn_c:
-            self.geneMutation(perturb_c,mut_step)
+
+        self.geneMutation(mut_conn_c,perturb_c,mut_step)
 
         # new link
         while True:
@@ -144,15 +144,16 @@ class Genome:
             else:
                 break
 
-    def geneMutation(self,perturb_c,mut_step):
+    def geneMutation(self,mut_c,perturb_c,mut_step):
         for gene in self.l_link_genes:
-            if random.random() <= perturb_c:
-                gene.weight += random.uniform(-mut_step,mut_step)
-            else:
-                w = float(self.settings["weight"])
-                gene.weight = random.uniform(-w,w)
-            # if random.random() <= switch_c:
-            #     gene.enabled = not gene.enabled
+            if random.random() <= mut_c:
+                if random.random() <= perturb_c:
+                    gene.weight += random.uniform(-mut_step,mut_step)
+                else:
+                    w = float(self.settings["weight"])
+                    gene.weight = random.uniform(-w,w)
+                # if random.random() <= switch_c:
+                #     gene.enabled = not gene.enabled
 
     def linkMutation(self,glob_innov):
 

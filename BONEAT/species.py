@@ -1,7 +1,7 @@
 import math
 import random
 import genome
-
+import time
 
 class SpeciesList:
 
@@ -14,6 +14,9 @@ class SpeciesList:
         self.weightsC = float(settings["w_factor"])
         self.threshold = float(settings["threshold"])
         self.population = int(settings["population"])
+
+        self.breedtime = 0.0
+        self.mutatetime =0.0
 
         self.max_pop_fitness = 0.0
 
@@ -94,22 +97,32 @@ class SpeciesList:
 
     def breedChildren(self,innovations):
 
+        self.breedtime = 0.0
+        self.mutatetime = 0.0
+
         crossoverchance = float(self.settings["crossover"])
 
         new_gen_children = []
         # breed all the children for each species
         for s in self.l_species:
             new_gen_children.extend(s.breedChildren(innovations))
+            self.breedtime += s.breedtime
+            self.mutatetime += s.mutatetime
 
         # fill the remainder with wild children
         remainder = self.population-len(new_gen_children)
         all_Gs = self.getAllGenomes()
         for i in range(remainder):
+            bt0 = time.clock()
             if random.random() <= crossoverchance and len(all_Gs)>1:
                 child=genome.crossover(random.sample(all_Gs,2),innovations,self.settings)
             else:
                 child = genome.copyGenome(random.choice(all_Gs),self.settings)
+            bt1 = time.clock()
+            self.breedtime += (bt1-bt0)
             child.mutate(innovations)
+            bt2 = time.clock()
+            self.mutatetime += (bt2-bt1)
             new_gen_children.append(child)
 
         self.newGeneration(new_gen_children)
@@ -152,6 +165,9 @@ class species:
         self.avg_fitness = 0.0
         self.max_fitness = 0.0
         self.breed = 0
+
+        self.breedtime = 0.0
+        self.mutatetime = 0.0
 
     def getSpeciesData(self):
 
@@ -199,6 +215,10 @@ class species:
 
     def breedChildren(self,innovations):
 
+
+        self.breedtime = 0.0
+        self.mutatetime = 0.0
+
         crossoverchance = float(self.settings["crossover"])
 
         # update root genome
@@ -211,13 +231,17 @@ class species:
 
         # loop through breed
         for i in range(self.breed):
+            bt0  = time.clock()
             if random.random() <= crossoverchance and len(self.l_genomes)>1:
                 child=genome.crossover(random.sample(self.l_genomes,2),innovations,self.settings)
-
             else:
                 child = genome.copyGenome(random.choice(self.l_genomes),self.settings)
-
+            bt1  = time.clock()
+            self.breedtime +=  (bt1-bt0)
             child.mutate(innovations)
+            bt2  = time.clock()
+            self.mutatetime += (bt2-bt1)
+
             children.append(child)
 
         return children

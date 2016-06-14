@@ -2,7 +2,7 @@ from innovation import *
 from genome import *
 from species import *
 import phenotype as phen
-import simulate as sim
+import simulate2 as sim
 import time
 import ConfigParser
 import csv
@@ -19,6 +19,18 @@ class Pool:
         self.newPopulation()
         self.generation = 1
         self.processors = int(self.GS["cores"])
+
+        self.tottime = 0.0
+        self.testtime = 0.0
+        self.culltime = 0.0
+        self.newgentime = 0.0
+        self.breedtime = 0.0
+        self.mutatetime = 0.0
+
+        self.timerdatafile="data/timerfile/{}{}_td.csv".format(self.GS["pair"],self.GS["timeframe"])
+        with open(self.timerdatafile,"w") as tdf:
+            writer = csv.writer(tdf, delimiter=',',quotechar='"')
+            writer.writerow(("generation","total","test","remove weak","breed","cross/copy","mutate"))
 
     def getSettingsFromCfg(self,cfg_filepath):
         config = ConfigParser.RawConfigParser()
@@ -53,7 +65,7 @@ class Pool:
     def testPopulation(self):
         print "\nGeneration %i, %i species ,%i innovations"\
               %(self.generation,len(self.species.l_species),len(self.innovations.l_innovations))
-        sim.fastSimulate(self.species.getAllGenomes(),self.GS)
+        sim.fastSimulateConfirm(self.species.getAllGenomes(),self.GS)
         self.logGenerationResults()
 
     def logGenerationResults(self):
@@ -66,14 +78,35 @@ class Pool:
                 line.extend(row)
                 writer.writerow(line)
 
+    def logTimer(self):
+        data = [self.tottime,self.testtime,self.culltime,self.newgentime,self.breedtime,self.mutatetime]
+        with open(self.timerdatafile,"a") as csvf:
+            writer = csv.writer(csvf, delimiter=',',quotechar='"')
+            writer.writerow(data)
+
     def evolvePopulation(self):
 
+        t0 = time.clock()
         #remove weakest individuals from species and stale speces
         self.species.removeWeakPopulation()
+        t1 = time.clock()
+        self.culltime = (t1-t0)
+
         #breed children and fill new population
         self.species.breedChildren(self.innovations)
+        t2 = time.clock()
+        self.newgentime = (t2-t1)
+        self.breedtime = self.species.breedtime
+        self.mutatetime = self.species.mutatetime
+
         # this is the new generation
         self.generation+=1
+
         # test the new population for fitness
         self.testPopulation()
+        t3 = time.clock()
+        self.culltime = (t3-t2)
+
+        self.tottime = (t3-t0)
+
 

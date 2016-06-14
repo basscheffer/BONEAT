@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db566f5e-22f0-4002-99ff-966fc7348672" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BONEAT/simulate2.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240xl.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/testGT.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BONEAT/mpl_play.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240sync.gt.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" afterPath="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/gd_playground.py" afterPath="$PROJECT_DIR$/BONEAT/gd_playground.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240.gt.txt" afterPath="$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240.gt.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/genome.py" afterPath="$PROJECT_DIR$/BONEAT/genome.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/gui.py" afterPath="$PROJECT_DIR$/BONEAT/gui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/playground.py" afterPath="$PROJECT_DIR$/BONEAT/playground.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/pool.py" afterPath="$PROJECT_DIR$/BONEAT/pool.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/simulate.py" afterPath="$PROJECT_DIR$/BONEAT/simulate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/simulate2.py" afterPath="$PROJECT_DIR$/BONEAT/simulate2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/species.py" afterPath="$PROJECT_DIR$/BONEAT/species.py" />
     </list>
     <ignored path="NEAT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,12 +34,208 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ga.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ga.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BONEAT/ga.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35883906">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pool.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="species.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+              <folding>
+                <element signature="e#115#553#0" expanded="false" />
+                <element signature="e#599#1001#0" expanded="false" />
+                <element signature="e#1063#1296#0" expanded="false" />
+                <element signature="e#1335#1431#0" expanded="false" />
+                <element signature="e#1478#2570#0" expanded="false" />
+                <element signature="e#2609#2658#0" expanded="false" />
+                <element signature="e#2710#3824#0" expanded="false" />
+                <element signature="e#3878#3982#0" expanded="false" />
+                <element signature="e#4026#4166#0" expanded="false" />
+                <element signature="e#4223#4280#0" expanded="false" />
+                <element signature="e#4323#4376#0" expanded="false" />
+                <element signature="e#4419#4584#0" expanded="false" />
+                <element signature="e#4998#5441#0" expanded="false" />
+                <element signature="e#5477#5697#0" expanded="false" />
+                <element signature="e#5753#6337#0" expanded="false" />
+                <element signature="e#6376#6421#0" expanded="false" />
+                <element signature="e#6470#6554#0" expanded="false" />
+                <element signature="e#7561#8419#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="genome.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/genome.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
+              <folding>
+                <element signature="e#128#272#0" expanded="false" />
+                <element signature="e#377#1584#0" expanded="false" />
+                <element signature="e#1668#2860#0" expanded="false" />
+                <element signature="e#2911#3076#0" expanded="false" />
+                <element signature="e#3120#3269#0" expanded="false" />
+                <element signature="e#3309#3385#0" expanded="false" />
+                <element signature="e#3422#3543#0" expanded="false" />
+                <element signature="e#3583#3641#0" expanded="false" />
+                <element signature="e#3707#3948#0" expanded="false" />
+                <element signature="e#4000#4803#0" expanded="false" />
+                <element signature="e#4866#5292#0" expanded="false" />
+                <element signature="e#5342#5851#0" expanded="false" />
+                <element signature="e#5901#6047#0" expanded="false" />
+                <element signature="e#6097#6569#0" expanded="false" />
+                <element signature="e#6614#7627#0" expanded="false" />
+                <element signature="e#7685#8348#0" expanded="false" />
+                <element signature="e#8404#9833#0" expanded="false" />
+                <element signature="e#9872#10088#0" expanded="false" />
+                <element signature="e#10130#11175#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playground.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mpl_play.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/mpl_play.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simulate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/simulate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="258" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
+              <folding>
+                <element signature="e#208#1790#0" expanded="false" />
+                <element signature="e#1842#2083#0" expanded="false" />
+                <element signature="e#2151#3362#0" expanded="false" />
+                <element signature="e#4066#4194#0" expanded="false" />
+                <element signature="e#4256#4353#0" expanded="false" />
+                <element signature="e#4403#4812#0" expanded="false" />
+                <element signature="e#4850#5027#0" expanded="false" />
+                <element signature="e#5087#5651#0" expanded="false" />
+                <element signature="e#5689#5862#0" expanded="false" />
+                <element signature="e#5902#6085#0" expanded="false" />
+                <element signature="e#6136#7016#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simulate2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BONEAT/simulate2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44078946">
+              <caret line="264" column="8" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="8" />
+              <folding>
+                <element signature="e#208#1790#0" expanded="false" />
+                <element signature="e#1842#2083#0" expanded="false" />
+                <element signature="e#2151#3556#0" expanded="false" />
+                <element signature="e#4260#4496#0" expanded="false" />
+                <element signature="e#4558#4655#0" expanded="false" />
+                <element signature="e#4694#5022#0" expanded="false" />
+                <element signature="e#5060#5237#0" expanded="false" />
+                <element signature="e#5297#5861#0" expanded="false" />
+                <element signature="e#5899#6072#0" expanded="false" />
+                <element signature="e#6112#6295#0" expanded="false" />
+                <element signature="e#6346#7226#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/gui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+              <folding>
+                <element signature="e#204#253#0" expanded="false" />
+                <element signature="e#286#524#0" expanded="false" />
+                <element signature="e#564#980#0" expanded="false" />
+                <element signature="e#1020#1318#0" expanded="false" />
+                <element signature="e#1355#1505#0" expanded="false" />
+                <element signature="e#1546#1760#0" expanded="false" />
+                <element signature="e#4268#4739#0" expanded="false" />
+                <element signature="e#4787#4966#0" expanded="false" />
+                <element signature="e#5006#5112#0" expanded="false" />
+                <element signature="e#5192#5327#0" expanded="false" />
+                <element signature="e#5405#5503#0" expanded="false" />
+                <element signature="e#5563#5685#0" expanded="false" />
+                <element signature="e#5757#5864#0" expanded="false" />
+                <element signature="e#5901#6160#0" expanded="false" />
+                <element signature="e#6211#6386#0" expanded="false" />
+                <element signature="e#6439#6586#0" expanded="false" />
+                <element signature="e#6632#7860#0" expanded="false" />
+                <element signature="e#6675#6776#0" expanded="false" />
+                <element signature="e#6822#6881#0" expanded="false" />
+                <element signature="e#6917#7318#0" expanded="false" />
+                <element signature="e#7354#7589#0" expanded="false" />
+                <element signature="e#7625#7860#0" expanded="false" />
+                <element signature="e#7900#10835#0" expanded="false" />
+                <element signature="e#7943#8706#0" expanded="false" />
+                <element signature="e#8745#8791#0" expanded="false" />
+                <element signature="e#8828#9027#0" expanded="false" />
+                <element signature="e#9064#9117#0" expanded="false" />
+                <element signature="e#9159#9351#0" expanded="false" />
+                <element signature="e#9388#9916#0" expanded="false" />
+                <element signature="e#9958#10835#0" expanded="false" />
+                <element signature="e#10873#12237#0" expanded="false" />
+                <element signature="e#10949#11494#0" expanded="false" />
+                <element signature="e#11538#11607#0" expanded="false" />
+                <element signature="e#11643#11676#0" expanded="false" />
+                <element signature="e#11712#11981#0" expanded="false" />
+                <element signature="e#12025#12104#0" expanded="false" />
+                <element signature="e#12145#12237#0" expanded="false" />
+                <element signature="e#12273#13003#0" expanded="false" />
+                <element signature="e#12315#12680#0" expanded="false" />
+                <element signature="e#12724#12818#0" expanded="false" />
+                <element signature="e#12854#12902#0" expanded="false" />
+                <element signature="e#12945#13003#0" expanded="false" />
+                <element signature="e#13098#13732#0" expanded="false" />
+                <element signature="e#13776#14181#0" expanded="false" />
+                <element signature="e#14217#14429#0" expanded="false" />
+                <element signature="e#14472#14805#0" expanded="false" />
+                <element signature="e#14844#15390#0" expanded="false" />
+                <element signature="e#15409#15546#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,22 +261,23 @@
         <option value="$PROJECT_DIR$/BONEAT/signals.py" />
         <option value="$PROJECT_DIR$/BONEAT/mql_files/AUDUSD_240.gt.txt" />
         <option value="$PROJECT_DIR$/BONEAT/data/norm_fs/AUDUSD240_NormConst.txt" />
-        <option value="$PROJECT_DIR$/BONEAT/pool.py" />
         <option value="$PROJECT_DIR$/BONEAT/ga.py" />
         <option value="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240pt1.csv" />
-        <option value="$PROJECT_DIR$/BONEAT/gui.py" />
-        <option value="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" />
-        <option value="$PROJECT_DIR$/BONEAT/species.py" />
         <option value="$PROJECT_DIR$/BONEAT/testGT.txt" />
         <option value="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240xl.csv" />
-        <option value="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv" />
         <option value="$PROJECT_DIR$/BONEAT/gd_playground.py" />
-        <option value="$PROJECT_DIR$/BONEAT/genome.py" />
-        <option value="$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240.gt.txt" />
-        <option value="$PROJECT_DIR$/BONEAT/simulate2.py" />
-        <option value="$PROJECT_DIR$/BONEAT/playground.py" />
         <option value="$PROJECT_DIR$/BONEAT/phenotype.py" />
+        <option value="$PROJECT_DIR$/BONEAT/mpl_play.py" />
+        <option value="$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240.gt.txt" />
+        <option value="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv" />
+        <option value="$PROJECT_DIR$/BONEAT/gui.py" />
+        <option value="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" />
         <option value="$PROJECT_DIR$/BONEAT/simulate.py" />
+        <option value="$PROJECT_DIR$/BONEAT/playground.py" />
+        <option value="$PROJECT_DIR$/BONEAT/genome.py" />
+        <option value="$PROJECT_DIR$/BONEAT/species.py" />
+        <option value="$PROJECT_DIR$/BONEAT/pool.py" />
+        <option value="$PROJECT_DIR$/BONEAT/simulate2.py" />
       </list>
     </option>
   </component>
@@ -113,34 +312,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="NEAT">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="NEAT">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="BONEAT">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,6 +365,34 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="NEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="NEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BONEAT">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -207,7 +406,7 @@
       <recent name="C:\Users\Bas Scheffer\Documents\NEAT\NEAT\BONEAT\data\config_files" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.playground">
+  <component name="RunManager" selected="Python.ga">
     <configuration default="false" name="playground" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -225,57 +424,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="gd_playground" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="NEAT" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/gd_playground.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="genome" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="NEAT" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/genome.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="phenotype" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="NEAT" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/phenotype.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="simulate" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,6 +437,57 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NEAT" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/simulate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="NEAT" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ga" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="NEAT" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/ga.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mpl_play" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="NEAT" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/mpl_play.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -417,18 +616,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.playground" />
-      <item index="1" class="java.lang.String" itemvalue="Python.gd_playground" />
-      <item index="2" class="java.lang.String" itemvalue="Python.genome" />
-      <item index="3" class="java.lang.String" itemvalue="Python.phenotype" />
-      <item index="4" class="java.lang.String" itemvalue="Python.simulate" />
+      <item index="1" class="java.lang.String" itemvalue="Python.simulate" />
+      <item index="2" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ga" />
+      <item index="4" class="java.lang.String" itemvalue="Python.mpl_play" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.playground" />
-        <item index="1" class="java.lang.String" itemvalue="Python.simulate" />
-        <item index="2" class="java.lang.String" itemvalue="Python.phenotype" />
-        <item index="3" class="java.lang.String" itemvalue="Python.genome" />
-        <item index="4" class="java.lang.String" itemvalue="Python.gd_playground" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ga" />
+        <item index="1" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="2" class="java.lang.String" itemvalue="Python.playground" />
+        <item index="3" class="java.lang.String" itemvalue="Python.mpl_play" />
+        <item index="4" class="java.lang.String" itemvalue="Python.simulate" />
       </list>
     </recent_temporary>
   </component>
@@ -458,12 +657,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21056548" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2061012" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33496732" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20915033" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -519,11 +718,68 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="90" />
+      <option name="time" value="93" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BONEAT/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="67" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
+          <folding>
+            <element signature="e#204#253#0" expanded="false" />
+            <element signature="e#286#524#0" expanded="false" />
+            <element signature="e#564#980#0" expanded="false" />
+            <element signature="e#1020#1318#0" expanded="false" />
+            <element signature="e#1355#1505#0" expanded="false" />
+            <element signature="e#1546#1760#0" expanded="false" />
+            <element signature="e#4268#4739#0" expanded="false" />
+            <element signature="e#4787#4966#0" expanded="false" />
+            <element signature="e#5006#5112#0" expanded="false" />
+            <element signature="e#5192#5327#0" expanded="false" />
+            <element signature="e#5405#5503#0" expanded="false" />
+            <element signature="e#5563#5685#0" expanded="false" />
+            <element signature="e#5757#5864#0" expanded="false" />
+            <element signature="e#5901#6160#0" expanded="false" />
+            <element signature="e#6211#6386#0" expanded="false" />
+            <element signature="e#6439#6586#0" expanded="false" />
+            <element signature="e#6632#7860#0" expanded="false" />
+            <element signature="e#6675#6776#0" expanded="false" />
+            <element signature="e#6822#6881#0" expanded="false" />
+            <element signature="e#6917#7318#0" expanded="false" />
+            <element signature="e#7354#7589#0" expanded="false" />
+            <element signature="e#7625#7860#0" expanded="false" />
+            <element signature="e#7900#10835#0" expanded="false" />
+            <element signature="e#7943#8706#0" expanded="false" />
+            <element signature="e#8745#8791#0" expanded="false" />
+            <element signature="e#8828#9027#0" expanded="false" />
+            <element signature="e#9064#9117#0" expanded="false" />
+            <element signature="e#9159#9351#0" expanded="false" />
+            <element signature="e#9388#9916#0" expanded="false" />
+            <element signature="e#9958#10835#0" expanded="false" />
+            <element signature="e#10873#12237#0" expanded="false" />
+            <element signature="e#10949#11494#0" expanded="false" />
+            <element signature="e#11538#11607#0" expanded="false" />
+            <element signature="e#11643#11676#0" expanded="false" />
+            <element signature="e#11712#11981#0" expanded="false" />
+            <element signature="e#12025#12104#0" expanded="false" />
+            <element signature="e#12145#12237#0" expanded="false" />
+            <element signature="e#12273#13003#0" expanded="false" />
+            <element signature="e#12315#12680#0" expanded="false" />
+            <element signature="e#12724#12818#0" expanded="false" />
+            <element signature="e#12854#12902#0" expanded="false" />
+            <element signature="e#12945#13003#0" expanded="false" />
+            <element signature="e#13098#13732#0" expanded="false" />
+            <element signature="e#13776#14181#0" expanded="false" />
+            <element signature="e#14217#14429#0" expanded="false" />
+            <element signature="e#14472#14805#0" expanded="false" />
+            <element signature="e#14844#15390#0" expanded="false" />
+            <element signature="e#15409#15546#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/simulate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -536,10 +792,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="e#555#1329#0" expanded="false" />
-            <element signature="e#1369#1494#0" expanded="false" />
-            <element signature="e#1534#1782#0" expanded="false" />
-            <element signature="e#1828#2200#0" expanded="false" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -555,27 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="117" column="23" selection-start-line="117" selection-start-column="23" selection-end-line="117" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-            <element signature="e#128#272#0" expanded="false" />
-            <element signature="e#377#1584#0" expanded="false" />
-            <element signature="e#1668#2860#0" expanded="false" />
-            <element signature="e#2911#3076#0" expanded="false" />
-            <element signature="e#3120#3269#0" expanded="false" />
-            <element signature="e#3309#3385#0" expanded="false" />
-            <element signature="e#3422#3543#0" expanded="false" />
-            <element signature="e#3583#3641#0" expanded="false" />
-            <element signature="e#3707#3948#0" expanded="false" />
-            <element signature="e#4000#4837#0" expanded="false" />
-            <element signature="e#4894#5251#0" expanded="false" />
-            <element signature="e#5301#5810#0" expanded="false" />
-            <element signature="e#5860#6006#0" expanded="false" />
-            <element signature="e#6056#6528#0" expanded="false" />
-            <element signature="e#6573#7586#0" expanded="false" />
-            <element signature="e#7644#8307#0" expanded="false" />
-            <element signature="e#8363#9792#0" expanded="false" />
-            <element signature="e#9831#10047#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -590,9 +822,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#318#336#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -701,20 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LUANEAT.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5664895">
-          <caret line="1128" column="3" selection-start-line="1128" selection-start-column="3" selection-end-line="1128" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/multiprocessing/pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3316583">
-          <caret line="557" column="0" selection-start-line="557" selection-start-column="0" selection-end-line="557" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/signals.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17085427">
@@ -792,88 +1008,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
+    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-762174762/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33245382">
+          <caret line="2025" column="8" selection-start-line="2025" selection-start-column="8" selection-end-line="2025" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/data/raw_price_data/AUDUSD240.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="206" column="21" selection-start-line="206" selection-start-column="21" selection-end-line="206" selection-end-column="21" />
+          <caret line="27872" column="45" selection-start-line="27872" selection-start-column="45" selection-end-line="27872" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/gd_playground.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="48" selection-start-line="176" selection-start-column="48" selection-end-line="176" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LUANEAT.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240.gt.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="21" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/phenotype.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8544521">
+          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/mpl_play.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/multiprocessing/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33245382">
+          <caret line="249" column="0" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/simulate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="258" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
+          <folding>
+            <element signature="e#208#1790#0" expanded="false" />
+            <element signature="e#1842#2083#0" expanded="false" />
+            <element signature="e#2151#3362#0" expanded="false" />
+            <element signature="e#4066#4194#0" expanded="false" />
+            <element signature="e#4256#4353#0" expanded="false" />
+            <element signature="e#4403#4812#0" expanded="false" />
+            <element signature="e#4850#5027#0" expanded="false" />
+            <element signature="e#5087#5651#0" expanded="false" />
+            <element signature="e#5689#5862#0" expanded="false" />
+            <element signature="e#5902#6085#0" expanded="false" />
+            <element signature="e#6136#7016#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/gui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="434" column="55" selection-start-line="434" selection-start-column="55" selection-end-line="434" selection-end-column="55" />
+          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
           <folding>
-            <element signature="e#0#25#0" expanded="false" />
             <element signature="e#204#253#0" expanded="false" />
             <element signature="e#286#524#0" expanded="false" />
             <element signature="e#564#980#0" expanded="false" />
             <element signature="e#1020#1318#0" expanded="false" />
             <element signature="e#1355#1505#0" expanded="false" />
             <element signature="e#1546#1760#0" expanded="false" />
-            <element signature="e#1800#4272#0" expanded="false" />
-            <element signature="e#4314#4785#0" expanded="false" />
-            <element signature="e#4833#5012#0" expanded="false" />
-            <element signature="e#5052#5158#0" expanded="false" />
-            <element signature="e#5238#5373#0" expanded="false" />
-            <element signature="e#5451#5549#0" expanded="false" />
-            <element signature="e#5609#5731#0" expanded="false" />
-            <element signature="e#5803#5910#0" expanded="false" />
-            <element signature="e#5947#6206#0" expanded="false" />
-            <element signature="e#6257#6432#0" expanded="false" />
-            <element signature="e#6485#6632#0" expanded="false" />
-            <element signature="e#6678#7906#0" expanded="false" />
-            <element signature="e#6721#6822#0" expanded="false" />
-            <element signature="e#6868#6927#0" expanded="false" />
-            <element signature="e#6963#7364#0" expanded="false" />
-            <element signature="e#7400#7635#0" expanded="false" />
-            <element signature="e#7671#7906#0" expanded="false" />
-            <element signature="e#7946#10881#0" expanded="false" />
-            <element signature="e#7989#8752#0" expanded="false" />
-            <element signature="e#8791#8837#0" expanded="false" />
-            <element signature="e#8874#9073#0" expanded="false" />
-            <element signature="e#9110#9163#0" expanded="false" />
-            <element signature="e#9205#9397#0" expanded="false" />
-            <element signature="e#9434#9962#0" expanded="false" />
-            <element signature="e#10004#10881#0" expanded="false" />
-            <element signature="e#10919#12283#0" expanded="false" />
-            <element signature="e#10995#11540#0" expanded="false" />
-            <element signature="e#11584#11653#0" expanded="false" />
-            <element signature="e#11689#11722#0" expanded="false" />
-            <element signature="e#11758#12027#0" expanded="false" />
-            <element signature="e#12071#12150#0" expanded="false" />
-            <element signature="e#12191#12283#0" expanded="false" />
-            <element signature="e#12319#13049#0" expanded="false" />
-            <element signature="e#12361#12726#0" expanded="false" />
-            <element signature="e#12770#12864#0" expanded="false" />
-            <element signature="e#12900#12948#0" expanded="false" />
-            <element signature="e#12991#13049#0" expanded="false" />
-            <element signature="e#13144#13778#0" expanded="false" />
-            <element signature="e#13822#14227#0" expanded="false" />
-            <element signature="e#14263#14475#0" expanded="false" />
-            <element signature="e#14518#14851#0" expanded="false" />
-            <element signature="e#15455#15592#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm50/system/python_stubs/-762174762/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33245382">
-          <caret line="2025" column="8" selection-start-line="2025" selection-start-column="8" selection-end-line="2025" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="e#555#1329#0" expanded="false" />
-            <element signature="e#1369#1494#0" expanded="false" />
-            <element signature="e#1534#1782#0" expanded="false" />
-            <element signature="e#1828#2200#0" expanded="false" />
+            <element signature="e#4268#4739#0" expanded="false" />
+            <element signature="e#4787#4966#0" expanded="false" />
+            <element signature="e#5006#5112#0" expanded="false" />
+            <element signature="e#5192#5327#0" expanded="false" />
+            <element signature="e#5405#5503#0" expanded="false" />
+            <element signature="e#5563#5685#0" expanded="false" />
+            <element signature="e#5757#5864#0" expanded="false" />
+            <element signature="e#5901#6160#0" expanded="false" />
+            <element signature="e#6211#6386#0" expanded="false" />
+            <element signature="e#6439#6586#0" expanded="false" />
+            <element signature="e#6632#7860#0" expanded="false" />
+            <element signature="e#6675#6776#0" expanded="false" />
+            <element signature="e#6822#6881#0" expanded="false" />
+            <element signature="e#6917#7318#0" expanded="false" />
+            <element signature="e#7354#7589#0" expanded="false" />
+            <element signature="e#7625#7860#0" expanded="false" />
+            <element signature="e#7900#10835#0" expanded="false" />
+            <element signature="e#7943#8706#0" expanded="false" />
+            <element signature="e#8745#8791#0" expanded="false" />
+            <element signature="e#8828#9027#0" expanded="false" />
+            <element signature="e#9064#9117#0" expanded="false" />
+            <element signature="e#9159#9351#0" expanded="false" />
+            <element signature="e#9388#9916#0" expanded="false" />
+            <element signature="e#9958#10835#0" expanded="false" />
+            <element signature="e#10873#12237#0" expanded="false" />
+            <element signature="e#10949#11494#0" expanded="false" />
+            <element signature="e#11538#11607#0" expanded="false" />
+            <element signature="e#11643#11676#0" expanded="false" />
+            <element signature="e#11712#11981#0" expanded="false" />
+            <element signature="e#12025#12104#0" expanded="false" />
+            <element signature="e#12145#12237#0" expanded="false" />
+            <element signature="e#12273#13003#0" expanded="false" />
+            <element signature="e#12315#12680#0" expanded="false" />
+            <element signature="e#12724#12818#0" expanded="false" />
+            <element signature="e#12854#12902#0" expanded="false" />
+            <element signature="e#12945#13003#0" expanded="false" />
+            <element signature="e#13098#13732#0" expanded="false" />
+            <element signature="e#13776#14181#0" expanded="false" />
+            <element signature="e#14217#14429#0" expanded="false" />
+            <element signature="e#14472#14805#0" expanded="false" />
+            <element signature="e#14844#15390#0" expanded="false" />
+            <element signature="e#15409#15546#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -881,9 +1147,8 @@
     <entry file="file://$PROJECT_DIR$/BONEAT/genome.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="357" column="0" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
+          <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
           <folding>
-            <element signature="e#0#18#0" expanded="false" />
             <element signature="e#128#272#0" expanded="false" />
             <element signature="e#377#1584#0" expanded="false" />
             <element signature="e#1668#2860#0" expanded="false" />
@@ -893,132 +1158,98 @@
             <element signature="e#3422#3543#0" expanded="false" />
             <element signature="e#3583#3641#0" expanded="false" />
             <element signature="e#3707#3948#0" expanded="false" />
-            <element signature="e#4000#4837#0" expanded="false" />
-            <element signature="e#4894#5251#0" expanded="false" />
-            <element signature="e#5301#5810#0" expanded="false" />
-            <element signature="e#5860#6006#0" expanded="false" />
-            <element signature="e#6056#6528#0" expanded="false" />
-            <element signature="e#6573#7586#0" expanded="false" />
-            <element signature="e#7644#8307#0" expanded="false" />
-            <element signature="e#8363#9792#0" expanded="false" />
-            <element signature="e#9831#10047#0" expanded="false" />
+            <element signature="e#4000#4803#0" expanded="false" />
+            <element signature="e#4866#5292#0" expanded="false" />
+            <element signature="e#5342#5851#0" expanded="false" />
+            <element signature="e#5901#6047#0" expanded="false" />
+            <element signature="e#6097#6569#0" expanded="false" />
+            <element signature="e#6614#7627#0" expanded="false" />
+            <element signature="e#7685#8348#0" expanded="false" />
+            <element signature="e#8404#9833#0" expanded="false" />
+            <element signature="e#9872#10088#0" expanded="false" />
+            <element signature="e#10130#11175#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240sync.gt.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.7234042">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240.gt.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/simulate2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.762533">
-          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-          <folding>
-            <element signature="e#1842#2083#0" expanded="false" />
-            <element signature="e#2151#3298#0" expanded="false" />
-            <element signature="e#3338#3948#0" expanded="false" />
-            <element signature="e#4002#4130#0" expanded="false" />
-            <element signature="e#4192#4289#0" expanded="false" />
-            <element signature="e#4339#4748#0" expanded="false" />
-            <element signature="e#4786#4963#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/data/raw_price_data/AUDUSD240.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27872" column="45" selection-start-line="27872" selection-start-column="45" selection-end-line="27872" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/gd_playground.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="48" selection-start-line="176" selection-start-column="48" selection-end-line="176" selection-end-column="48" />
-          <folding>
-            <element signature="e#345#444#0" expanded="false" />
-            <element signature="e#517#621#0" expanded="false" />
-            <element signature="e#712#943#0" expanded="false" />
-            <element signature="e#990#2651#0" expanded="false" />
-            <element signature="e#2697#3105#0" expanded="false" />
-            <element signature="e#3147#3419#0" expanded="false" />
-            <element signature="e#3454#3921#0" expanded="false" />
-            <element signature="e#3956#4712#0" expanded="false" />
-            <element signature="e#4758#4853#0" expanded="false" />
-            <element signature="e#4897#4979#0" expanded="false" />
-            <element signature="e#5012#5152#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/phenotype.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
-          <folding>
-            <element signature="e#52#234#0" expanded="false" />
-            <element signature="e#105#234#0" expanded="false" />
-            <element signature="e#253#352#0" expanded="false" />
-            <element signature="e#416#541#0" expanded="false" />
-            <element signature="e#580#1428#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/simulate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding>
-            <element signature="e#1842#2083#0" expanded="false" />
-            <element signature="e#3402#4012#0" expanded="false" />
-            <element signature="e#4066#4194#0" expanded="false" />
-            <element signature="e#4256#4353#0" expanded="false" />
-            <element signature="e#4403#4812#0" expanded="false" />
-            <element signature="e#4850#5027#0" expanded="false" />
-            <element signature="e#5518#6455#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding>
-            <element signature="e#318#336#0" expanded="true" />
-          </folding>
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/ga.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35883906">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+          <folding>
+            <element signature="e#115#553#0" expanded="false" />
+            <element signature="e#599#1001#0" expanded="false" />
+            <element signature="e#1063#1296#0" expanded="false" />
+            <element signature="e#1335#1431#0" expanded="false" />
+            <element signature="e#1478#2570#0" expanded="false" />
+            <element signature="e#2609#2658#0" expanded="false" />
+            <element signature="e#2710#3824#0" expanded="false" />
+            <element signature="e#3878#3982#0" expanded="false" />
+            <element signature="e#4026#4166#0" expanded="false" />
+            <element signature="e#4223#4280#0" expanded="false" />
+            <element signature="e#4323#4376#0" expanded="false" />
+            <element signature="e#4419#4584#0" expanded="false" />
+            <element signature="e#4998#5441#0" expanded="false" />
+            <element signature="e#5477#5697#0" expanded="false" />
+            <element signature="e#5753#6337#0" expanded="false" />
+            <element signature="e#6376#6421#0" expanded="false" />
+            <element signature="e#6470#6554#0" expanded="false" />
+            <element signature="e#7561#8419#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/simulate2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44078946">
+          <caret line="264" column="8" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="8" />
+          <folding>
+            <element signature="e#208#1790#0" expanded="false" />
+            <element signature="e#1842#2083#0" expanded="false" />
+            <element signature="e#2151#3556#0" expanded="false" />
+            <element signature="e#4260#4496#0" expanded="false" />
+            <element signature="e#4558#4655#0" expanded="false" />
+            <element signature="e#4694#5022#0" expanded="false" />
+            <element signature="e#5060#5237#0" expanded="false" />
+            <element signature="e#5297#5861#0" expanded="false" />
+            <element signature="e#5899#6072#0" expanded="false" />
+            <element signature="e#6112#6295#0" expanded="false" />
+            <element signature="e#6346#7226#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
