@@ -260,9 +260,9 @@ def fastSimulateConfirm(list_of_genomes,settings):
     for perf in resultlist:
         fit = perf[p_mode]
         if fit <= 0.0:
-            fit = -0.0001
-        perf["fitness"] = fit+0.0001
-        
+            fit = 0.0
+        perf["fitness"] = fit
+
 
     confirm_genome_list = []
 
