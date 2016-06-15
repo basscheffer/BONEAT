@@ -2,106 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db566f5e-22f0-4002-99ff-966fc7348672" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BONEAT/C4S_pseudo.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/data/ga_logs/test5-6/AUDUSD240.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/data/ga_logs/test5-6/AUDUSD240xl.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LUANEAT.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/.idea/NEATCPP.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/C2DMatrix.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/C2DMatrix.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CController.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CInnovation.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CInnovation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CMapper.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CMapper.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CMineSweeper.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CMinesweeper.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CParams.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CParams.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CSpecies.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CSpecies.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CTimer.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/CTimer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/Cga.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/Cga.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/ReadMe.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/SVector2D.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/Script1.aps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/Script1.rc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/collision.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/collision.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/defines.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/executable/params.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/executable/smart sweepers.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/genes.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/genotype.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/genotype.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/icon1.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/main.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/params.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/phenotype.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/phenotype.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/resource.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/smart sweepers.dsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/smart sweepers.dsw" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/smart sweepers.ncb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/smart sweepers.opt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/smart sweepers.plg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/utils.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NEATCPP/utils.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/.idea/oldneat.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/Makefile_old" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/NEATDOC.ps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/USERDOC" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/experiments.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/experiments.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/gen_27" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/genetics.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/genetics.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/gtests.scm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatmain.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatmain.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatmain_ng.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatmain_ng.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatswig.i" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatswig_wrap.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatswig_wrap.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/neatswig_wrap.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/netviz-p2m-46gen.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/networks.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/networks.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/p2mpar3bare.ne" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/p2nv.ne" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/p2test.ne" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/pole1startgenes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/pole2_markov.ne" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/pole2startgenes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/pole2startgenes1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/pole2startgenes2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/supergeneral" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/visual.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/visual.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/finaldir/xorstartgenes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldneat/neattar.tar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" afterPath="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/ga.py" afterPath="$PROJECT_DIR$/BONEAT/ga.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/playground.py" afterPath="$PROJECT_DIR$/BONEAT/playground.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/pool.py" afterPath="$PROJECT_DIR$/BONEAT/pool.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/species.py" afterPath="$PROJECT_DIR$/BONEAT/species.py" />
     </list>
     <ignored path="NEAT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -122,21 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ga.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ga.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BONEAT/ga.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23247863">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="C4S_pseudo.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BONEAT/C4S_pseudo.txt">
+      <file leaf-file-name="AUDUSD240_td.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.29694322">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -146,10 +51,20 @@
         <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="41" />
               <folding>
-                <element signature="e#961#974#0" expanded="true" />
+                <element signature="e#962#1003#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gd_playground.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/gd_playground.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="185" column="11" selection-start-line="185" selection-start-column="11" selection-end-line="185" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,9 +73,31 @@
         <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#1063#1837#0" expanded="false" />
+                <element signature="e#1877#2002#0" expanded="false" />
+                <element signature="e#2042#2297#0" expanded="false" />
+                <element signature="e#2343#2715#0" expanded="false" />
+                <element signature="e#2749#3013#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="species.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1929824">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#157#595#0" expanded="false" />
+                <element signature="e#1105#1338#0" expanded="false" />
+                <element signature="e#1377#1473#0" expanded="false" />
+                <element signature="e#2651#2700#0" expanded="false" />
+                <element signature="e#7573#8431#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -187,7 +124,6 @@
         <option value="$PROJECT_DIR$/BONEAT/signals.py" />
         <option value="$PROJECT_DIR$/BONEAT/mql_files/AUDUSD_240.gt.txt" />
         <option value="$PROJECT_DIR$/BONEAT/data/norm_fs/AUDUSD240_NormConst.txt" />
-        <option value="$PROJECT_DIR$/BONEAT/ga.py" />
         <option value="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240pt1.csv" />
         <option value="$PROJECT_DIR$/BONEAT/testGT.txt" />
         <option value="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240xl.csv" />
@@ -199,13 +135,14 @@
         <option value="$PROJECT_DIR$/BONEAT/gui.py" />
         <option value="$PROJECT_DIR$/BONEAT/simulate.py" />
         <option value="$PROJECT_DIR$/BONEAT/genome.py" />
-        <option value="$PROJECT_DIR$/BONEAT/species.py" />
         <option value="$PROJECT_DIR$/BONEAT/simulate2.py" />
-        <option value="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" />
-        <option value="$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv" />
-        <option value="$PROJECT_DIR$/BONEAT/pool.py" />
-        <option value="$PROJECT_DIR$/BONEAT/playground.py" />
         <option value="$PROJECT_DIR$/BONEAT/C4S_pseudo.txt" />
+        <option value="$PROJECT_DIR$/BONEAT/playground.py" />
+        <option value="$PROJECT_DIR$/BONEAT/species.py" />
+        <option value="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" />
+        <option value="$PROJECT_DIR$/BONEAT/ga.py" />
+        <option value="$PROJECT_DIR$/BONEAT/pool.py" />
+        <option value="$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv" />
       </list>
     </option>
   </component>
@@ -286,6 +223,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BONEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BONEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="timerfile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BONEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BONEAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ga_logs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -302,7 +315,7 @@
       <recent name="C:\Users\Bas Scheffer\Documents\NEAT\NEAT\BONEAT\data\config_files" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.playground">
+  <component name="RunManager" selected="Python.ga">
     <configuration default="false" name="playground" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,23 +329,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NEAT" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/playground.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="simulate" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="NEAT" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/simulate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -384,6 +380,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="NEAT" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/mpl_play.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="gd_playground" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/BONEAT" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="NEAT" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BONEAT/gd_playground.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -512,18 +525,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.playground" />
-      <item index="1" class="java.lang.String" itemvalue="Python.simulate" />
-      <item index="2" class="java.lang.String" itemvalue="Python.gui" />
-      <item index="3" class="java.lang.String" itemvalue="Python.ga" />
-      <item index="4" class="java.lang.String" itemvalue="Python.mpl_play" />
+      <item index="1" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ga" />
+      <item index="3" class="java.lang.String" itemvalue="Python.mpl_play" />
+      <item index="4" class="java.lang.String" itemvalue="Python.gd_playground" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.playground" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ga" />
-        <item index="2" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="3" class="java.lang.String" itemvalue="Python.mpl_play" />
-        <item index="4" class="java.lang.String" itemvalue="Python.simulate" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ga" />
+        <item index="1" class="java.lang.String" itemvalue="Python.playground" />
+        <item index="2" class="java.lang.String" itemvalue="Python.gd_playground" />
+        <item index="3" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="4" class="java.lang.String" itemvalue="Python.mpl_play" />
       </list>
     </recent_temporary>
   </component>
@@ -551,25 +564,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2061012" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13392857" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20588236" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20588236" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33006537" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -645,7 +658,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#961#974#0" expanded="true" />
+            <element signature="e#962#1003#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -783,13 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/gd_playground.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="48" selection-start-line="176" selection-start-column="48" selection-end-line="176" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/data/genotypes/AUDUSD240.gt.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -882,17 +888,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/genome.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="146" column="52" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
+          <folding>
+            <element signature="e#128#272#0" expanded="false" />
+            <element signature="e#377#1584#0" expanded="false" />
+            <element signature="e#1668#2860#0" expanded="false" />
+            <element signature="e#2911#3076#0" expanded="false" />
+            <element signature="e#3120#3269#0" expanded="false" />
+            <element signature="e#3309#3385#0" expanded="false" />
+            <element signature="e#3422#3543#0" expanded="false" />
+            <element signature="e#3583#3641#0" expanded="false" />
+            <element signature="e#3707#3948#0" expanded="false" />
+            <element signature="e#4866#5292#0" expanded="false" />
+            <element signature="e#5342#5851#0" expanded="false" />
+            <element signature="e#5901#6047#0" expanded="false" />
+            <element signature="e#6097#6569#0" expanded="false" />
+            <element signature="e#6614#7627#0" expanded="false" />
+            <element signature="e#7685#8348#0" expanded="false" />
+            <element signature="e#8404#9833#0" expanded="false" />
+            <element signature="e#9872#10088#0" expanded="false" />
+            <element signature="e#10130#11175#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -910,23 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-          <folding>
-            <element signature="e#961#974#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/C4S_pseudo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -935,19 +937,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1929824">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#157#595#0" expanded="false" />
+            <element signature="e#1105#1338#0" expanded="false" />
+            <element signature="e#1377#1473#0" expanded="false" />
+            <element signature="e#2651#2700#0" expanded="false" />
+            <element signature="e#7573#8431#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/gd_playground.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="185" column="11" selection-start-line="185" selection-start-column="11" selection-end-line="185" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7052402">
+          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="e#962#1003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="2580" column="3" selection-start-line="2580" selection-start-column="0" selection-end-line="2580" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#1063#1837#0" expanded="false" />
+            <element signature="e#1877#2002#0" expanded="false" />
+            <element signature="e#2042#2297#0" expanded="false" />
+            <element signature="e#2343#2715#0" expanded="false" />
+            <element signature="e#2749#3013#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/ga.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23247863">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29694322">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>

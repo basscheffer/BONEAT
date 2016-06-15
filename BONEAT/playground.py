@@ -34,11 +34,11 @@
 # NN = phenotype.neuralNetwork(G)
 # SIM = simulate.Simulator()
 # print SIM.runSimulation(data,NN,settings)
-import pickle
 
-from pool import *
+from timeit import default_timer as timer
+import time
 
-if __name__=='__main__':
+start = timer()
 
-    p = pickle.load(open("testpickle.p","r"))
-    p.evolvePopulation()
+end = timer()
+print(end - start)

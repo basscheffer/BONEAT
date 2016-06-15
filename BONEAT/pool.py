@@ -6,6 +6,7 @@ import simulate2 as sim
 import time
 import ConfigParser
 import csv
+from timeit import default_timer as timer
 
 class Pool:
 
@@ -16,8 +17,7 @@ class Pool:
         self.population = int(self.GS["population"])
         self.species = SpeciesList(self.GS)
         self.innovations = innovList()
-        self.newPopulation()
-        self.generation = 1
+        self.generation = 0
         self.processors = int(self.GS["cores"])
 
         self.tottime = 0.0
@@ -86,25 +86,33 @@ class Pool:
 
     def evolvePopulation(self):
 
-        t0 = time.clock()
-        #remove weakest individuals from species and stale speces
-        self.species.removeWeakPopulation()
-        t1 = time.clock()
-        self.culltime = (t1-t0)
+        t0 = timer()
+        if self.generation == 0:
+            #start a new population
+            self.newPopulation()
+            t2 = timer()
+            self.newgentime = (t2-t0)
+            self.breedtime = (t2-t0)
+        else:
+            #remove weakest individuals from species and stale speces
+            self.species.removeWeakPopulation()
+            t1 = timer()
+            self.culltime = (t1-t0)
 
-        #breed children and fill new population
-        self.species.breedChildren(self.innovations)
-        t2 = time.clock()
-        self.newgentime = (t2-t1)
-        self.breedtime = self.species.breedtime
-        self.mutatetime = self.species.mutatetime
+            #breed children and fill new population
+            self.species.breedChildren(self.innovations)
+
+            t2 = timer()
+            self.newgentime = (t2-t1)
+            self.breedtime = self.species.breedtime
+            self.mutatetime = self.species.mutatetime
 
         # this is the new generation
         self.generation+=1
 
         # test the new population for fitness
         self.testPopulation()
-        t3 = time.clock()
+        t3 = timer()
         self.testtime = (t3-t2)
 
         self.tottime = (t3-t0)
