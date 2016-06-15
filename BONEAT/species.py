@@ -178,10 +178,9 @@ class species:
         self.calculateAverageFitness()
         s_avg_fit = self.avg_fitness
         self.l_genomes.sort(key=lambda g: g.fitness, reverse=True)
-        s_topf_gen = self.l_genomes[0].makeGenotypeString()
         s_topf_perf = self.l_genomes[0].performance
 
-        sdata = [s_num,s_pop,s_topfit,s_avg_fit,s_topf_gen,s_topf_perf]
+        sdata = [s_num,s_pop,s_topfit,s_avg_fit,s_topf_perf]
         return sdata
 
     def removeWeak(self):

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db566f5e-22f0-4002-99ff-966fc7348672" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv" afterPath="$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv" afterPath="$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/ga.py" afterPath="$PROJECT_DIR$/BONEAT/ga.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/playground.py" afterPath="$PROJECT_DIR$/BONEAT/playground.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BONEAT/pool.py" afterPath="$PROJECT_DIR$/BONEAT/pool.py" />
@@ -31,30 +32,30 @@
         <entry file="file://$PROJECT_DIR$/BONEAT/ga.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AUDUSD240_td.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AUDUSD240_td.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29694322">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="playground.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="playground.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="41" />
-              <folding>
-                <element signature="e#962#1003#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.037117902">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,14 +74,16 @@
         <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <element signature="e#1063#1837#0" expanded="false" />
-                <element signature="e#1877#2002#0" expanded="false" />
-                <element signature="e#2042#2297#0" expanded="false" />
-                <element signature="e#2343#2715#0" expanded="false" />
-                <element signature="e#2749#3013#0" expanded="false" />
+                <element signature="e#262#1313#0" expanded="false" />
+                <element signature="e#1370#2144#0" expanded="false" />
+                <element signature="e#2184#2309#0" expanded="false" />
+                <element signature="e#2349#2604#0" expanded="false" />
+                <element signature="e#2650#3022#0" expanded="false" />
+                <element signature="e#3056#3320#0" expanded="false" />
+                <element signature="e#3363#4302#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,15 +92,23 @@
       <file leaf-file-name="species.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1929824">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#157#595#0" expanded="false" />
+                <element signature="e#641#1043#0" expanded="false" />
                 <element signature="e#1105#1338#0" expanded="false" />
                 <element signature="e#1377#1473#0" expanded="false" />
+                <element signature="e#1520#2612#0" expanded="false" />
                 <element signature="e#2651#2700#0" expanded="false" />
-                <element signature="e#7573#8431#0" expanded="false" />
+                <element signature="e#2752#3851#0" expanded="false" />
+                <element signature="e#3905#4009#0" expanded="false" />
+                <element signature="e#4053#4193#0" expanded="false" />
+                <element signature="e#4250#4307#0" expanded="false" />
+                <element signature="e#4350#4403#0" expanded="false" />
+                <element signature="e#4446#4611#0" expanded="false" />
+                <element signature="e#7502#8360#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -137,12 +148,12 @@
         <option value="$PROJECT_DIR$/BONEAT/genome.py" />
         <option value="$PROJECT_DIR$/BONEAT/simulate2.py" />
         <option value="$PROJECT_DIR$/BONEAT/C4S_pseudo.txt" />
-        <option value="$PROJECT_DIR$/BONEAT/playground.py" />
-        <option value="$PROJECT_DIR$/BONEAT/species.py" />
         <option value="$PROJECT_DIR$/BONEAT/data/config_files/AUDUSD240.cfg" />
-        <option value="$PROJECT_DIR$/BONEAT/ga.py" />
-        <option value="$PROJECT_DIR$/BONEAT/pool.py" />
         <option value="$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv" />
+        <option value="$PROJECT_DIR$/BONEAT/ga.py" />
+        <option value="$PROJECT_DIR$/BONEAT/species.py" />
+        <option value="$PROJECT_DIR$/BONEAT/pool.py" />
+        <option value="$PROJECT_DIR$/BONEAT/playground.py" />
       </list>
     </option>
   </component>
@@ -237,68 +248,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BONEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timerfile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BONEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BONEAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ga_logs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -315,7 +264,7 @@
       <recent name="C:\Users\Bas Scheffer\Documents\NEAT\NEAT\BONEAT\data\config_files" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ga">
+  <component name="RunManager" selected="Python.playground">
     <configuration default="false" name="playground" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -532,8 +481,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ga" />
-        <item index="1" class="java.lang.String" itemvalue="Python.playground" />
+        <item index="0" class="java.lang.String" itemvalue="Python.playground" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ga" />
         <item index="2" class="java.lang.String" itemvalue="Python.gd_playground" />
         <item index="3" class="java.lang.String" itemvalue="Python.gui" />
         <item index="4" class="java.lang.String" itemvalue="Python.mpl_play" />
@@ -571,7 +520,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20588236" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20588236" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -657,9 +606,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#962#1003#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -937,21 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1929824">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#157#595#0" expanded="false" />
-            <element signature="e#1105#1338#0" expanded="false" />
-            <element signature="e#1377#1473#0" expanded="false" />
-            <element signature="e#2651#2700#0" expanded="false" />
-            <element signature="e#7573#8431#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/gd_playground.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -968,51 +900,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
+    <entry file="file://$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="41" />
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/species.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
           <folding>
-            <element signature="e#962#1003#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#157#595#0" expanded="false" />
+            <element signature="e#641#1043#0" expanded="false" />
+            <element signature="e#1105#1338#0" expanded="false" />
+            <element signature="e#1377#1473#0" expanded="false" />
+            <element signature="e#1520#2612#0" expanded="false" />
+            <element signature="e#2651#2700#0" expanded="false" />
+            <element signature="e#2752#3851#0" expanded="false" />
+            <element signature="e#3905#4009#0" expanded="false" />
+            <element signature="e#4053#4193#0" expanded="false" />
+            <element signature="e#4250#4307#0" expanded="false" />
+            <element signature="e#4350#4403#0" expanded="false" />
+            <element signature="e#4446#4611#0" expanded="false" />
+            <element signature="e#7502#8360#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/data/ga_logs/AUDUSD240.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="2580" column="3" selection-start-line="2580" selection-start-column="0" selection-end-line="2580" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.22270742">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#1063#1837#0" expanded="false" />
-            <element signature="e#1877#2002#0" expanded="false" />
-            <element signature="e#2042#2297#0" expanded="false" />
-            <element signature="e#2343#2715#0" expanded="false" />
-            <element signature="e#2749#3013#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BONEAT/ga.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BONEAT/data/timerfile/AUDUSD240_td.csv">
+    <entry file="file://$PROJECT_DIR$/BONEAT/pool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29694322">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#262#1313#0" expanded="false" />
+            <element signature="e#1370#2144#0" expanded="false" />
+            <element signature="e#2184#2309#0" expanded="false" />
+            <element signature="e#2349#2604#0" expanded="false" />
+            <element signature="e#2650#3022#0" expanded="false" />
+            <element signature="e#3056#3320#0" expanded="false" />
+            <element signature="e#3363#4302#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BONEAT/playground.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.037117902">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
           <folding />
         </state>
       </provider>

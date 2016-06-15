@@ -34,11 +34,3 @@
 # NN = phenotype.neuralNetwork(G)
 # SIM = simulate.Simulator()
 # print SIM.runSimulation(data,NN,settings)
-
-from timeit import default_timer as timer
-import time
-
-start = timer()
-
-end = timer()
-print(end - start)

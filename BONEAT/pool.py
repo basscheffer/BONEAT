@@ -32,6 +32,11 @@ class Pool:
             writer = csv.writer(tdf, delimiter=',',quotechar='"')
             writer.writerow(("generation","total","test","remove weak","breed","cross/copy","mutate"))
 
+        csvpath="data/ga_logs/{}{}.csv".format(self.GS["pair"],self.GS["timeframe"])
+        with open(csvpath,"w") as csvf:
+            writer = csv.writer(csvf, delimiter=',',quotechar='"')
+            writer.writerow(("generation","species","population","max fitness","avg fitness","best performance"))
+
     def getSettingsFromCfg(self,cfg_filepath):
         config = ConfigParser.RawConfigParser()
         config.read(cfg_filepath)
