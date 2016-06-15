@@ -79,7 +79,7 @@ class Pool:
                 writer.writerow(line)
 
     def logTimer(self):
-        data = [self.tottime,self.testtime,self.culltime,self.newgentime,self.breedtime,self.mutatetime]
+        data = [self.generation,self.tottime,self.testtime,self.culltime,self.newgentime,self.breedtime,self.mutatetime]
         with open(self.timerdatafile,"a") as csvf:
             writer = csv.writer(csvf, delimiter=',',quotechar='"')
             writer.writerow(data)
@@ -105,8 +105,10 @@ class Pool:
         # test the new population for fitness
         self.testPopulation()
         t3 = time.clock()
-        self.culltime = (t3-t2)
+        self.testtime = (t3-t2)
 
         self.tottime = (t3-t0)
+
+        self.logTimer()
 
 

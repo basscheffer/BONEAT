@@ -1,0 +1,20 @@
+
+RESOURCES
+    AMI
+    EBS
+    S3
+    DB
+
+When the C4 spot instance boots do the following
+
+(attach the ebs with the script and required resources)
+run the script from the ebs
+
+script:
+    get the first job from database
+    get the config file that belongs to this job from the S3
+    (make a local copy of the required data)
+    recover the pool from the last run from the S3
+    continue the normal run
+    write logs to DB
+
