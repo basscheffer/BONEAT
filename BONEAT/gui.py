@@ -67,7 +67,7 @@ class mainWindow(QMainWindow):
 
         self.simSettGb = simulationSettings("simulation","Simulation settings")
         self.simSettGb.addSlider("spread","Spread",5.0,0.0,1.5,0.1)
-        self.simSettGb.addDropDown("perf_mode","Performance function",["prof/dd"])
+        self.simSettGb.addDropDown("perf_mode","Performance function",["prof/bar"])
         self.simSettGb.addSlider("cores","CPU Cores",12,1,4,1)
         self.simSettGb.addSlider("population","Population",2000,30,300,10)
         self.simSettGb.addButtons()

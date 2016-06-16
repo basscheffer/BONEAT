@@ -117,7 +117,7 @@ class SpeciesList:
         for i in range(remainder):
             bt0 = timer()
             if random.random() <= crossoverchance and len(all_Gs)>1:
-                child= genome.crossover(random.sample(all_Gs, 2), innovations, self.settings)
+                child= genome.crossover(random.sample(all_Gs, 2), self.settings)
             else:
                 child = genome.copyGenome(random.choice(all_Gs), self.settings)
             bt1 = timer()
@@ -233,7 +233,7 @@ class species:
         for i in range(self.breed):
             bt0  = timer()
             if random.random() <= crossoverchance and len(self.l_genomes)>1:
-                child= genome.crossover(random.sample(self.l_genomes, 2), innovations, self.settings)
+                child= genome.crossover(random.sample(self.l_genomes, 2), self.settings)
             else:
                 child = genome.copyGenome(random.choice(self.l_genomes), self.settings)
             bt1  = timer()
