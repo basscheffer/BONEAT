@@ -290,6 +290,7 @@ def fastSimulateConfirm(list_of_genomes,settings):
         if change < 0.0:
             change = 0.0
         genome.performance["fitness"] = genome.performance["fitness"]*change
+        genome.fitness = genome.performance["fitness"]
 
     best_performer = max(list_of_genomes,key=lambda g: g.fitness)
     print "Best performer:"
