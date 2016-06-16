@@ -91,26 +91,35 @@ class Simulator:
             posprof = self.pos_prof/settings["profit_norm"]
             inputlist = [self.pos_open,self.pos_dir,posprof]
             inputlist.extend(tf[2:8])
-            # print data[i+1][0].date().isoformat()," ",data[i+1][3]*24," ",inputlist
             outputlist = NN.update(inputlist)
-            #print i
-            # print data[i+1][0].date().isoformat()," ",data[i+1][3]*24," ",outputlist
 
-            if outputlist[0] > 0.5:
+            if i <= 30:
+                continue
+
+            if outputlist[0] > 0.0:
                 openbuy = True
-            if outputlist[1] > 0.5:
+            if outputlist[1] > 0.0:
                 opensell = True
-            if outputlist[2] > 0.5:
+            if outputlist[2] > 0.0:
                 closepos = True
 
-            if openbuy==opensell:
-                if closepos:
-                    self.closePosition(tf[0],tf[3])
-            else:
+            outsum = sum((openbuy,opensell,closepos))
+            if outsum == 1:
                 if openbuy:
                     self.openPosition(1.0,openprice)
-                else:
+                elif opensell:
                     self.openPosition(-1.0,openprice)
+                elif closepos:
+                    self.closePosition()
+            elif outsum == 2:
+                if openbuy and closepos:
+                    self.openPosition(1.0,openprice)
+                elif opensell and closepos:
+                    self.openPosition(-1.0,openprice)
+                else:
+                    pass
+            else:
+                pass
 
         return self.getPerformance()
 
@@ -132,20 +141,23 @@ class Simulator:
         return perf
 
     def openPosition(self,direction,price):
-        if self.pos_open == 0.0:
-            self.pos_open = 1.0
-            self.pos_dir = direction
-            self.pos_price = price
+        if self.pos_open == 1.0:
+            if self.pos_dir == direction:
+                return
+            else:
+                self.closePosition()
+        self.pos_open = 1.0
+        self.pos_dir = direction
+        self.pos_price = price
 
     def updatePosProfit(self,currentPrice,spread):
 
         profit = (currentPrice-self.pos_price)*self.pos_dir
         self.pos_prof = profit-(spread/10000)
 
-    def closePosition(self,date, time):
+    def closePosition(self):
         if self.pos_open > 0.0:
             self.curr_bal += self.pos_prof
-            #print date.date().isoformat()," ",time*24," profit: ",self.pos_prof
             self.trade_count+=1
             if self.pos_prof > 0.0:
                 self.win_count+=1
@@ -248,8 +260,9 @@ def fastSimulateConfirm(list_of_genomes,settings):
     for perf in resultlist:
         fit = perf[p_mode]
         if fit <= 0.0:
-            fit = -0.0001
-        perf["fitness"] = fit+0.0001
+            fit = 0.0
+        perf["fitness"] = fit
+
 
     confirm_genome_list = []
 
@@ -282,23 +295,6 @@ def fastSimulateConfirm(list_of_genomes,settings):
     print "Best performer:"
     for key in best_performer.performance:
         print key," : ",best_performer.performance[key]
-
-
-
-# def slowSimulate(list_of_genomes,data_file_path):
-#     #### WATCH OUT NOT UP TO DATE
-#
-#     # make a NN from each genome and append it to a processing list
-#     for genome in list_of_genomes:
-#         result = simuRoutine([genome,data_file_path])
-#         if genome.fitness > 0.0 and genome.fitness != result["fitness"]:
-#             print "\n############ WARNING ############\n"
-#         genome.fitness = result['fitness']
-#         genome.performance = result
-#
-#     best_performer = max(list_of_genomes,key=lambda g: g.fitness)
-#     print "Maximum fitness = %.1f with performance:" %best_performer.fitness
-#     print best_performer.performance
 
 # if __name__=='__main__':
 #     makeBacktestData()

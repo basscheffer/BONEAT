@@ -215,7 +215,6 @@ class species:
 
     def breedChildren(self,innovations):
 
-
         self.breedtime = 0.0
         self.mutatetime = 0.0
 

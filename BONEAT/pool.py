@@ -2,7 +2,7 @@ from innovation import *
 from genome import *
 from species import *
 import phenotype as phen
-import simulate2 as sim
+import simulate as sim
 import time
 import ConfigParser
 import csv
