@@ -174,7 +174,7 @@ class W(QGraphicsView):
 
         NNV = neuralNetVisualiser(900,600)
         # NNV.drawArc()
-        GTS = open("data/genotypes/AUDUSD240sync.gt.txt").read()
+        GTS = open("testchild.txt").read()
         NNV.readGTstring(GTS)
         NNV.makeGraphicNodes()
         NNV.makeGraphicLinks()

@@ -30,9 +30,14 @@ class innovList:
         return inno_num
 
     def getInnovationByNumber(self,number):
-        for i in self.l_innovations:
-            if i.innovNumber == number:
-                return i
+        # for i in self.l_innovations:
+        #     if i.innovNumber == number:
+        #         return i
+        # else:
+        #     return False
+        inno = self.l_innovations[number]
+        if inno.innovNumber == number:
+            return inno
         else:
             return False
 
