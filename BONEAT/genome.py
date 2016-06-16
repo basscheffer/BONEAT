@@ -320,7 +320,6 @@ def crossover(genome_pair,settings):
 
     return NG
 
-
 def copyGenome(genome,settings):
     nG = Genome(settings)
     nG.l_link_genes = []

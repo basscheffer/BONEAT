@@ -1,10 +1,12 @@
 import numpy as np
 import multiprocessing as mp
 from phenotype import *
-import time
+from timeit import default_timer as timer
 import math
+import yappi
 from datetime import *
 import dateutil.parser as dp
+import cProfile
 
 def makeBacktestData(data_path='data/AUDUSD240.csv'):
 
@@ -133,7 +135,7 @@ class Simulator:
         perf['trades'] = self.trade_count
         if self.trade_count > 0:
             perf['winratio'] = float(self.win_count)/float(self.trade_count)
-        perf["prof/bar"] = (self.curr_bal/float(self.barcount))*10000
+        perf["prof/bar"] = (self.curr_bal/float(self.barcount))*1000
 
         return perf
 
@@ -194,6 +196,7 @@ def simuRoutine(process_data):
     NN = neuralNetwork(process_data[0])
     S = process_data[2]
     SIM = Simulator()
+
     return SIM.runSimulation(data,NN,S)
 
 def confirmRoutine(process_data):
@@ -293,6 +296,84 @@ def fastSimulateConfirm(list_of_genomes,settings):
     print "Best performer:"
     for key in best_performer.performance:
         print key," : ",best_performer.performance[key]
+
+def fastSimulateConfirm2(list_of_genomes,settings):
+
+    # start = timer()
+
+    processes = int(settings["cores"])
+    data_file_path = settings["test_data_path"]
+    processing_list = []
+
+    # make a NN from each genome and append it to a processing list
+    for genome in list_of_genomes:
+        processing_list.append([genome,data_file_path,settings])
+
+    pool = mp.Pool(processes)
+
+    # p1 = timer()
+    # print "point 1 ",p1-start
+
+
+    resultlist = pool.map(simuRoutine,processing_list)
+
+    pool.close()
+    pool.join()
+
+    # p2 = timer()
+    # print "point 2 ",p2-p1
+
+    p_mode = settings["perf_mode"]
+
+    for perf in resultlist:
+        fit = perf[p_mode]
+        if fit <= 0.0:
+            fit = 0.0
+        perf["fitness"] = fit
+
+
+    confirm_genome_list = []
+
+    for i,genome in enumerate(list_of_genomes):
+        genome.fitness = resultlist[i]['fitness']
+        genome.performance = resultlist[i]
+        if genome.fitness > 0.0:
+            confirm_genome_list.append(genome)
+
+    processing_conf_list = []
+    for genome in confirm_genome_list:
+        processing_conf_list.append([genome,data_file_path,settings])
+
+    pool = mp.Pool(processes)
+
+    # p3 = timer()
+    # print "point 3 ",p3-p2
+
+    confirmlist = pool.map(confirmRoutine,processing_conf_list)
+    pool.close()
+    pool.join()
+
+    # p4 = timer()
+    # print "point 4 ",p4-p3
+
+    for i,genome in enumerate(confirm_genome_list):
+        cf = confirmlist[i][p_mode]
+        change = cf/genome.performance[p_mode]
+        genome.performance["confirmfactor"] = change
+        if change > 1.0:
+            change = 1.0
+        if change < 0.0:
+            change = 0.0
+        genome.performance["fitness"] = genome.performance["fitness"]*change
+        genome.fitness = genome.performance["fitness"]
+
+    best_performer = max(list_of_genomes,key=lambda g: g.fitness)
+    print "Best performer:"
+    for key in best_performer.performance:
+        print key," : ",best_performer.performance[key]
+
+    # p5 = timer()
+    # print "point 5 ",p5-p4
 
 # if __name__=='__main__':
 #     makeBacktestData()
