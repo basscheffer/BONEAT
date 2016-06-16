@@ -1,12 +1,12 @@
-from innovation import *
-from genome import *
-from species import *
-import phenotype as phen
-import simulate as sim
-import time
 import ConfigParser
 import csv
 from timeit import default_timer as timer
+
+import simulate as sim
+from genome import *
+from innovation import *
+from species import *
+
 
 class Pool:
 

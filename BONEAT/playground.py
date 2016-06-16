@@ -36,9 +36,9 @@
 # print SIM.runSimulation(data,NN,settings)
 
 import pickle
-import genome2 as genome
+import genome as genome
 import random
 
 p = pickle.load(open("longtest.p","r"))
 parents =random.sample(p.species.getAllGenomes(),2)
-child = genome.crossover(parents,p.innovations,p.GS)
+child = genome.crossover(parents,p.GS)

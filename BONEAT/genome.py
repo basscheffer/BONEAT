@@ -2,6 +2,8 @@ from gene import *
 from enums import *
 import random
 import innovation
+from timeit import default_timer as timer
+import copy
 
 class Genome:
 
@@ -106,13 +108,14 @@ class Genome:
     def getNodeNumbers(self):
         return list(g.innovationNumber for g in self.l_node_genes)
 
-    def createFromGeneList(self,gene_list,innovations):
-        for g  in gene_list:
-            I = innovations.getInnovationByNumber(g.innovationNumber)
-            if I.innovType == GeneType.NODE:
+    def createFromGeneList(self,gene_list):
+        for g in gene_list:
+            if hasattr(g,'nodeType'):
                 self.l_node_genes.append(g)
-            else:
+            elif hasattr(g, 'weight'):
                 self.l_link_genes.append(g)
+            else:
+                raise Exception('gene type not recognised')
 
     def mutate(self,global_innovations):
 
@@ -264,50 +267,59 @@ def newSimpleGenome(inputs,outputs,pool,settings):
 
     return nG
 
-def crossover(genome_pair,innovations,settings):
+def crossover(genome_pair,settings):
 
-    equal_fitness = False
-    if genome_pair[0].fitness == genome_pair[1].fitness:
-        genome1 = genome_pair[0]
-        genome2 = genome_pair[1]
-        equal_fitness = True
+    # start = timer()
+
+    if genome_pair[1].fitness > genome_pair[0].fitness:
+        G1 = genome_pair[1]
+        G2 = genome_pair[0]
     else:
-        genome_pair.sort(key=lambda g: g.fitness, reverse=True)
-        genome1 = genome_pair[0]
-        genome2 = genome_pair[1]
+        G1 = genome_pair[0]
+        G2 = genome_pair[1]
 
-    genlength = max([genome1.getMaxInnovNum(),genome2.getMaxInnovNum()])+1
-    l_gen1 = [None]*genlength
-    l_gen2 = [None]*genlength
+    # p1 = timer()
+    # print "point 1 ",p1-start
 
-    G1_genes = genome1.getAllGenes()
-    G2_genes = genome1.getAllGenes()
+    # p2 = timer()
+    # print "point 2 ",p2-p1
+
+    G1_genes = G1.getAllGenes()
+    G2_genes = G2.getAllGenes()
+    G2_innovs = {}
+    for gene in G2_genes:
+        G2_innovs[gene.innovationNumber] = gene
+
+    # p3 = timer()
+    # print "point 3 ",p3-p2
+
+    new_genes = []
+    for gene in G1_genes:
+        if gene.innovationNumber in G2_innovs and bool(random.getrandbits(1)):
+            new_genes.append(copy.copy(G2_innovs[gene.innovationNumber]))
+        else:
+            new_genes.append(copy.copy(gene))
 
     ####### AAARRRRRGGGHHHHHH this cost me a day,
     # learn: never say = always copy in a new object python will keep reference
-    for g in G1_genes:
-        l_gen1[g.innovationNumber] = copyGene(g) # ok half day each
-    for g in G2_genes:
-        l_gen2[g.innovationNumber] = copyGene(g) # ok half day each
 
-    new_genes = []
-    for In in range(genlength):
-        if l_gen1[In] == None and l_gen2[In] == None:
-            continue
-        elif l_gen1[In] != None and l_gen2[In] != None:
-            if bool(random.getrandbits(1)):
-                new_genes.append(l_gen1[In])
-            else:
-                new_genes.append(l_gen2[In])
-        elif l_gen1[In] != None:
-            new_genes.append(l_gen1[In])
-        elif l_gen2[In] != None and equal_fitness:
-            new_genes.append(l_gen2[In])
+    # p5 = timer()
+    # print "point 5 ",p5-p3
 
     NG = Genome(settings)
-    NG.createFromGeneList(new_genes,innovations)
+
+    # p6 = timer()
+    # print "point 6 ",p6-p5
+
+    NG.createFromGeneList(new_genes)
+
+    # p7 = timer()
+    # print "point 7 ",p7-p6
+
+    # print "total time ", timer()-start
 
     return NG
+
 
 def copyGenome(genome,settings):
     nG = Genome(settings)

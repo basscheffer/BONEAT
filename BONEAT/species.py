@@ -1,8 +1,9 @@
 import math
 import random
-import genome
-import time
 from timeit import default_timer as timer
+
+import genome
+
 
 class SpeciesList:
 
@@ -116,9 +117,9 @@ class SpeciesList:
         for i in range(remainder):
             bt0 = timer()
             if random.random() <= crossoverchance and len(all_Gs)>1:
-                child=genome.crossover(random.sample(all_Gs,2),innovations,self.settings)
+                child= genome.crossover(random.sample(all_Gs, 2), innovations, self.settings)
             else:
-                child = genome.copyGenome(random.choice(all_Gs),self.settings)
+                child = genome.copyGenome(random.choice(all_Gs), self.settings)
             bt1 = timer()
             self.breedtime += (bt1-bt0)
             child.mutate(innovations)
@@ -232,9 +233,9 @@ class species:
         for i in range(self.breed):
             bt0  = timer()
             if random.random() <= crossoverchance and len(self.l_genomes)>1:
-                child=genome.crossover(random.sample(self.l_genomes,2),innovations,self.settings)
+                child= genome.crossover(random.sample(self.l_genomes, 2), innovations, self.settings)
             else:
-                child = genome.copyGenome(random.choice(self.l_genomes),self.settings)
+                child = genome.copyGenome(random.choice(self.l_genomes), self.settings)
             bt1  = timer()
             self.breedtime +=  (bt1-bt0)
             child.mutate(innovations)

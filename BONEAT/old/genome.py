@@ -1,8 +1,7 @@
-from gene import *
-from enums import *
+from BONEAT.gene import *
+from BONEAT.enums import *
 import random
-import innovation
-from timeit import default_timer as timer
+import BONEAT.innovation
 
 class Genome:
 
@@ -267,8 +266,6 @@ def newSimpleGenome(inputs,outputs,pool,settings):
 
 def crossover(genome_pair,innovations,settings):
 
-    start = timer()
-
     equal_fitness = False
     if genome_pair[0].fitness == genome_pair[1].fitness:
         genome1 = genome_pair[0]
@@ -279,21 +276,12 @@ def crossover(genome_pair,innovations,settings):
         genome1 = genome_pair[0]
         genome2 = genome_pair[1]
 
-    p1 = timer()
-    print "point 1 ",p1-start
-
     genlength = max([genome1.getMaxInnovNum(),genome2.getMaxInnovNum()])+1
     l_gen1 = [None]*genlength
     l_gen2 = [None]*genlength
 
-    p2 = timer()
-    print "point 2 ",p2-p1
-
     G1_genes = genome1.getAllGenes()
     G2_genes = genome1.getAllGenes()
-
-    p3 = timer()
-    print "point 3 ",p3-p2
 
     ####### AAARRRRRGGGHHHHHH this cost me a day,
     # learn: never say = always copy in a new object python will keep reference
@@ -301,9 +289,6 @@ def crossover(genome_pair,innovations,settings):
         l_gen1[g.innovationNumber] = copyGene(g) # ok half day each
     for g in G2_genes:
         l_gen2[g.innovationNumber] = copyGene(g) # ok half day each
-
-    p4 = timer()
-    print "point 4 ",p4-p3
 
     new_genes = []
     for In in range(genlength):
@@ -319,20 +304,8 @@ def crossover(genome_pair,innovations,settings):
         elif l_gen2[In] != None and equal_fitness:
             new_genes.append(l_gen2[In])
 
-    p5 = timer()
-    print "point 5 ",p5-p4
-
     NG = Genome(settings)
-
-    p6 = timer()
-    print "point 6 ",p6-p5
-
     NG.createFromGeneList(new_genes,innovations)
-
-    p7 = timer()
-    print "point 7 ",p7-p6
-
-    print "total time ", timer()-start
 
     return NG
 
