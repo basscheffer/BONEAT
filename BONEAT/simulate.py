@@ -74,10 +74,13 @@ class Simulator:
         self.max_dd = 0.0
         self.trade_count = 0
         self.win_count = 0
+        self.barcount = 0
 
-    def runSimulation(self,data,neuralNetwork,settings):
+    def runSimulation(self,data,neuralNetwork,settings,dryrun = 30):
 
         NN = neuralNetwork
+
+        self.barcount = len(data)-dryrun
 
         for i,tf in enumerate(data):
             openbuy=False
@@ -93,7 +96,7 @@ class Simulator:
             inputlist.extend(tf[2:8])
             outputlist = NN.update(inputlist)
 
-            if i <= 30:
+            if i <= dryrun:
                 continue
 
             if outputlist[0] > 0.0:
@@ -125,18 +128,12 @@ class Simulator:
 
     def getPerformance(self):
         perf = {'winratio':0.0}
-        if self.max_dd > 0.0:
-            perf['prof/dd'] = self.curr_bal/self.max_dd
-            perf['p2/dd'] = (self.curr_bal*abs(self.curr_bal))/self.max_dd
-        else:
-            perf['prof/dd'] = self.curr_bal*abs(self.curr_bal)
-            perf['p2/dd'] = self.curr_bal
         perf['profit'] = self.curr_bal
         perf['drawdown'] = self.max_dd
         perf['trades'] = self.trade_count
         if self.trade_count > 0:
             perf['winratio'] = float(self.win_count)/float(self.trade_count)
-        perf["t*p2/d"] = self.trade_count*perf["p2/dd"]
+        perf["prof/bar"] = (self.curr_bal/float(self.barcount))*10000
 
         return perf
 
