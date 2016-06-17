@@ -5,6 +5,7 @@ BONEAT/data/raw_price_data/*
 BONEAT/data/timerfile/*
 BONEAT/longtest.p
 BONEAT/.idea
+.idea
 
 # Windows image file caches
 Thumbs.db
