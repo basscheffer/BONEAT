@@ -3,7 +3,6 @@ import multiprocessing as mp
 from phenotype import *
 from timeit import default_timer as timer
 import math
-import yappi
 from datetime import *
 import dateutil.parser as dp
 import cProfile

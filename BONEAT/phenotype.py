@@ -1,6 +1,5 @@
 from enums import *
 import math
-import yappi
 
 class Neuron:
 
@@ -78,11 +77,6 @@ class neuralNetwork:
         # add result to output list
             if N.Ntype == NodeType.OUTPUT:
                 self.outputs[N.io-1]=N.output
-
-        # fs = yappi.get_func_stats()
-        # fs.sort("tsub")
-        # fs.print_all( columns={0:("name",100), 1:("ncall", 5), 2:("tsub", 8), 3:("ttot", 8), 4:("tavg",8)})
-
 
         return self.outputs
 
