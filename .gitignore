@@ -1,9 +1,9 @@
 # defined by bas
-data/ga_logs/*
-data/genotypes/*
-data/raw_price_data/*
-data/timerfile/*
-longtest.p
+BONEAT/data/ga_logs/*
+BONEAT/data/genotypes/*
+BONEAT/data/raw_price_data/*
+BONEAT/data/timerfile/*
+BONEAT/longtest.p
 .idea/
 
 # Windows image file caches
