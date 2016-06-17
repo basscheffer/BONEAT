@@ -66,7 +66,7 @@ class SpeciesList:
                 continue
             # remove weak population
             else:
-                species.removeWeakN()
+                species.removeWeak()
                 surv.append(species)
 
         allAlive = False
