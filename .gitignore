@@ -1,6 +1,7 @@
 # defined by bas
 BONEAT/data/ga_logs/*
 BONEAT/data/genotypes/*
+BONEAT/data/config_files/*
 BONEAT/data/raw_price_data/*
 BONEAT/data/timerfile/*
 BONEAT/longtest.p
