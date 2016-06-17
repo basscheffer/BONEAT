@@ -6,7 +6,7 @@ import pstats
 if __name__=='__main__':
 
     p = Pool("data/config_files/AUDUSD240.cfg")
-    for i in range(40):
+    for i in range(10000):
         # pr = cProfile.Profile()
         # pr.enable()
         p.evolvePopulation()
