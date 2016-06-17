@@ -9,9 +9,6 @@
 #         if row:
 #             writer.writerow(row[:5])
 #
-#
-#
-#
 # import numpy as np
 # import genome
 # import phenotype
@@ -36,9 +33,14 @@
 # print SIM.runSimulation(data,NN,settings)
 
 import pickle
-import genome2 as genome
+import species
 import random
+import cProfile
 
 p = pickle.load(open("longtest.p","r"))
-parents =random.sample(p.species.getAllGenomes(),2)
-child = genome.crossover(parents,p.innovations,p.GS)
+G = random.choice(p.species.getAllGenomes())
+pr = cProfile.Profile()
+pr.enable()
+G.mutate(p.innovations)
+pr.print_stats("tottime")
+

@@ -1,10 +1,12 @@
 import numpy as np
 import multiprocessing as mp
 from phenotype import *
-import time
+from timeit import default_timer as timer
 import math
+import yappi
 from datetime import *
 import dateutil.parser as dp
+import cProfile
 
 def makeBacktestData(data_path='data/AUDUSD240.csv'):
 
@@ -74,10 +76,13 @@ class Simulator:
         self.max_dd = 0.0
         self.trade_count = 0
         self.win_count = 0
+        self.barcount = 0
 
-    def runSimulation(self,data,neuralNetwork,settings):
+    def runSimulation(self,data,neuralNetwork,settings,dryrun = 30):
 
         NN = neuralNetwork
+
+        self.barcount = len(data)-dryrun
 
         for i,tf in enumerate(data):
             openbuy=False
@@ -93,7 +98,7 @@ class Simulator:
             inputlist.extend(tf[2:8])
             outputlist = NN.update(inputlist)
 
-            if i <= 30:
+            if i <= dryrun:
                 continue
 
             if outputlist[0] > 0.0:
@@ -125,18 +130,12 @@ class Simulator:
 
     def getPerformance(self):
         perf = {'winratio':0.0}
-        if self.max_dd > 0.0:
-            perf['prof/dd'] = self.curr_bal/self.max_dd
-            perf['p2/dd'] = (self.curr_bal*abs(self.curr_bal))/self.max_dd
-        else:
-            perf['prof/dd'] = self.curr_bal*abs(self.curr_bal)
-            perf['p2/dd'] = self.curr_bal
         perf['profit'] = self.curr_bal
         perf['drawdown'] = self.max_dd
         perf['trades'] = self.trade_count
         if self.trade_count > 0:
             perf['winratio'] = float(self.win_count)/float(self.trade_count)
-        perf["t*p2/d"] = self.trade_count*perf["p2/dd"]
+        perf["prof/bar"] = (self.curr_bal/float(self.barcount))*1000
 
         return perf
 
@@ -197,6 +196,7 @@ def simuRoutine(process_data):
     NN = neuralNetwork(process_data[0])
     S = process_data[2]
     SIM = Simulator()
+
     return SIM.runSimulation(data,NN,S)
 
 def confirmRoutine(process_data):
@@ -290,6 +290,7 @@ def fastSimulateConfirm(list_of_genomes,settings):
         if change < 0.0:
             change = 0.0
         genome.performance["fitness"] = genome.performance["fitness"]*change
+        genome.fitness = genome.performance["fitness"]
 
     best_performer = max(list_of_genomes,key=lambda g: g.fitness)
     print "Best performer:"

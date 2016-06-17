@@ -1,12 +1,12 @@
-from innovation import *
-from genome import *
-from species import *
-import phenotype as phen
-import simulate as sim
-import time
 import ConfigParser
 import csv
 from timeit import default_timer as timer
+
+import simulate as sim
+from genome import *
+from innovation import *
+from species import *
+
 
 class Pool:
 
@@ -69,7 +69,7 @@ class Pool:
 
     def testPopulation(self):
         print "\nGeneration %i, %i species ,%i innovations"\
-              %(self.generation,len(self.species.l_species),len(self.innovations.l_innovations))
+              %(self.generation,len(self.species.l_species),self.innovations.getNumberOfInnovations())
         sim.fastSimulateConfirm(self.species.getAllGenomes(),self.GS)
         self.logGenerationResults()
 

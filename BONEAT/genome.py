@@ -1,7 +1,7 @@
 from gene import *
 from enums import *
 import random
-import innovation
+import copy
 
 class Genome:
 
@@ -94,25 +94,27 @@ class Genome:
             return False
 
     def getMaxInnovNum(self):
-        all = self.getAllGenes()
-        return max(g.innovationNumber for g in all)
+        return max(self.getAllGenesDict().keys())
 
-    def getAllGenes(self):
-        allGenes=[]
-        allGenes.extend(self.l_link_genes)
-        allGenes.extend(self.l_node_genes)
+    def getAllGenesDict(self):
+        allGenes={}
+        for lg in self.l_link_genes:
+            allGenes[lg.innovationNumber] = lg
+        for ng in self.l_node_genes:
+            allGenes[ng.innovationNumber] = ng
         return allGenes
 
     def getNodeNumbers(self):
         return list(g.innovationNumber for g in self.l_node_genes)
 
-    def createFromGeneList(self,gene_list,innovations):
-        for g  in gene_list:
-            I = innovations.getInnovationByNumber(g.innovationNumber)
-            if I.innovType == GeneType.NODE:
+    def createFromGeneList(self,gene_list):
+        for g in gene_list:
+            if hasattr(g,'nodeType'):
                 self.l_node_genes.append(g)
-            else:
+            elif hasattr(g, 'weight'):
                 self.l_link_genes.append(g)
+            else:
+                raise Exception('gene type not recognised')
 
     def mutate(self,global_innovations):
 
@@ -264,48 +266,31 @@ def newSimpleGenome(inputs,outputs,pool,settings):
 
     return nG
 
-def crossover(genome_pair,innovations,settings):
+def crossover(genome_pair,settings):
 
-    equal_fitness = False
-    if genome_pair[0].fitness == genome_pair[1].fitness:
-        genome1 = genome_pair[0]
-        genome2 = genome_pair[1]
-        equal_fitness = True
+    if genome_pair[1].fitness > genome_pair[0].fitness:
+        G1 = genome_pair[1]
+        G2 = genome_pair[0]
     else:
-        genome_pair.sort(key=lambda g: g.fitness, reverse=True)
-        genome1 = genome_pair[0]
-        genome2 = genome_pair[1]
+        G1 = genome_pair[0]
+        G2 = genome_pair[1]
 
-    genlength = max([genome1.getMaxInnovNum(),genome2.getMaxInnovNum()])+1
-    l_gen1 = [None]*genlength
-    l_gen2 = [None]*genlength
+    G1_genes = G1.getAllGenesDict()
+    G2_genes = G2.getAllGenesDict()
 
-    G1_genes = genome1.getAllGenes()
-    G2_genes = genome1.getAllGenes()
+    new_genes = []
+    for key, gene in G1_genes.iteritems():
+        if key in G2_genes and bool(random.getrandbits(1)):
+            new_genes.append(copy.copy(G2_genes[key]))
+        else:
+            new_genes.append(copy.copy(gene))
 
     ####### AAARRRRRGGGHHHHHH this cost me a day,
     # learn: never say = always copy in a new object python will keep reference
-    for g in G1_genes:
-        l_gen1[g.innovationNumber] = copyGene(g) # ok half day each
-    for g in G2_genes:
-        l_gen2[g.innovationNumber] = copyGene(g) # ok half day each
-
-    new_genes = []
-    for In in range(genlength):
-        if l_gen1[In] == None and l_gen2[In] == None:
-            continue
-        elif l_gen1[In] != None and l_gen2[In] != None:
-            if bool(random.getrandbits(1)):
-                new_genes.append(l_gen1[In])
-            else:
-                new_genes.append(l_gen2[In])
-        elif l_gen1[In] != None:
-            new_genes.append(l_gen1[In])
-        elif l_gen2[In] != None and equal_fitness:
-            new_genes.append(l_gen2[In])
 
     NG = Genome(settings)
-    NG.createFromGeneList(new_genes,innovations)
+
+    NG.createFromGeneList(new_genes)
 
     return NG
 

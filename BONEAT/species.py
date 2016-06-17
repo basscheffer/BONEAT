@@ -1,8 +1,8 @@
 import math
 import random
-import genome
-import time
 from timeit import default_timer as timer
+import genome
+
 
 class SpeciesList:
 
@@ -116,9 +116,9 @@ class SpeciesList:
         for i in range(remainder):
             bt0 = timer()
             if random.random() <= crossoverchance and len(all_Gs)>1:
-                child=genome.crossover(random.sample(all_Gs,2),innovations,self.settings)
+                child= genome.crossover(random.sample(all_Gs, 2), self.settings)
             else:
-                child = genome.copyGenome(random.choice(all_Gs),self.settings)
+                child = genome.copyGenome(random.choice(all_Gs), self.settings)
             bt1 = timer()
             self.breedtime += (bt1-bt0)
             child.mutate(innovations)
@@ -232,9 +232,9 @@ class species:
         for i in range(self.breed):
             bt0  = timer()
             if random.random() <= crossoverchance and len(self.l_genomes)>1:
-                child=genome.crossover(random.sample(self.l_genomes,2),innovations,self.settings)
+                child= genome.crossover(random.sample(self.l_genomes, 2), self.settings)
             else:
-                child = genome.copyGenome(random.choice(self.l_genomes),self.settings)
+                child = genome.copyGenome(random.choice(self.l_genomes), self.settings)
             bt1  = timer()
             self.breedtime +=  (bt1-bt0)
             child.mutate(innovations)
@@ -247,35 +247,29 @@ class species:
 
 def difference(genome1,genome2):
 
-    disjointcounter = 0.0
     weightsum = 0.0
     weightcounter = 0.0
-    max_genes = max(len(genome1.l_link_genes),len(genome2.l_link_genes))
-    max_innov = max(genome1.getMaxInnovNum(),genome2.getMaxInnovNum())
+    G1 = genome1.getAllGenesDict()
+    G2 = genome2.getAllGenesDict()
+    G1s = set(G1.keys())
+    G2s = set(G2.keys())
 
-    il1 = [None]*(max_innov+1)
-    il2 = [None]*(max_innov+1)
+    COML = list(G1s.intersection(G2s))
+    for i in COML:
+        if hasattr(G1[i],"weight"):
+            weightcounter += 1.0
+            weightsum += abs(G1[i].weight-G2[i].weight)
 
-    for g in genome1.l_link_genes:
-        il1[g.innovationNumber]=g.weight
-
-    for g in genome2.l_link_genes:
-        il2[g.innovationNumber]=g.weight
-
-    for i in range(len(il1)):
-        if il1[i] != il2[i]:
-            if il1[i] == None or il2[i] == None:
-                disjointcounter += 1.0
-            if il1[i] != None and il2[i] != None:
-                weightcounter += 1.0
-                weightsum += abs(il1[i]-il2[i])
-
-    djr = disjointcounter/max_genes
     if weightcounter > 0.0:
         aw = weightsum/weightcounter
     else:
         aw = 0.0
 
-    return djr, aw
+    disjointcounter = float(len(G1s.symmetric_difference(G2s)))
+    max_genes = max(len(G1),len(G2))
+    djr = disjointcounter/max_genes
 
+
+
+    return djr, aw
 
