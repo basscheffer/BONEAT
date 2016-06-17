@@ -66,7 +66,7 @@ class SpeciesList:
                 continue
             # remove weak population
             else:
-                species.removeWeak()
+                species.removeWeakN()
                 surv.append(species)
 
         allAlive = False
@@ -186,6 +186,20 @@ class species:
     def removeWeak(self):
         split = int(math.ceil(len(self.l_genomes)/2.0))
         self.l_genomes.sort(key=lambda g: g.fitness, reverse=True)
+        surv =self.l_genomes[:split]
+        self.l_genomes = surv
+        self.calculateAverageFitness()
+
+    def removeWeakN(self):
+        avg_fit = sum(g.fitness for g in self.l_genomes)/float(len(self.l_genomes))
+        maxsplit = int(math.ceil(len(self.l_genomes)/2.0))
+        self.l_genomes.sort(key=lambda g: g.fitness, reverse=True)
+        split = 1
+        for i,g in enumerate(self.l_genomes):
+            if g.fitness >= avg_fit and i < maxsplit:
+                split = i+1
+            else:
+                break
         surv =self.l_genomes[:split]
         self.l_genomes = surv
         self.calculateAverageFitness()
