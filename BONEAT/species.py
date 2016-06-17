@@ -248,35 +248,29 @@ class species:
 
 def difference(genome1,genome2):
 
-    disjointcounter = 0.0
     weightsum = 0.0
     weightcounter = 0.0
-    max_genes = max(len(genome1.l_link_genes),len(genome2.l_link_genes))
-    max_innov = max(genome1.getMaxInnovNum(),genome2.getMaxInnovNum())
+    G1 = genome1.getAllGenesDict()
+    G2 = genome2.getAllGenesDict()
+    G1s = set(G1.keys())
+    G2s = set(G2.keys())
 
-    il1 = [None]*(max_innov+1)
-    il2 = [None]*(max_innov+1)
+    COML = list(G1s.intersection(G2s))
+    for i in COML:
+        if hasattr(G1[i],"weight"):
+            weightcounter += 1.0
+            weightsum += abs(G1[i].weight-G2[i].weight)
 
-    for g in genome1.l_link_genes:
-        il1[g.innovationNumber]=g.weight
-
-    for g in genome2.l_link_genes:
-        il2[g.innovationNumber]=g.weight
-
-    for i in range(len(il1)):
-        if il1[i] != il2[i]:
-            if il1[i] == None or il2[i] == None:
-                disjointcounter += 1.0
-            if il1[i] != None and il2[i] != None:
-                weightcounter += 1.0
-                weightsum += abs(il1[i]-il2[i])
-
-    djr = disjointcounter/max_genes
     if weightcounter > 0.0:
         aw = weightsum/weightcounter
     else:
         aw = 0.0
 
-    return djr, aw
+    disjointcounter = float(len(G1s.symmetric_difference(G2s)))
+    max_genes = max(len(G1),len(G2))
+    djr = disjointcounter/max_genes
 
+
+
+    return djr, aw
 

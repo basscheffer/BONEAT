@@ -96,13 +96,14 @@ class Genome:
             return False
 
     def getMaxInnovNum(self):
-        all = self.getAllGenes()
-        return max(g.innovationNumber for g in all)
+        return max(self.getAllGenesDict().keys())
 
-    def getAllGenes(self):
-        allGenes=[]
-        allGenes.extend(self.l_link_genes)
-        allGenes.extend(self.l_node_genes)
+    def getAllGenesDict(self):
+        allGenes={}
+        for lg in self.l_link_genes:
+            allGenes[lg.innovationNumber] = lg
+        for ng in self.l_node_genes:
+            allGenes[ng.innovationNumber] = ng
         return allGenes
 
     def getNodeNumbers(self):
@@ -269,8 +270,6 @@ def newSimpleGenome(inputs,outputs,pool,settings):
 
 def crossover(genome_pair,settings):
 
-    # start = timer()
-
     if genome_pair[1].fitness > genome_pair[0].fitness:
         G1 = genome_pair[1]
         G2 = genome_pair[0]
@@ -278,45 +277,22 @@ def crossover(genome_pair,settings):
         G1 = genome_pair[0]
         G2 = genome_pair[1]
 
-    # p1 = timer()
-    # print "point 1 ",p1-start
-
-    # p2 = timer()
-    # print "point 2 ",p2-p1
-
-    G1_genes = G1.getAllGenes()
-    G2_genes = G2.getAllGenes()
-    G2_innovs = {}
-    for gene in G2_genes:
-        G2_innovs[gene.innovationNumber] = gene
-
-    # p3 = timer()
-    # print "point 3 ",p3-p2
+    G1_genes = G1.getAllGenesDict()
+    G2_genes = G2.getAllGenesDict()
 
     new_genes = []
-    for gene in G1_genes:
-        if gene.innovationNumber in G2_innovs and bool(random.getrandbits(1)):
-            new_genes.append(copy.copy(G2_innovs[gene.innovationNumber]))
+    for key, gene in G1_genes.iteritems():
+        if key in G2_genes and bool(random.getrandbits(1)):
+            new_genes.append(copy.copy(G2_genes[key]))
         else:
             new_genes.append(copy.copy(gene))
 
     ####### AAARRRRRGGGHHHHHH this cost me a day,
     # learn: never say = always copy in a new object python will keep reference
 
-    # p5 = timer()
-    # print "point 5 ",p5-p3
-
     NG = Genome(settings)
 
-    # p6 = timer()
-    # print "point 6 ",p6-p5
-
     NG.createFromGeneList(new_genes)
-
-    # p7 = timer()
-    # print "point 7 ",p7-p6
-
-    # print "total time ", timer()-start
 
     return NG
 
