@@ -14,7 +14,6 @@ class innovList:
         if foundlist:
             return foundlist
         else:
-            print "returned false"
             return False
 
     def createNewInnovation(self,innovType,fromNode,toNode,nodeType=0):
@@ -28,14 +27,3 @@ class innovList:
 
     def getNumberOfInnovations(self):
         return len(self.inno_array)
-
-
-class innovation:
-
-    def __init__(self,innovNumber,innovType,nodeType,fromNode,toNode):
-
-        self.innovNumber = innovNumber
-        self.innovType = innovType
-        self.nodeType = nodeType
-        self.fromNode = fromNode
-        self.toNode = toNode
