@@ -69,7 +69,7 @@ class Pool:
 
     def testPopulation(self):
         print "\nGeneration %i, %i species ,%i innovations"\
-              %(self.generation,len(self.species.l_species),len(self.innovations.l_innovations))
+              %(self.generation,len(self.species.l_species),self.innovations.getNumberOfInnovations())
         sim.fastSimulateConfirm(self.species.getAllGenomes(),self.GS)
         self.logGenerationResults()
 

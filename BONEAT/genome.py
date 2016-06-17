@@ -1,8 +1,6 @@
 from gene import *
 from enums import *
 import random
-import innovation
-from timeit import default_timer as timer
 import copy
 
 class Genome:

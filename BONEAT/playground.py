@@ -38,12 +38,9 @@ import random
 import cProfile
 
 p = pickle.load(open("longtest.p","r"))
-pair = random.sample(p.species.getAllGenomes(),2)
-print pair[0].getAllGenesDict().keys()
-print pair[1].getAllGenesDict().keys()
+G = random.choice(p.species.getAllGenomes())
 pr = cProfile.Profile()
 pr.enable()
-print species.difference(pair[0],pair[1])
-print species.differenceN(pair[0],pair[1])
-pr.print_stats()
+G.mutate(p.innovations)
+pr.print_stats("tottime")
 

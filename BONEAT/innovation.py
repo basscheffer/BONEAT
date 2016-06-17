@@ -1,45 +1,33 @@
 from enums import *
+import numpy as np
 
 
 class innovList:
 
     def __init__(self):
-        self.l_innovations = []
-        self.new_innov_number = 0
 
-    def findInnovations(self,innovType,fromNode,toNode,nodeType=None):
+        self.inno_array = np.zeros((0,4),dtype=int)
 
-        foundlist = []
-
-        for i in self.l_innovations:
-            if innovType == i.innovType and nodeType == i.nodeType\
-                and fromNode == i.fromNode and toNode == i.toNode:
-                foundlist.append(i.innovNumber)
-
+    def findInnovations(self,innovType,fromNode,toNode,nodeType=0):
+        foundlist = list(np.where((self.inno_array[:,0] == innovType) & (self.inno_array[:,1]==fromNode) &
+                             (self.inno_array[:,2] == toNode) & (self.inno_array[:,3]==nodeType))[0])
         if foundlist:
             return foundlist
         else:
+            print "returned false"
             return False
 
-    def createNewInnovation(self,innovType,fromNode,toNode,nodeType=None):
+    def createNewInnovation(self,innovType,fromNode,toNode,nodeType=0):
 
-        inno_num = self.new_innov_number
-        new_innov = innovation(inno_num,innovType,nodeType,fromNode,toNode)
-        self.new_innov_number += 1
-        self.l_innovations.append(new_innov)
+        inno_num = len(self.inno_array)
+
+        new_innov = [[innovType,fromNode,toNode,nodeType]]
+        self.inno_array = np.concatenate((self.inno_array,new_innov))
+
         return inno_num
 
-    def getInnovationByNumber(self,number):
-        # for i in self.l_innovations:
-        #     if i.innovNumber == number:
-        #         return i
-        # else:
-        #     return False
-        inno = self.l_innovations[number]
-        if inno.innovNumber == number:
-            return inno
-        else:
-            return False
+    def getNumberOfInnovations(self):
+        return len(self.inno_array)
 
 
 class innovation:
