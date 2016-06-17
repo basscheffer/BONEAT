@@ -6,6 +6,7 @@ BONEAT/data/timerfile/*
 BONEAT/longtest.p
 BONEAT/.idea
 .idea
+*.pyc
 
 # Windows image file caches
 Thumbs.db
