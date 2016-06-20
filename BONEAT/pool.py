@@ -6,6 +6,7 @@ import simulate as sim
 from genome import *
 from innovation import *
 from species import *
+import db_log
 
 
 class Pool:
@@ -71,7 +72,6 @@ class Pool:
         print "\nGeneration %i, %i species ,%i innovations"\
               %(self.generation,len(self.species.l_species),self.innovations.getNumberOfInnovations())
         sim.fastSimulateConfirm(self.species.getAllGenomes(),self.GS)
-        self.logGenerationResults()
 
     def logGenerationResults(self):
         data = self.species.getGenerationData()
@@ -82,6 +82,22 @@ class Pool:
                 line = [self.generation]
                 line.extend(row)
                 writer.writerow(line)
+
+    def logGenoTypes(self):
+        DBL = db_log.GTLogger()
+        AGL = self.species.getAllGenomes()
+        AGL.sort(key=lambda g: g.fitness, reverse=True)
+        cull = int(math.ceil(len(AGL)/10.0))
+        for i in range(cull):
+            D = {"pair":self.GS["pair"],
+                 "generation":self.generation,
+                 "species":AGL[i].species_id,
+                 "confirmfactor":0.0
+                 }
+            D.update(AGL[i].performance)
+            DBL.logGenoType(D,AGL[i].makeGenotypeString(),cull)
+        DBL.cullGenoTypeLog(cull)
+        DBL.close()
 
     def logTimer(self):
         data = [self.generation,self.tottime,self.testtime,self.culltime,self.newgentime,self.breedtime,self.mutatetime]
@@ -119,6 +135,8 @@ class Pool:
         self.testPopulation()
         t3 = timer()
         self.testtime = (t3-t2)
+        self.logGenerationResults()
+        self.logGenoTypes()
 
         self.tottime = (t3-t0)
 

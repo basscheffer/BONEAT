@@ -124,6 +124,7 @@ class Simulator:
                     pass
             else:
                 pass
+        self.closePosition()
 
         return self.getPerformance()
 

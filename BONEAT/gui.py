@@ -80,7 +80,6 @@ class mainWindow(QMainWindow):
 
         self.specSettGb = settingsBox("speciation","Speciation settings")
         self.specSettGb.addSlider("threshold","Speciation threshold",5.0,0.2,1.0,0.1)
-        self.specSettGb.addSlider("d_factor","Disjoint weight",3.0,0.0,1.0,0.1)
         self.specSettGb.addSlider("e_factor","Excess weight",3.0,0.0,1.0,0.1)
         self.specSettGb.addSlider("w_factor","Weight difference weight",3.0,0.0,1.0,0.1)
         self.specSettGb.addSlider("staleness","Stale species",30,1,15,1)

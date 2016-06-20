@@ -13,6 +13,8 @@ class Genome:
         self.fitness = 0.0
         self.performance = {}
 
+        self.species_id = 0
+
     def addNode(self,fromNode,toNode,global_innovations,nodeType=NodeType.HIDDEN,weight=1.0):
 
         #get all possible innovation numbers for this node

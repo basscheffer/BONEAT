@@ -10,7 +10,6 @@ class SpeciesList:
 
         self.settings = settings
 
-        self.disjointC = float(settings["d_factor"])
         self.excessC = float(settings["e_factor"])
         self.weightsC = float(settings["w_factor"])
         self.threshold = float(settings["threshold"])
@@ -29,11 +28,13 @@ class SpeciesList:
         # loop through all species and check to which it belongs
         for s in self.l_species:
             if self.sameSpecies(s.root_genome,genome):
+                genome.species_id = s.sp_id
                 s.l_genomes.append(genome)
                 break
 
         # if it didn't belong to any make a new one
         else:
+            genome.species_id = self.next_id
             s = species(self.next_id,genome,self.settings)
             self.next_id += 1
             self.l_species.append(s)
@@ -44,7 +45,7 @@ class SpeciesList:
         D,W = difference(speciesGenome,newGenome)
 
         # calculate delta
-        delta = self.disjointC*D+self.weightsC*W
+        delta = self.excessC*D+self.weightsC*W
 
         # check if this is within threshold
         return delta <= self.threshold
@@ -282,8 +283,6 @@ def difference(genome1,genome2):
     disjointcounter = float(len(G1s.symmetric_difference(G2s)))
     max_genes = max(len(G1),len(G2))
     djr = disjointcounter/max_genes
-
-
 
     return djr, aw
 
