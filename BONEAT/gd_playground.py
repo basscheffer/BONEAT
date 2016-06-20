@@ -14,8 +14,6 @@ def inArray(num,array):
 def sigmoid(x):
   return 1 / (1 + math.exp(-x))
 
-
-
 class graphicNode:
 
     def __init__(self,y_pos,x_pos,type,number):
@@ -74,20 +72,25 @@ class neuralNetVisualiser(QGraphicsScene):
         self.layerarray.append(inlist)
         
         allcreated = False
-        while not allcreated:
+        i = 0
+        while not allcreated and i < 20:
             allcreated = True
             newlayerlist = []
             for l in self.linklist:
+                # if the from node is already made then skip
                 if l[0] in newlayerlist or inArray(l[0],self.layerarray):
                     pass
                 else:
+                    # if the to node is in an upper layer make the node in this layer
                     if inArray(l[1],self.layerarray[:-1]):
                         newlayerlist.append(l[0])
+                    # else there is still more to do
                     else:
                         allcreated = False
             newlayerlist.sort(reverse=False)
             if newlayerlist:
                 self.layerarray.insert(len(self.layerarray)-1,newlayerlist)
+            i += 1
         for layer in self.layerarray:
             print layer
     
@@ -174,7 +177,7 @@ class W(QGraphicsView):
 
         NNV = neuralNetVisualiser(900,600)
         # NNV.drawArc()
-        GTS = open("testchild.txt").read()
+        GTS = open("C:\Users\Bas Scheffer\Downloads\\test2.txt").read()
         NNV.readGTstring(GTS)
         NNV.makeGraphicNodes()
         NNV.makeGraphicLinks()

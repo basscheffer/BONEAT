@@ -36,11 +36,17 @@ import pickle
 import species
 import random
 import cProfile
+#
+# p = pickle.load(open("longtest.p","r"))
+# G = random.choice(p.species.getAllGenomes())
+# pr = cProfile.Profile()
+# pr.enable()
+# G.mutate(p.innovations)
+# # pr.print_stats("tottime")
+pickl = pickle.load(open("C:\Users\Bas Scheffer\Downloads\\longtest.p","r"))
 
-p = pickle.load(open("longtest.p","r"))
-G = random.choice(p.species.getAllGenomes())
-pr = cProfile.Profile()
-pr.enable()
-G.mutate(p.innovations)
-pr.print_stats("tottime")
+allGenomes = pickl.species.getAllGenomes()
+allGenomes.sort(key=lambda g: g.fitness, reverse=True)
+print allGenomes[0].performance
+print allGenomes[0].makeGenotypeString()
 
