@@ -35,7 +35,6 @@ class GTLogger:
         ,%(r2)s,%(fitness)s,%(confirmfactor)s,'%(gt_string)s')"""
         data.update({"gt_string":genotype_string})
         query = I_Q%data
-        print query
         self.curs.execute(query)
         self.conn.commit()
 
