@@ -309,18 +309,23 @@ def buildFromGTFile(genotype_file):
     nodelist = []
     linklist = []
 
-    with open(genotype_file,"r") as gtf:
-        gts = gtf.read()
-        ns,ls = gts.split(">NEUR")[1].split(">LINK")
-        nsl =  ns.split()
-        lsl = ls.split()
+    gts = ""
+    if ".txt" in genotype_file:
+        with open(genotype_file,"r") as gtf:
+            gts = gtf.read()
+    else:
+        gts = genotype_file
 
-        for ni in nsl:
-            x = ni.split(";")
-            nodelist.append([int(x[0]),int(x[1]),int(x[2])])
-        for li in lsl:
-            x = li.split(";")
-            linklist.append([int(x[0]),int(x[1]),float(x[2])])
+    ns,ls = gts.split(">NEUR")[1].split(">LINK")
+    nsl =  ns.split()
+    lsl = ls.split()
+
+    for ni in nsl:
+        x = ni.split(";")
+        nodelist.append([int(x[0]),int(x[1]),int(x[2])])
+    for li in lsl:
+        x = li.split(";")
+        linklist.append([int(x[0]),int(x[1]),float(x[2])])
 
     settings = {"pair":"AUDUSD","timeframe":240}
     NG = Genome(settings)

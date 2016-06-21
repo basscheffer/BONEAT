@@ -1,59 +1,26 @@
-# import csv
-#
-# nf = open("data/ga_logs/AUDUSD240xl.csv","w")
-# writer = csv.writer(nf,delimiter=",",quotechar='"')
-#
-# with open("data/ga_logs/AUDUSD240.csv","r") as of:
-#     reader = csv.reader(of,delimiter=",",quotechar='"')
-#     for row in reader:
-#         if row:
-#             writer.writerow(row[:5])
-#
-# import numpy as np
-# import genome
-# import phenotype
-# import simulate
-# import dateutil.parser as dp
-#
-# A = np.load("data/npy_data/AUDUSD240_NormData.npy")
-#
-# from_date=dp.parse("2007-01-01")
-# to_date=dp.parse("2013-01-01")
-# # idx=(A[:,0]>=from_date) & (A[:,0]<to_date)
-# # data1 = A[idx]
-# # print data1
-# si = min(np.where(A[:,0]>=from_date)[0])
-# ei = min(np.where(A[:,0]>=to_date)[0])
-# data = A[si:ei]
-#
-# settings = {"spread":"1.8","profit_norm":0.627450}
-# G = genome.buildFromGTFile("data/genotypes/AUDUSD240.gt.txt")
-# NN = phenotype.neuralNetwork(G)
-# SIM = simulate.Simulator()
-# print SIM.runSimulation(data,NN,settings)
+import genome
+import sumulateN as simulate
+import MySQLdb as db
 
-import pickle
-import species
-import random
-import cProfile
-import sys
-#
-# p = pickle.load(open("longtest.p","r"))
-# G = random.choice(p.species.getAllGenomes())
-# pr = cProfile.Profile()
-# pr.enable()
-# G.mutate(p.innovations)
-# # pr.print_stats("tottime")
-# pickl = pickle.load(open("C:\Users\Bas Scheffer\Downloads\\longtest.p","r"))
-#
-# allGenomes = pickl.species.getAllGenomes()
-# allGenomes.sort(key=lambda g: g.fitness, reverse=True)
-# print allGenomes[0].performance
-# print allGenomes[0].makeGenotypeString()
+conn = db.connect(host="basdb.cjezotpxmuuq.ap-southeast-2.rds.amazonaws.com"
+                             ,port=3306
+                             ,user = "basscheffer"
+                             ,passwd ="basscheffer"
+                             ,db="boneat")
+curs = conn.cursor()
+query = """select genotype_id, fitness, gt_string from genotypes where genotype_id = 150"""
 
-import string as str
+S = {"spread":1.8,"profit_norm":0.627450,"traindata_start":"2007-01-01","traindata_end":"2013-01-01"}
+dp = "data/npy_data/AUDUSD240_NormData.npy"
 
-fs = "bla bla '%(bla)s'"
-d = {"bla":"rara\npolitiepet"}
-print fs%d
+curs.execute(query)
+result = curs.fetchall()
+
+for row in result:
+    print "Genome %i with fitness %f"%(row[0],row[1])
+    G = genome.buildFromGTFile(row[2])
+    data = [G,dp,S]
+    print simulate.simuRoutine(data)
+
+
 

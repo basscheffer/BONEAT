@@ -6,6 +6,7 @@ import math
 from datetime import *
 import dateutil.parser as dp
 import cProfile
+from scipy import stats
 
 def makeBacktestData(data_path='data/AUDUSD240.csv'):
 
@@ -70,7 +71,8 @@ class Simulator:
         self.pos_prof = 0.0
         self.pos_price = 0.0
 
-        self.max_bal = 0.0
+        self.max_eq = 0.0
+        self.equity = 0.0
         self.curr_bal = 0.0
         self.max_dd = 0.0
         self.trade_count = 0
@@ -83,6 +85,8 @@ class Simulator:
 
         self.barcount = len(data)-dryrun
 
+        self.EQ = [0]*len(data)
+
         for i,tf in enumerate(data):
             openbuy=False
             opensell=False
@@ -91,6 +95,11 @@ class Simulator:
             openprice = tf[1]
             if self.pos_open != 0.0:
                 self.updatePosProfit(openprice,float(settings["spread"]))
+
+            self.equity = self.curr_bal + self.pos_prof
+            self.EQ[i] = self.equity
+            self.calcDrawDown()
+
 
             posprof = self.pos_prof/settings["profit_norm"]
             inputlist = [self.pos_open,self.pos_dir,posprof]
@@ -126,6 +135,13 @@ class Simulator:
                 pass
         self.closePosition()
 
+        with open("restest3.txt","w") as fh:
+            for i,e in enumerate(self.EQ):
+                fh.write("%i,%f\n"%(i,e))
+
+
+        self.slope, intercept, self.r_value, p_value, std_err = stats.linregress(range(len(data)),self.EQ)
+
         return self.getPerformance()
 
     def getPerformance(self):
@@ -135,7 +151,9 @@ class Simulator:
         perf['trades'] = self.trade_count
         if self.trade_count > 0:
             perf['winratio'] = float(self.win_count)/float(self.trade_count)
-        perf["prof/bar"] = (self.curr_bal/float(self.barcount))*1000
+        perf["slope"] = self.slope
+        perf["r2"] = self.r_value**2
+        perf["slope*r2"] = (self.r_value**2)*self.slope
 
         return perf
 
@@ -160,17 +178,16 @@ class Simulator:
             self.trade_count+=1
             if self.pos_prof > 0.0:
                 self.win_count+=1
-            self.calcExtremes()
             self.pos_open = 0.0
             self.pos_dir = 0.0
             self.pos_prof = 0.0
             self.pos_price = 0.0
 
-    def calcExtremes(self):
-        if self.curr_bal > self.max_bal:
-            self.max_bal = self.curr_bal
-        if self.max_bal-self.curr_bal > self.max_dd:
-            self.max_dd=self.max_bal-self.curr_bal
+    def calcDrawDown(self):
+        if self.equity > self.max_eq:
+            self.max_eq = self.equity
+        if self.max_eq-self.equity > self.max_dd:
+            self.max_dd = self.max_eq-self.equity
 
 def getData(data_path,settings,data_field = "train"):
     A = np.load(data_path)
