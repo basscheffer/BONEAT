@@ -135,9 +135,9 @@ class Simulator:
                 pass
         self.closePosition()
 
-        with open("restest3.txt","w") as fh:
-            for i,e in enumerate(self.EQ):
-                fh.write("%i,%f\n"%(i,e))
+        # with open("restest3.txt","w") as fh:
+        #     for i,e in enumerate(self.EQ):
+        #         fh.write("%i,%f\n"%(i,e))
 
 
         self.slope, intercept, self.r_value, p_value, std_err = stats.linregress(range(len(data)),self.EQ)

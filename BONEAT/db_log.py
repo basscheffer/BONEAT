@@ -30,11 +30,12 @@ class GTLogger:
 
         I_Q = """insert
         into genotypes
-        (pair,generation,species,slope*r2,slope,profit,trades,winratio,drawdown,r2,fitness,confirmfactor,gt_string)
+        (pair,generation,species,slope_r2,slope,profit,trades,winratio,drawdown,r2,fitness,confirmfactor,gt_string)
         values ('%(pair)s',%(generation)s,%(species)s,%(slope*r2)s,%(slope)s,%(profit)s,%(trades)s,%(winratio)s,%(drawdown)s
         ,%(r2)s,%(fitness)s,%(confirmfactor)s,'%(gt_string)s')"""
         data.update({"gt_string":genotype_string})
         query = I_Q%data
+        print query
         self.curs.execute(query)
         self.conn.commit()
 
