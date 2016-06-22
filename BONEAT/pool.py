@@ -28,6 +28,12 @@ class Pool:
         self.breedtime = 0.0
         self.mutatetime = 0.0
 
+        with open(cfg_filepath,"r") as f:
+            cfg_str = f.read()
+            DBL = db_log.GTLogger()
+            self.pool_id = DBL.newPool(cfg_str)
+            DBL.close()
+
         self.timerdatafile="data/timerfile/{}{}_td.csv".format(self.GS["pair"],self.GS["timeframe"])
         with open(self.timerdatafile,"w") as tdf:
             writer = csv.writer(tdf, delimiter=',',quotechar='"')
@@ -92,11 +98,12 @@ class Pool:
             D = {"pair":self.GS["pair"],
                  "generation":self.generation,
                  "species":AGL[i].species_id,
-                 "confirmfactor":0.0
+                 "confirmfactor":0.0,
+                 "pool_id":self.pool_id
                  }
             D.update(AGL[i].performance)
-            DBL.logGenoType(D,AGL[i].makeGenotypeString(),cull)
-        DBL.cullGenoTypeLog(cull)
+            DBL.logGenoType(D,AGL[i].makeGenotypeString(),cull,self.pool_id)
+        DBL.cullGenoTypeLog(cull,self.pool_id)
         DBL.close()
 
     def logTimer(self):
