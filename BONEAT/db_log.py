@@ -20,15 +20,16 @@ class GTLogger:
         self.curs = self.conn.cursor()
 
     def logGenoType(self,data,genotype_string,cull,pool_id):
-        query = """select min(t.fitness)
+        query = """select min(t.fitness), count(t.fitness)
         from (select fitness from genotypes where pool_id = %i order by fitness desc limit %i)t"""%(pool_id,cull)
         self.curs.execute(query)
-        res = self.curs.fetchall()[0][0]
-        if len(res) < cull:
-            pass
-        else:
-            if data["fitness"] < res[0][0]:
-                return
+        res = self.curs.fetchall()
+        if not res == None:
+            if res[0][1] < cull:
+                pass
+            else:
+                if data["fitness"] < res[0][0]:
+                    return
 
         I_Q = """insert
         into genotypes
