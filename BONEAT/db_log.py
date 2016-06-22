@@ -23,9 +23,12 @@ class GTLogger:
         query = """select min(t.fitness)
         from (select fitness from genotypes where pool_id = %i order by fitness desc limit %i)t"""%(pool_id,cull)
         self.curs.execute(query)
-        floor = self.curs.fetchall()[0][0]
-        if data["fitness"] < floor:
-            return
+        res = self.curs.fetchall()[0][0]
+        if len(res) < cull:
+            pass
+        else:
+            if data["fitness"] < res[0][0]:
+                return
 
         I_Q = """insert
         into genotypes
